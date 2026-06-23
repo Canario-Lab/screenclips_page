@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" data-lang="en" data-lang-target-pl="../terms.html" data-lang-target-en="./terms.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Terms of Use for the ScreenClips app.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/terms.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/terms.html">
+    <title>Terms — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn
+        };
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (stored === 'pl' || stored === 'en') return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const first = (languages[0] || '').toLowerCase();
+        const preferred = first.startsWith('pl') ? 'pl' : 'en';
+        if (preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260623-i18n">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Document navigation">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"><span class="icon-stack">▰</span></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Back to homepage</a>
+          <div class="language-switcher" aria-label="Language">
+            <a href="../terms.html" hreflang="pl" lang="pl" data-lang-switch="pl">PL</a>
+            <a href="./terms.html" hreflang="en" lang="en" data-lang-switch="en" aria-current="page">EN</a>
+          </div>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Terms of Use for ScreenClips</h1>
+          <p>Effective date: June 16, 2026</p>
+          <p>Version: 1.0</p>
+          <h2>1. Service provider</h2>
+          <p>The service provider making the ScreenClips app available is Canario-Lab.</p>
+          <p>These Terms define the rules for using the app, including free features, Premium, backups, export, and the share extension.</p>
+          <h2>2. Nature of the app</h2>
+          <p>ScreenClips is a local iOS tool for organizing screenshots into Clips and libraries. The app helps group images, notes, and context so the user can return to their own materials more easily.</p>
+          <p>ScreenClips is not a cloud service, external data storage service, social network, copyright management service, or a service that guarantees permanent archiving outside the user&#x27;s device.</p>
+          <h2>3. Technical requirements</h2>
+          <p>Using the app requires a compatible Apple device and an iOS version supported by the app.</p>
+          <p>Some features may require access to Photos, the system share sheet, Files, Face ID, the App Store, an Apple ID, or an internet connection, especially for purchasing or restoring Premium.</p>
+          <h2>4. User data and responsibility for content</h2>
+          <p>The user is responsible for screens, notes, Clip names, libraries, and other materials added to the app, including having the right to store, export, and share them.</p>
+          <p>Removing a screen from a Clip does not delete the original photo from the Photos library. Deleting data in ScreenClips may remove the local copy stored by the app.</p>
+          <h2>5. Backups and export</h2>
+          <p>A ScreenClips backup is a local .screenclipbackup file created at the user&#x27;s request. Restoring a backup replaces the current app state with data from the selected file.</p>
+          <p>The user is responsible for safely storing backup files, PDFs, and other exports, and for the consequences of sending them to external services such as iCloud Drive, mail, messengers, or other apps.</p>
+          <h2>6. Free version and Premium</h2>
+          <p>ScreenClips is a freemium app. The free version has capacity limits: up to 2 libraries, 5 Clips, and 20 screens in total.</p>
+          <p>ScreenClips Premium unlocks the capacity limits for libraries, Clips, and screens. Premium does not change the local nature of the app and does not create an external copy of the user&#x27;s data.</p>
+          <h2>7. Lifetime purchase and payments</h2>
+          <p>The target payment model for ScreenClips is a one-time Lifetime purchase in the App Store, handled by Apple and verified through RevenueCat.</p>
+          <p>The app does not offer a monthly or yearly subscription and does not offer a trial. The Lifetime purchase does not renew automatically.</p>
+          <p>Payment is charged to the user&#x27;s Apple ID account after purchase confirmation. Canario-Lab does not process the user&#x27;s payment card details.</p>
+          <h2>8. Restoring purchase</h2>
+          <p>The user may restore the Lifetime purchase on a compatible Apple device using Apple and RevenueCat mechanisms available in the app.</p>
+          <p>Premium access is confirmed based on the ScreenClips Pro entitlement returned by RevenueCat. Access may require an internet connection and correct App Store or RevenueCat configuration.</p>
+          <h2>9. Availability and app changes</h2>
+          <p>Canario-Lab makes efforts to keep the app working properly, but ScreenClips is provided as available and may contain bugs, limitations, or temporary interruptions.</p>
+          <p>App features, free version limits, the Premium offer, and these Terms may change as the product evolves, App Store requirements change, or legal requirements change.</p>
+          <h2>10. Liability</h2>
+          <p>To the extent permitted by law, Canario-Lab is not liable for data loss resulting from app deletion, device damage, incorrect backup use, mistaken file sharing, actions of external services, or the user&#x27;s lack of their own backup copy.</p>
+          <p>The user should independently protect important materials and keep copies of files they want to store long term.</p>
+          <h2>11. Final provisions</h2>
+          <p>In matters not regulated by these Terms, applicable law applies.</p>
+          <p>If any provision of these Terms is found invalid, the remaining provisions remain in force.</p>
+          <p>The current version of these Terms will be available in the app.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="./terms.html" aria-current="page">Terms</a>
+          <a href="mailto:screenclips@screenclips.app">Contact</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,12 +1,39 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" data-lang="pl" data-lang-target-pl="./terms.html" data-lang-target-en="./en/terms.html">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#F4EEE4">
     <meta name="description" content="Warunki korzystania z aplikacji ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/terms.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/terms.html">
     <title>Warunki — ScreenClips</title>
-    <link rel="stylesheet" href="./styles.css?v=20260623-legal-pages">
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn
+        };
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (stored === 'pl' || stored === 'en') return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const first = (languages[0] || '').toLowerCase();
+        const preferred = first.startsWith('pl') ? 'pl' : 'en';
+        if (preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="./styles.css?v=20260623-i18n">
   </head>
   <body class="legal-page">
     <main class="legal-shell">
@@ -15,7 +42,13 @@
           <div class="app-icon" aria-hidden="true"><span class="icon-stack">▰</span></div>
           <span>ScreenClips</span>
         </a>
-        <a class="secondary-link" href="./">Wróć na stronę główną</a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Wróć na stronę główną</a>
+          <div class="language-switcher" aria-label="Language">
+            <a href="./terms.html" hreflang="pl" lang="pl" data-lang-switch="pl" aria-current="page">PL</a>
+            <a href="./en/terms.html" hreflang="en" lang="en" data-lang-switch="en">EN</a>
+          </div>
+        </div>
       </nav>
 
       <article class="legal-card">

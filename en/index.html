@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en" data-lang="en" data-lang-target-pl="../" data-lang-target-en="./">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="ScreenClips turns loose screenshots into organized Clips with names, notes, and libraries. No account, no cloud, no mess.">
+    <meta property="og:title" content="ScreenClips — screenshots stop getting lost in Photos">
+    <meta property="og:description" content="Turn scattered screenshots into Clips with context, notes, and libraries.">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/">
+    <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
+    <title>ScreenClips — screenshots stop getting lost in Photos</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn
+        };
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (stored === 'pl' || stored === 'en') return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const first = (languages[0] || '').toLowerCase();
+        const preferred = first.startsWith('pl') ? 'pl' : 'en';
+        if (preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260623-i18n">
+  </head>
+  <body>
+    <main>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"><span class="icon-stack">▰</span></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="nav-links">
+          <a href="#how-it-works">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#privacy">Privacy</a>
+          <div class="language-switcher" aria-label="Language">
+            <a href="../" hreflang="pl" lang="pl" data-lang-switch="pl">PL</a>
+            <a href="./" hreflang="en" lang="en" data-lang-switch="en" aria-current="page">EN</a>
+          </div>
+          <a class="app-store-button nav-cta" href="#app-store-link-do-podmiany" aria-label="Download ScreenClips on the App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Download on</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero section-shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Screenshot organizer for iPhone</div>
+          <h1>Screenshots stop getting lost in Photos.</h1>
+          <p class="lead">Turn loose screenshots into Clips with a name, a note, and a library. No account, no cloud, no endless digging through your camera roll.</p>
+          <div class="hero-actions">
+            <a class="app-store-button " href="#app-store-link-do-podmiany" aria-label="Download ScreenClips on the App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Download on</small><strong>App Store</strong></span>
+          </a>
+            <a class="secondary-link" href="#how-it-works">See how it works</a>
+          </div>
+          <div class="trust-row" aria-label="No account"><span>No account</span><span>Works locally</span><span>One-time Premium unlock</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="ScreenClips app preview">
+          <div class="floating-card card-left"><strong>Libraries</strong><small>Recipes · Tickets · Study</small></div>
+          <div class="phone hero-phone">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="ScreenClips home screen with libraries and Clips" loading="lazy" src="../screens/home.webp">
+            </div>
+          </div>
+          <div class="floating-card card-right"><strong>Clips with context</strong><small>Name, note, screenshots</small></div>
+        </div>
+      </section>
+
+      <section class="problem section-shell compact">
+        <div class="section-heading">
+          <span class="kicker">Problem</span>
+          <h2>Photos is great for photos. Important screenshots need more.</h2>
+          <p>Receipts, recipes, tickets, ideas, and article snippets end up next to selfies, memes, and accidental ceiling shots. We built the cloud, then still lost the screenshot with the hotel address.</p>
+        </div>
+        <div class="problem-grid"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">▣</span>
+            <h3>Screenshots vanish in the crowd</h3>
+            <p>You save something important, then a week later you are scrubbing through the camera roll like evidence footage.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">✎</span>
+            <h3>Context disappears</h3>
+            <p>The image alone often is not enough. ScreenClips lets you add a name and a note.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">☰</span>
+            <h3>Topics get mixed together</h3>
+            <p>Travel, work, shopping, and learning deserve their own places, not one endless pile in Photos.</p>
+          </article></div>
+      </section>
+
+      <section id="how-it-works" class="how section-shell">
+        <div class="section-heading narrow">
+          <span class="kicker">How it works</span>
+          <h2>Three steps. No system for managing your system.</h2>
+        </div>
+        <div class="steps"><div class="step-card">
+            <span>01</span>
+            <h3>Create a library</h3>
+            <p>Separate topics like recipes, receipts, tickets, research, learning, or anything else you are trying to keep alive.</p>
+          </div>
+<div class="step-card">
+            <span>02</span>
+            <h3>Add a Clip</h3>
+            <p>A Clip is a small bundle around one thing. It has a name, a description, and its own screenshots.</p>
+          </div>
+<div class="step-card">
+            <span>03</span>
+            <h3>Come back without hunting</h3>
+            <p>Open a library, pick a Clip, and everything you need is already together.</p>
+          </div></div>
+        <div class="showcase-grid">
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="List of Clips in ScreenClips" loading="lazy" src="../screens/clips.webp">
+            </div>
+          </div>
+          <div class="showcase-copy">
+            <span class="kicker">From chaos to context</span>
+            <h2>Libraries and Clips instead of one giant camera-roll dump.</h2>
+            <p>ScreenClips does not try to guess for you. It gives you a simple structure: a library for the topic, a Clip for the specific thing, and screenshots or photos inside.</p>
+            <div class="mini-list"><span>✓ Clip name and description</span><span>✓ screenshots and photos in one place</span><span>✓ quick return to saved materials</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="use-cases section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">Use cases</span>
+          <h2>For the things you actually save as screenshots.</h2>
+        </div>
+        <div class="use-case-grid"><div class="use-case">
+            <span aria-hidden="true">▤</span>
+            <strong>Receipts</strong>
+            <small>invoices, proof of purchase</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">✈</span>
+            <strong>Travel</strong>
+            <small>tickets, addresses, bookings</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☕</span>
+            <strong>Recipes</strong>
+            <small>from the web and family chats</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">◈</span>
+            <strong>Ideas</strong>
+            <small>inspiration and research</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">Aa</span>
+            <strong>Learning</strong>
+            <small>vocabulary, notes, materials</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☺</span>
+            <strong>Memes</strong>
+            <small>because civilization may collapse, but at least it can be funny</small>
+          </div></div>
+      </section>
+
+      <section id="features" class="features section-shell">
+        <div class="feature-layout">
+          <div class="feature-copy">
+            <span class="kicker">Features</span>
+            <h2>Everything you need to get screenshots under control. No drama.</h2>
+            <div class="feature-list"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">＋</span>
+            <h3>Add screenshots and photos</h3>
+            <p>Collect materials inside Clips and keep adding to them as the topic grows.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">⇪</span>
+            <h3>Export to PDF</h3>
+            <p>Turn a Clip into a readable file when you want to send it or keep it outside the app.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">♡</span>
+            <h3>Mark what matters</h3>
+            <p>Favorites, flags, and order where there used to be only scrolling despair.</p>
+          </article></div>
+          </div>
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Clip detail screen with screenshot, photo, and PDF export actions" loading="lazy" src="../screens/detail.webp">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="privacy section-shell compact">
+        <div class="privacy-card">
+          <div>
+            <span class="kicker light">Privacy</span>
+            <h2>Your screenshots stay with you.</h2>
+            <p>ScreenClips works locally. You do not need an account to get organized, and you do not have to hand your receipts, notes, and plans to another service that really wants to “improve the experience”.</p>
+          </div>
+          <div class="privacy-points"><span>No account</span><span>No cloud</span><span>No ads</span></div>
+        </div>
+      </section>
+
+      <section class="premium section-shell">
+        <div class="premium-copy">
+          <span class="kicker">Premium</span>
+          <h2>Start with order. Unlock more room when ScreenClips becomes your system.</h2>
+          <p>Premium does not make the app complicated. It gives you more room for libraries, Clips, and screenshots. The price is shown in the App Store.</p>
+          <a class="app-store-button " href="#app-store-link-do-podmiany" aria-label="Download ScreenClips on the App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Download on</small><strong>App Store</strong></span>
+          </a>
+        </div>
+        <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="ScreenClips Premium screen" loading="lazy" src="../screens/paywall1.webp">
+            </div>
+          </div>
+      </section>
+
+      <section class="faq section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">FAQ</span>
+          <h2>Short answers, because life is long enough already.</h2>
+        </div>
+        <div class="faq-list"><details open>
+            <summary>Does ScreenClips delete photos from my library?</summary>
+            <p>No. Removing an item from a Clip does not delete the original from Photos.</p>
+          </details>
+<details>
+            <summary>Does the app work offline?</summary>
+            <p>Yes. ScreenClips is designed as a local organizer on your iPhone.</p>
+          </details>
+<details>
+            <summary>Do I need to create an account?</summary>
+            <p>No. ScreenClips does not need an account to organize your Clips.</p>
+          </details>
+<details>
+            <summary>Can I add regular photos too?</summary>
+            <p>Yes. You can add screenshots and photos when they belong in a Clip.</p>
+          </details></div>
+      </section>
+
+      <section class="final-cta section-shell">
+        <div class="final-card">
+          <div class="app-icon" aria-hidden="true"><span class="icon-stack">▰</span></div>
+          <h2>Stop searching for screenshots. Start coming back to them.</h2>
+          <p>ScreenClips organizes the things you save “for later”. This time, later is actually findable.</p>
+          <a class="app-store-button " href="#app-store-link-do-podmiany" aria-label="Download ScreenClips on the App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Download on</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="./terms.html">Terms</a>
+          <a href="mailto:screenclips@screenclips.app">Contact</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
