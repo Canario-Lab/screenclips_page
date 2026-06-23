@@ -1,29 +1,20 @@
 # ScreenClips landing page
 
-Nowoczesny landing page dla aplikacji ScreenClips, zbudowany w React + Vite.
+Nowoczesny statyczny landing page dla aplikacji ScreenClips.
 
 ## Uruchomienie
 
 ```bash
-npm install
-npm run dev
+python3 -m http.server 8000
 ```
 
-## Build
+Potem otwórz:
 
-```bash
-npm run build
-```
+<http://localhost:8000>
 
 ## Do podmiany przed publikacją
 
-W `src/App.jsx` podmień:
-
-```js
-const APP_STORE_URL = '#app-store-link-do-podmiany'
-```
-
-na docelowy link App Store.
+W `index.html` podmień `#app-store-link-do-podmiany` na docelowy link App Store.
 
 ## Uwaga o App Store badge
 
