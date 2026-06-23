@@ -12,9 +12,9 @@ Potem otwórz:
 
 <http://localhost:8000>
 
-## Do podmiany przed publikacją
+## Link App Store
 
-W `index.html` podmień `#app-store-link-do-podmiany` na docelowy link App Store.
+Przyciski App Store prowadzą do `https://apps.apple.com/app/id6771277332`.
 
 ## Uwaga o App Store badge
 
