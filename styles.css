@@ -103,7 +103,11 @@ main { overflow: hidden; }
   background: linear-gradient(135deg, var(--red), #e24c45);
   box-shadow: 0 14px 34px rgba(210,59,51,.35);
 }
-.icon-stack { font-size: 25px; line-height: 1; transform: rotate(90deg); }
+.app-icon-mark {
+  width: 34px;
+  height: auto;
+  display: block;
+}
 
 .app-store-button {
   display: inline-flex;
