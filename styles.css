@@ -534,28 +534,37 @@ p { color: var(--muted); font-size: 18px; line-height: 1.55; }
 @media (max-width: 640px) {
   .section-shell { padding: 64px 18px; }
   .section-shell.compact { padding-block: 54px; }
-  .nav { padding-inline: 12px; }
-  .nav-links { gap: 8px; padding-right: 0; }
+  .nav { padding-inline: 10px; }
+  .nav-links { gap: 5px; padding-right: 0; }
   .brand span { display: none; }
-  .language-switcher a {
-    min-width: 30px;
-    min-height: 28px;
-    padding: 0 7px;
-    font-size: 12px;
-  }
-  .facebook-button {
+  .brand .app-icon {
     width: 42px;
     height: 42px;
-    flex-basis: 42px;
+    border-radius: 14px;
+  }
+  .language-switcher {
+    gap: 2px;
+    padding: 3px;
+  }
+  .language-switcher a {
+    min-width: 25px;
+    min-height: 28px;
+    padding: 0 5px;
+    font-size: 11px;
+  }
+  .facebook-button {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
   }
   .facebook-button::before {
-    width: 21px;
-    height: 21px;
+    width: 19px;
+    height: 19px;
   }
   .nav-cta {
-    min-width: 48px;
-    width: 48px;
-    min-height: 48px;
+    min-width: 42px;
+    width: 42px;
+    min-height: 42px;
     padding: 8px;
     justify-content: center;
     transform: none;

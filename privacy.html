@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl" data-lang="pl" data-lang-target-pl="./privacy.html" data-lang-target-en="./en/privacy.html" data-lang-target-de="./de/privacy.html" data-lang-target-es="./es/privacy.html">
+<html lang="pl" data-lang="pl" data-lang-target-pl="./privacy.html" data-lang-target-en="./en/privacy.html" data-lang-target-de="./de/privacy.html" data-lang-target-es="./es/privacy.html" data-lang-target-it="./it/privacy.html">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
     <link rel="alternate" hreflang="en" href="https://screenclips.app/en/privacy.html">
     <link rel="alternate" hreflang="de" href="https://screenclips.app/de/privacy.html">
     <link rel="alternate" hreflang="es" href="https://screenclips.app/es/privacy.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/privacy.html">
     <title>Polityka prywatności — ScreenClips</title>
     <script>
       (() => {
@@ -18,9 +19,10 @@
           pl: html.dataset.langTargetPl,
           en: html.dataset.langTargetEn,
           de: html.dataset.langTargetDe,
-          es: html.dataset.langTargetEs
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt
         };
-        const supported = ['pl', 'en', 'de', 'es'];
+        const supported = ['pl', 'en', 'de', 'es', 'it'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -31,14 +33,14 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es'));
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
       })();
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260704-facebook">
+    <link rel="stylesheet" href="./styles.css?v=20260704-it">
   </head>
   <body class="legal-page">
     <main class="legal-shell">
@@ -54,6 +56,7 @@
             <a href="./en/privacy.html" hreflang="en" lang="en" data-lang-switch="en">EN</a>
             <a href="./de/privacy.html" hreflang="de" lang="de" data-lang-switch="de">DE</a>
             <a href="./es/privacy.html" hreflang="es" lang="es" data-lang-switch="es">ES</a>
+            <a href="./it/privacy.html" hreflang="it" lang="it" data-lang-switch="it">IT</a>
           </div>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips na Facebooku">
             <span aria-hidden="true">f</span>

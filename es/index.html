@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-lang="es" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="./">
+<html lang="es" data-lang="es" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="./" data-lang-target-it="../it/">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,7 @@
     <link rel="alternate" hreflang="en" href="https://screenclips.app/en/">
     <link rel="alternate" hreflang="de" href="https://screenclips.app/de/">
     <link rel="alternate" hreflang="es" href="https://screenclips.app/es/">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/">
     <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
     <title>ScreenClips — tus capturas dejan de perderse en Fotos</title>
     <script>
@@ -22,9 +23,10 @@
           pl: html.dataset.langTargetPl,
           en: html.dataset.langTargetEn,
           de: html.dataset.langTargetDe,
-          es: html.dataset.langTargetEs
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt
         };
-        const supported = ['pl', 'en', 'de', 'es'];
+        const supported = ['pl', 'en', 'de', 'es', 'it'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -35,14 +37,14 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es'));
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
       })();
     </script>
-    <link rel="stylesheet" href="../styles.css?v=20260704-facebook">
+    <link rel="stylesheet" href="../styles.css?v=20260704-it">
   </head>
   <body>
     <main>
@@ -60,6 +62,7 @@
             <a href="../en/" hreflang="en" lang="en" data-lang-switch="en">EN</a>
             <a href="../de/" hreflang="de" lang="de" data-lang-switch="de">DE</a>
             <a href="./" hreflang="es" lang="es" data-lang-switch="es" aria-current="page">ES</a>
+            <a href="../it/" hreflang="it" lang="it" data-lang-switch="it">IT</a>
           </div>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips en Facebook">
             <span aria-hidden="true">f</span>

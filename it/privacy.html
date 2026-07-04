@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="it" data-lang="it" data-lang-target-pl="../privacy.html" data-lang-target-en="../en/privacy.html" data-lang-target-de="../de/privacy.html" data-lang-target-es="../es/privacy.html" data-lang-target-it="./privacy.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Informativa sulla privacy dell'app ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/privacy.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/privacy.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/privacy.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/privacy.html">
+    <title>Informativa sulla privacy — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260704-it">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Navigazione del documento">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Torna alla home</a>
+          <div class="language-switcher" aria-label="Lingua">
+            <a href="../privacy.html" hreflang="pl" lang="pl" data-lang-switch="pl">PL</a>
+            <a href="../en/privacy.html" hreflang="en" lang="en" data-lang-switch="en">EN</a>
+            <a href="../de/privacy.html" hreflang="de" lang="de" data-lang-switch="de">DE</a>
+            <a href="../es/privacy.html" hreflang="es" lang="es" data-lang-switch="es">ES</a>
+            <a href="./privacy.html" hreflang="it" lang="it" data-lang-switch="it" aria-current="page">IT</a>
+          </div>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips su Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Informativa sulla privacy</h1>
+          <p>Data di entrata in vigore: 16 giugno 2026</p>
+          <p>Versione: 1.0</p>
+          <h2>1) Titolare del trattamento</h2>
+          <p>Il titolare dei dati personali è Canario-Lab / l'app ScreenClips.</p>
+          <p>ScreenClips è un'app locale per iOS che organizza screenshot in Clip e librerie. L'app non richiede la creazione di un account né la registrazione dell'utente.</p>
+          <h2>2) Dati salvati localmente</h2>
+          <p>I dati creati nell'app, inclusi Clip, librerie, note, icone, screenshot, impostazioni della lingua, impostazioni di Face ID e informazioni sui backup, sono salvati localmente sul dispositivo dell'utente o nel contenitore locale App Group condiviso dall'app principale e dall'estensione di condivisione.</p>
+          <p>Questi dati non vengono inviati automaticamente a Canario-Lab né a server di Canario-Lab.</p>
+          <h2>3) Foto, screenshot e Share Extension</h2>
+          <p>L'app usa l'accesso a Foto solo per aggiungere alla Clip le immagini selezionate dall'utente. ScreenClips salva una propria copia ottimizzata dello screenshot per usarla all'interno dell'app.</p>
+          <p>Eliminare uno screenshot da una Clip lo rimuove solo dai dati di ScreenClips. Non elimina la foto originale dalla libreria Foto dell'utente.</p>
+          <p>La Share Extension consente di inviare immagini selezionate dal foglio di condivisione del sistema a ScreenClips. L'estensione scrive i dati nello stesso archivio locale tramite l'App Group group.com.canario-lab.screenclip.shared.</p>
+          <h2>4) Backup, esportazione e condivisione</h2>
+          <p>Un backup crea un file locale .screenclipbackup con Clip, librerie, screenshot e impostazioni dell'app. Il file viene salvato o condiviso tramite i meccanismi di sistema scelti dall'utente.</p>
+          <p>Il ripristino di un backup sostituisce lo stato locale attuale dell'app con i dati contenuti nel file selezionato. L'utente è responsabile della conservazione e della protezione dei file di backup esportati, dei PDF e di qualsiasi altro materiale condiviso fuori dall'app.</p>
+          <h2>5) Face ID e sicurezza del dispositivo</h2>
+          <p>Se l'utente attiva il blocco con Face ID, l'autenticazione è gestita da iOS tramite LocalAuthentication. ScreenClips non riceve né conserva dati biometrici.</p>
+          <p>Poiché i dati dell'app sono memorizzati localmente, proteggere il dispositivo con codice, Face ID o altri strumenti di sistema resta una parte importante della sicurezza.</p>
+          <h2>6) Acquisti Premium, Apple e RevenueCat</h2>
+          <p>ScreenClips può offrire l'accesso Premium come acquisto Lifetime una tantum sull'App Store. L'app non offre abbonamenti mensili o annuali né periodi di prova.</p>
+          <p>I pagamenti sono gestiti da Apple tramite App Store e StoreKit. ScreenClips usa RevenueCat per mostrare l'offerta, verificare l'entitlement ScreenClips Pro, ripristinare gli acquisti e mostrare nell'app l'ID tecnico di RevenueCat.</p>
+          <p>In questo ambito, Apple e RevenueCat possono trattare dati tecnici di acquisto, come identificativi di transazione, identificativi di prodotto, stato dell'accesso Premium e un identificativo anonimo dell'utente dell'app usato per confermare l'accesso.</p>
+          <p>Canario-Lab non tratta i dati della carta di pagamento dell'utente.</p>
+          <h2>7) Destinatari dei dati</h2>
+          <p>I dati possono essere trattati da servizi esterni solo nella misura necessaria per le funzioni scelte dall'utente o per la gestione degli acquisti:</p>
+          <ul>
+            <li>Apple, per App Store, StoreKit, pagamenti, selettori di file di sistema, Foto, Face ID e condivisione.</li>
+            <li>RevenueCat, per gestire l'offerta, verificare Premium e ripristinare l'acquisto Lifetime.</li>
+            <li>Fornitori di sistema scelti dall'utente, se l'utente esporta un PDF, un backup o condivide un file fuori da ScreenClips.</li>
+            <li>Autorità pubbliche, quando richiesto dalla legge applicabile.</li>
+          </ul>
+          <h2>8) Periodo di conservazione</h2>
+          <p>I dati salvati in ScreenClips restano localmente fino a quando l'utente li elimina, ripristina un altro backup, disinstalla l'app o i dati vengono rimossi tramite i meccanismi di sistema di iOS.</p>
+          <p>I backup esportati, i PDF e i file condivisi fuori dall'app restano sotto il controllo dell'utente e dei servizi a cui sono stati inviati.</p>
+          <p>I dati di acquisto gestiti da Apple e RevenueCat sono conservati secondo le policy di tali servizi.</p>
+          <h2>9) Diritti dell'utente</h2>
+          <p>Se Canario-Lab tratta dati personali dell'utente in un caso specifico, ad esempio durante un contatto con l'assistenza, l'utente può chiedere accesso, rettifica, cancellazione, limitazione del trattamento, opposizione al trattamento e può presentare reclamo all'autorità di controllo competente.</p>
+          <p>Per domande sulla privacy, usa il canale di contatto indicato nell'App Store o all'interno dell'app.</p>
+          <h2>10) Modifiche a questa informativa</h2>
+          <p>Questa Informativa sulla privacy può essere aggiornata insieme alle modifiche delle funzioni di ScreenClips, del modello di pagamento o dei requisiti legali. La versione attuale sarà disponibile nell'app.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html" aria-current="page">Privacy</a>
+          <a href="./terms.html">Condizioni</a>
+          <a href="mailto:screenclips@screenclips.app">Contatto</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
