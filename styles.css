@@ -535,9 +535,33 @@ p { color: var(--muted); font-size: 18px; line-height: 1.55; }
   .section-shell { padding: 64px 18px; }
   .section-shell.compact { padding-block: 54px; }
   .nav { padding-inline: 12px; }
+  .nav-links { gap: 8px; padding-right: 0; }
   .brand span { display: none; }
-  .nav-cta { transform: scale(.76); }
-  .nav-cta:hover { transform: scale(.76) translateY(-2px); }
+  .language-switcher a {
+    min-width: 30px;
+    min-height: 28px;
+    padding: 0 7px;
+    font-size: 12px;
+  }
+  .facebook-button {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+  .facebook-button::before {
+    width: 21px;
+    height: 21px;
+  }
+  .nav-cta {
+    min-width: 48px;
+    width: 48px;
+    min-height: 48px;
+    padding: 8px;
+    justify-content: center;
+    transform: none;
+  }
+  .nav-cta:hover { transform: translateY(-2px); }
+  .nav-cta > span:not(.apple-mark) { display: none; }
   h1 { font-size: clamp(54px, 17vw, 76px); }
   h2 { font-size: clamp(34px, 11vw, 48px); }
   .lead, .section-heading p, .showcase-copy p, .premium-copy p, .privacy-card p { font-size: 18px; }

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es" data-lang="es" data-lang-target-pl="../terms.html" data-lang-target-en="../en/terms.html" data-lang-target-de="../de/terms.html" data-lang-target-es="./terms.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Condiciones de uso de la app ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/terms.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/terms.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/terms.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/terms.html">
+    <title>Condiciones — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs
+        };
+        const supported = ['pl', 'en', 'de', 'es'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260704-facebook">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Navegación del documento">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Volver al inicio</a>
+          <div class="language-switcher" aria-label="Language">
+            <a href="../terms.html" hreflang="pl" lang="pl" data-lang-switch="pl">PL</a>
+            <a href="../en/terms.html" hreflang="en" lang="en" data-lang-switch="en">EN</a>
+            <a href="../de/terms.html" hreflang="de" lang="de" data-lang-switch="de">DE</a>
+            <a href="./terms.html" hreflang="es" lang="es" data-lang-switch="es" aria-current="page">ES</a>
+          </div>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips en Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Condiciones de uso de ScreenClips</h1>
+          <p>Fecha de entrada en vigor: 16 de junio de 2026</p>
+          <p>Versión: 1.0</p>
+          <h2>1. Proveedor</h2>
+          <p>El proveedor que pone a disposición la app ScreenClips es Canario-Lab.</p>
+          <p>Estas Condiciones regulan el uso de la app, incluidas las funciones gratuitas, Premium, copias de seguridad, exportación y la extensión para compartir.</p>
+          <h2>2. Naturaleza de la app</h2>
+          <p>ScreenClips es una herramienta local para iOS que organiza capturas en Clips y bibliotecas. La app ayuda a agrupar imágenes, notas y contexto para que el usuario pueda volver más fácilmente a sus propios materiales.</p>
+          <p>ScreenClips no es un servicio en la nube, un almacenamiento externo de datos, una red social, un gestor de derechos de autor ni un servicio que garantice el archivado permanente fuera del dispositivo del usuario.</p>
+          <h2>3. Requisitos técnicos</h2>
+          <p>Para usar la app se requiere un dispositivo Apple compatible y una versión de iOS admitida por la app.</p>
+          <p>Algunas funciones pueden requerir acceso a Fotos, la hoja de compartir del sistema, Archivos, Face ID, App Store, un Apple ID o conexión a internet, especialmente para comprar o restaurar Premium.</p>
+          <h2>4. Datos del usuario y responsabilidad por el contenido</h2>
+          <p>El usuario es responsable de las capturas, notas, nombres de Clips, bibliotecas y otros materiales añadidos a la app, incluido contar con el derecho a almacenarlos, exportarlos y compartirlos.</p>
+          <p>Eliminar una captura de un Clip no elimina la foto original de la biblioteca Fotos. Eliminar datos en ScreenClips sí puede eliminar la copia local guardada por la app.</p>
+          <h2>5. Copias de seguridad y exportación</h2>
+          <p>Un backup de ScreenClips es un archivo local .screenclipbackup creado a petición del usuario. Restaurar un backup sustituye el estado actual de la app por los datos del archivo seleccionado.</p>
+          <p>El usuario es responsable de guardar de forma segura archivos de backup, PDFs y otras exportaciones, así como de las consecuencias de enviarlos a servicios externos como iCloud Drive, correo, mensajería u otras apps.</p>
+          <h2>6. Versión gratuita y Premium</h2>
+          <p>ScreenClips es una app freemium. La versión gratuita tiene límites de capacidad: hasta 2 bibliotecas, 5 Clips y 20 capturas en total.</p>
+          <p>ScreenClips Premium desbloquea los límites de capacidad para bibliotecas, Clips y capturas. Premium no cambia el carácter local de la app ni crea una copia externa de los datos del usuario.</p>
+          <h2>7. Compra Lifetime y pagos</h2>
+          <p>El modelo de pago previsto para ScreenClips es una compra Lifetime de pago único en el App Store, gestionada por Apple y verificada mediante RevenueCat.</p>
+          <p>La app no ofrece suscripción mensual o anual ni periodo de prueba. La compra Lifetime no se renueva automáticamente.</p>
+          <p>El pago se carga a la cuenta Apple ID del usuario tras confirmar la compra. Canario-Lab no trata los datos de la tarjeta de pago del usuario.</p>
+          <h2>8. Restauración de compra</h2>
+          <p>El usuario puede restaurar la compra Lifetime en un dispositivo Apple compatible mediante los mecanismos de Apple y RevenueCat disponibles en la app.</p>
+          <p>El acceso Premium se confirma según el entitlement ScreenClips Pro devuelto por RevenueCat. El acceso puede requerir conexión a internet y una configuración correcta de App Store o RevenueCat.</p>
+          <h2>9. Disponibilidad y cambios en la app</h2>
+          <p>Canario-Lab se esfuerza por mantener la app funcionando correctamente, pero ScreenClips se ofrece tal como está disponible y puede contener errores, limitaciones o interrupciones temporales.</p>
+          <p>Las funciones de la app, los límites de la versión gratuita, la oferta Premium y estas Condiciones pueden cambiar a medida que evoluciona el producto, cambian los requisitos del App Store o cambian los requisitos legales.</p>
+          <h2>10. Responsabilidad</h2>
+          <p>En la medida permitida por la ley, Canario-Lab no responde por la pérdida de datos causada por desinstalar la app, daños en el dispositivo, uso incorrecto de backups, compartir archivos por error, acciones de servicios externos o falta de una copia de seguridad propia por parte del usuario.</p>
+          <p>El usuario debe proteger por su cuenta los materiales importantes y conservar copias de los archivos que quiera guardar a largo plazo.</p>
+          <h2>11. Disposiciones finales</h2>
+          <p>Para lo no regulado por estas Condiciones se aplicará la legislación correspondiente.</p>
+          <p>Si alguna disposición de estas Condiciones se considera inválida, las demás disposiciones seguirán en vigor.</p>
+          <p>La versión actual de estas Condiciones estará disponible en la app.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html">Privacidad</a>
+          <a href="./terms.html" aria-current="page">Condiciones</a>
+          <a href="mailto:screenclips@screenclips.app">Contacto</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
