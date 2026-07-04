@@ -472,18 +472,21 @@ p { color: var(--muted); font-size: 18px; line-height: 1.55; }
   font-size: clamp(42px, 7vw, 72px);
   line-height: .98;
   letter-spacing: -.045em;
+  overflow-wrap: anywhere;
 }
 .legal-card h2 {
   margin-top: 34px;
   font-size: clamp(24px, 3vw, 32px);
   line-height: 1.12;
   letter-spacing: -.025em;
+  overflow-wrap: anywhere;
 }
 .legal-card p,
 .legal-card li {
   color: var(--muted);
   font-size: 17px;
   line-height: 1.68;
+  overflow-wrap: anywhere;
 }
 .legal-card p,
 .legal-card ul {

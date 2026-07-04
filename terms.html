@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl" data-lang="pl" data-lang-target-pl="./terms.html" data-lang-target-en="./en/terms.html">
+<html lang="pl" data-lang="pl" data-lang-target-pl="./terms.html" data-lang-target-en="./en/terms.html" data-lang-target-de="./de/terms.html">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <meta name="description" content="Warunki korzystania z aplikacji ScreenClips.">
     <link rel="alternate" hreflang="pl" href="https://screenclips.app/terms.html">
     <link rel="alternate" hreflang="en" href="https://screenclips.app/en/terms.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/terms.html">
     <title>Warunki — ScreenClips</title>
     <script>
       (() => {
@@ -14,8 +15,10 @@
         const current = html.dataset.lang || html.lang || 'pl';
         const targets = {
           pl: html.dataset.langTargetPl,
-          en: html.dataset.langTargetEn
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe
         };
+        const supported = ['pl', 'en', 'de'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -24,16 +27,16 @@
           if (!link) return;
           try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
         });
-        if (stored === 'pl' || stored === 'en') return;
+        if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const first = (languages[0] || '').toLowerCase();
-        const preferred = first.startsWith('pl') ? 'pl' : 'en';
-        if (preferred !== current && targets[preferred]) {
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
       })();
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260628-facebook">
+    <link rel="stylesheet" href="./styles.css?v=20260704-de">
   </head>
   <body class="legal-page">
     <main class="legal-shell">
@@ -47,6 +50,7 @@
           <div class="language-switcher" aria-label="Language">
             <a href="./terms.html" hreflang="pl" lang="pl" data-lang-switch="pl" aria-current="page">PL</a>
             <a href="./en/terms.html" hreflang="en" lang="en" data-lang-switch="en">EN</a>
+            <a href="./de/terms.html" hreflang="de" lang="de" data-lang-switch="de">DE</a>
           </div>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips na Facebooku">
             <span aria-hidden="true">f</span>
