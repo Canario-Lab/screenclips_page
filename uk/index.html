@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="uk" data-lang="uk" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-it="../it/" data-lang-target-fr="../fr/" data-lang-target-tr="../tr/" data-lang-target-uk="./">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="ScreenClips упорядковує скріншоти в Кліпи з назвами, нотатками й бібліотеками. Без акаунта, без хмари, без зайвого безладу.">
+    <meta property="og:title" content="ScreenClips — скріншоти більше не губляться у Фотографіях">
+    <meta property="og:description" content="Перетворюй розрізнені скріншоти на Кліпи з контекстом, нотатками й бібліотеками.">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/">
+    <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
+    <title>ScreenClips — скріншоти більше не губляться у Фотографіях</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body>
+    <main>
+      <nav class="nav" aria-label="Основна навігація">
+        <a class="brand" href="#top" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="nav-links">
+          <a href="#yak-pratsiuie">Як це працює</a>
+          <a href="#mozhlyvosti">Можливості</a>
+          <a href="#pryvatnist">Приватність</a>
+          <details class="language-switcher" aria-label="Мова">
+            <summary aria-label="Мова"><span class="language-current"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></span></summary>
+            <div class="language-menu">
+              <a href="../" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../tr/" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="./" hreflang="uk" lang="uk" data-lang-switch="uk" aria-current="page"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips у Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+          <a class="app-store-button nav-cta" href="https://apps.apple.com/app/id6771277332" aria-label="Завантажити ScreenClips з App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Завантажити з</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero section-shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Органайзер скріншотів для iPhone</div>
+          <h1>Скріншоти більше не губляться у Фотографіях.</h1>
+          <p class="lead">Перетворюй розрізнені скріншоти на Кліпи з назвою, нотаткою і власною бібліотекою. Без акаунта, без хмари й без щоденного полювання в галереї.</p>
+          <div class="hero-actions">
+            <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Завантажити ScreenClips з App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Завантажити з</small><strong>App Store</strong></span>
+          </a>
+            <a class="secondary-link" href="#yak-pratsiuie">Подивитися, як це працює</a>
+          </div>
+          <div class="trust-row" aria-label="Без акаунта"><span>Без акаунта</span><span>Працює локально</span><span>Premium один раз</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="Попередній перегляд застосунку ScreenClips">
+          <div class="floating-card card-left"><strong>Бібліотеки</strong><small>Рецепти · Квитки · Навчання</small></div>
+          <div class="phone hero-phone">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Головний екран ScreenClips з бібліотеками та Кліпами" loading="lazy" src="../screens/home.webp">
+            </div>
+          </div>
+          <div class="floating-card card-right"><strong>Кліпи з контекстом</strong><small>Назва, нотатка, скріншоти</small></div>
+        </div>
+      </section>
+
+      <section class="problem section-shell compact">
+        <div class="section-heading">
+          <span class="kicker">Проблема</span>
+          <h2>Фотографії чудові для фото. Для важливих скріншотів — уже не дуже.</h2>
+          <p>Чеки, рецепти, квитки, ідеї та фрагменти статей губляться між селфі, мемами й випадковими знімками. Ми маємо хмару, але все одно не можемо швидко знайти скрін з адресою готелю.</p>
+        </div>
+        <div class="problem-grid"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">▣</span>
+            <h3>Скріншот тоне в загальній стрічці</h3>
+            <p>Зберігаєш щось важливе, а за тиждень гортаєш галерею так, ніби переглядаєш архів справ.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">✎</span>
+            <h3>Контекст зникає</h3>
+            <p>Самого зображення часто замало. ScreenClips дає додати назву й нотатку.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">☰</span>
+            <h3>Теми змішуються</h3>
+            <p>Покупки, робота, подорожі й навчання заслуговують окремих місць, а не однієї великої купи у Фотографіях.</p>
+          </article></div>
+      </section>
+
+      <section id="yak-pratsiuie" class="how section-shell">
+        <div class="section-heading narrow">
+          <span class="kicker">Як це працює</span>
+          <h2>Три кроки. Без нового складного методу для керування твоїм методом.</h2>
+        </div>
+        <div class="steps"><div class="step-card">
+            <span>01</span>
+            <h3>Створи бібліотеку</h3>
+            <p>Відокрем рецепти, чеки, квитки, дослідження, навчальні матеріали або будь-що, до чого хочеш повернутися.</p>
+          </div>
+<div class="step-card">
+            <span>02</span>
+            <h3>Додай Кліп</h3>
+            <p>Кліп збирає все навколо однієї теми. У нього є назва, опис і власні скріншоти.</p>
+          </div>
+<div class="step-card">
+            <span>03</span>
+            <h3>Повертайся без пошуків</h3>
+            <p>Відкрий бібліотеку, вибери Кліп — і потрібне вже на місці. Без довгих прогулянок галереєю.</p>
+          </div></div>
+        <div class="showcase-grid">
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Список Кліпів у ScreenClips" loading="lazy" src="../screens/clips.webp">
+            </div>
+          </div>
+          <div class="showcase-copy">
+            <span class="kicker">Від хаосу до контексту</span>
+            <h2>Бібліотеки й Кліпи замість великої шухляди у Фотографіях.</h2>
+            <p>ScreenClips не намагається вгадати все за тебе. Він дає просту структуру: бібліотека для теми, Кліп для конкретної справи, всередині — скріншоти й фото.</p>
+            <div class="mini-list"><span>✓ назва й опис для кожного Кліпа</span><span>✓ скріншоти та фото в одному місці</span><span>✓ швидке повернення до збереженого</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="use-cases section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">Приклади</span>
+          <h2>Для речей, які ти справді зберігаєш скріншотом.</h2>
+        </div>
+        <div class="use-case-grid"><div class="use-case">
+            <span aria-hidden="true">▤</span>
+            <strong>Чеки</strong>
+            <small>рахунки й документи</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">✈</span>
+            <strong>Подорожі</strong>
+            <small>квитки, адреси, бронювання</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☕</span>
+            <strong>Рецепти</strong>
+            <small>з інтернету й сімейних чатів</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">◈</span>
+            <strong>Ідеї</strong>
+            <small>натхнення й дослідження</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">Aa</span>
+            <strong>Навчання</strong>
+            <small>слова, нотатки, матеріали</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☺</span>
+            <strong>Меми</strong>
+            <small>бо веселий безлад теж хоче трохи порядку</small>
+          </div></div>
+      </section>
+
+      <section id="mozhlyvosti" class="features section-shell">
+        <div class="feature-layout">
+          <div class="feature-copy">
+            <span class="kicker">Можливості</span>
+            <h2>Усе потрібне для порядку в скріншотах. Без зайвої драми.</h2>
+            <div class="feature-list"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">＋</span>
+            <h3>Додавай скріншоти й фото</h3>
+            <p>Збирай матеріали всередині Кліпів і доповнюй їх, коли тема росте.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">⇪</span>
+            <h3>Експортуй у PDF</h3>
+            <p>Коли Кліп треба надіслати або зберегти поза застосунком, перетвори його на охайний файл.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">♡</span>
+            <h3>Позначай важливе</h3>
+            <p>Там, де раніше були тільки прокручування й зітхання, з'являються обране, прапорці й порядок.</p>
+          </article></div>
+          </div>
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Деталі Кліпа з діями додавання фото, скріншота та експорту PDF" loading="lazy" src="../screens/detail.webp">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pryvatnist" class="privacy section-shell compact">
+        <div class="privacy-card">
+          <div>
+            <span class="kicker light">Приватність</span>
+            <h2>Твої скріншоти залишаються у тебе.</h2>
+            <p>ScreenClips працює локально. Щоб навести порядок, не потрібно створювати акаунт або віддавати чеки, нотатки й плани сторонньому сервісу.</p>
+          </div>
+          <div class="privacy-points"><span>Без акаунта</span><span>Без хмари</span><span>Без реклами</span></div>
+        </div>
+      </section>
+
+      <section class="premium section-shell">
+        <div class="premium-copy">
+          <span class="kicker">Premium</span>
+          <h2>Почни з порядку. Коли ScreenClips стане твоєю системою, відкрий більше місця.</h2>
+          <p>Premium не ускладнює застосунок. Він просто дає більше простору для бібліотек, Кліпів і скріншотів. Ціну показує App Store.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Завантажити ScreenClips з App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Завантажити з</small><strong>App Store</strong></span>
+          </a>
+        </div>
+        <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Екран ScreenClips Premium" loading="lazy" src="../screens/paywall1.webp">
+            </div>
+          </div>
+      </section>
+
+      <section class="faq section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">FAQ</span>
+          <h2>Короткі відповіді, бо життя й так досить довге.</h2>
+        </div>
+        <div class="faq-list"><details open>
+            <summary>ScreenClips видаляє фото з моєї галереї?</summary>
+            <p>Ні. Якщо прибрати зображення з Кліпа, оригінал у Фотографіях не видаляється.</p>
+          </details>
+<details>
+            <summary>Застосунок працює без інтернету?</summary>
+            <p>Так. ScreenClips створений як локальний органайзер, що працює на твоєму iPhone.</p>
+          </details>
+<details>
+            <summary>Потрібно створювати акаунт?</summary>
+            <p>Ні. ScreenClips не вимагає акаунта, щоб упорядковувати твої Кліпи.</p>
+          </details>
+<details>
+            <summary>Можна додавати звичайні фото?</summary>
+            <p>Так. Якщо фото належить до конкретного Кліпа, його можна додати разом зі скріншотами.</p>
+          </details></div>
+      </section>
+
+      <section class="final-cta section-shell">
+        <div class="final-card">
+          <div class="app-icon" aria-hidden="true"></div>
+          <h2>Досить шукати скріншоти. Почни повертатися до них.</h2>
+          <p>ScreenClips упорядковує те, що ти зберігаєш “на потім”. І цього разу “потім” справді можна знайти.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Завантажити ScreenClips з App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Завантажити з</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html">Приватність</a>
+          <a href="./terms.html">Умови</a>
+          <a href="mailto:screenclips@screenclips.app">Контакт</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

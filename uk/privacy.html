@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="uk" data-lang="uk" data-lang-target-pl="../privacy.html" data-lang-target-en="../en/privacy.html" data-lang-target-de="../de/privacy.html" data-lang-target-es="../es/privacy.html" data-lang-target-it="../it/privacy.html" data-lang-target-fr="../fr/privacy.html" data-lang-target-tr="../tr/privacy.html" data-lang-target-uk="./privacy.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Політика конфіденційності застосунку ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/privacy.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/privacy.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/privacy.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/privacy.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/privacy.html">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/privacy.html">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/privacy.html">
+    <title>Політика конфіденційності — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Навігація документа">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Повернутися на головну</a>
+          <details class="language-switcher" aria-label="Мова">
+            <summary aria-label="Мова"><span class="language-current"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></span></summary>
+            <div class="language-menu">
+              <a href="../privacy.html" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/privacy.html" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/privacy.html" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/privacy.html" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/privacy.html" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/privacy.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../tr/privacy.html" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="./privacy.html" hreflang="uk" lang="uk" data-lang-switch="uk" aria-current="page"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips у Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Політика конфіденційності</h1>
+          <p>Дата набрання чинності: 16.06.2026</p>
+          <p>Версія: 1.0</p>
+          <h2>1) Контролер даних</h2>
+          <p>Контролером персональних даних є Canario-Lab / застосунок ScreenClips.</p>
+          <p>ScreenClips — це локальний iOS-застосунок для впорядкування скріншотів у Кліпи та бібліотеки. Застосунок не вимагає облікового запису й не проводить реєстрацію.</p>
+          <h2>2) Дані, що зберігаються локально</h2>
+          <p>Дані, створені в застосунку, зокрема Кліпи, бібліотеки, нотатки, іконки, скріншоти, мовні налаштування, налаштування Face ID та інформація про резервні копії, зберігаються локально на пристрої користувача або в локальному контейнері App Group, який використовують основний застосунок і розширення поширення.</p>
+          <p>Ці дані не надсилаються автоматично до Canario-Lab або на сервери Canario-Lab.</p>
+          <h2>3) Фото, скріншоти та Share Extension</h2>
+          <p>Застосунок використовує доступ до Фотографій лише для додавання вибраних користувачем зображень до Кліпа. ScreenClips зберігає власну оптимізовану копію скріншота для роботи застосунку.</p>
+          <p>Видалення скріншота з Кліпа видаляє його тільки з даних ScreenClips. Оригінальне фото з бібліотеки Фотографій користувача не видаляється.</p>
+          <p>Share Extension дозволяє передати вибрані зображення із системного аркуша поширення до ScreenClips. Розширення записує дані в той самий локальний store через App Group group.com.canario-lab.screenclip.shared.</p>
+          <h2>4) Резервні копії, експорт і поширення</h2>
+          <p>Резервна копія створює локальний файл .screenclipbackup з Кліпами, бібліотеками, скріншотами та налаштуваннями застосунку. Файл зберігається або поширюється системними інструментами, які обирає користувач.</p>
+          <p>Відновлення з резервної копії замінює поточний локальний стан застосунку даними з вибраного файлу. Користувач відповідає за зберігання та захист експортованих резервних копій, PDF і матеріалів, поширених за межі застосунку.</p>
+          <h2>5) Face ID і безпека пристрою</h2>
+          <p>Якщо користувач увімкне блокування Face ID, автентифікацію виконує iOS через LocalAuthentication. ScreenClips не отримує й не зберігає біометричні дані.</p>
+          <p>Оскільки дані застосунку зберігаються локально, важливо захищати сам пристрій кодом доступу, Face ID або іншими системними механізмами безпеки.</p>
+          <h2>6) Premium-покупки, Apple і RevenueCat</h2>
+          <p>ScreenClips може пропонувати Premium-доступ як одноразову Lifetime-покупку в App Store. Застосунок не пропонує місячних чи річних підписок і не має пробного періоду.</p>
+          <p>Платежі обробляє Apple через App Store і StoreKit. ScreenClips використовує RevenueCat, щоб показувати пропозицію, перевіряти entitlement ScreenClips Pro, відновлювати покупку та показувати технічний RevenueCat ID у застосунку.</p>
+          <p>У цьому обсязі Apple і RevenueCat можуть обробляти технічні дані покупки: ідентифікатори транзакцій, ідентифікатори продуктів, статус Premium-доступу та анонімний ідентифікатор користувача застосунку, потрібний для підтвердження доступу.</p>
+          <p>Canario-Lab не обробляє дані платіжної картки користувача.</p>
+          <h2>7) Одержувачі даних</h2>
+          <p>Дані можуть оброблятися зовнішніми сервісами лише в межах функцій, які обирає користувач, або для роботи покупок:</p>
+          <ul>
+            <li>Apple — у межах App Store, StoreKit, платежів, системного вибору файлів, Фотографій, Face ID і поширення.</li>
+            <li>RevenueCat — у межах показу пропозиції, перевірки Premium і відновлення Lifetime-покупки.</li>
+            <li>Системні провайдери, яких користувач обирає сам, якщо експортує PDF, резервну копію або поширює файл за межі ScreenClips.</li>
+            <li>Державні органи, якщо цього вимагає чинне законодавство.</li>
+          </ul>
+          <h2>8) Строк зберігання</h2>
+          <p>Дані, збережені в ScreenClips, залишаються локально до їх видалення користувачем, відновлення іншої резервної копії, видалення застосунку або видалення даних механізмами iOS.</p>
+          <p>Експортовані резервні копії, PDF і файли, поширені поза застосунком, залишаються під контролем користувача та сервісів, до яких їх передано.</p>
+          <p>Дані покупок, які обробляють Apple і RevenueCat, зберігаються відповідно до правил цих сервісів.</p>
+          <h2>9) Права користувача</h2>
+          <p>Якщо в конкретному випадку Canario-Lab обробляє персональні дані користувача, наприклад під час звернення до підтримки, користувач може вимагати доступ до даних, виправлення, видалення, обмеження обробки, заперечити проти обробки та подати скаргу до компетентного наглядового органу.</p>
+          <p>З питань конфіденційності можна скористатися каналом зв'язку, зазначеним в App Store або в застосунку.</p>
+          <h2>10) Зміни політики</h2>
+          <p>Політика конфіденційності може оновлюватися разом зі змінами функцій ScreenClips, платіжної моделі або правових вимог. Актуальна версія буде доступна в застосунку.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="privacy.html" aria-current="page">Приватність</a>
+          <a href="terms.html">Умови</a>
+          <a href="mailto:screenclips@screenclips.app">Контакт</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

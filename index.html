@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl" data-lang="pl" data-lang-target-pl="./" data-lang-target-en="./en/" data-lang-target-de="./de/" data-lang-target-es="./es/" data-lang-target-it="./it/" data-lang-target-fr="./fr/" data-lang-target-tr="./tr/">
+<html lang="pl" data-lang="pl" data-lang-target-pl="./" data-lang-target-en="./en/" data-lang-target-de="./de/" data-lang-target-es="./es/" data-lang-target-it="./it/" data-lang-target-fr="./fr/" data-lang-target-tr="./tr/" data-lang-target-uk="./uk/">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,7 @@
     <link rel="alternate" hreflang="it" href="https://screenclips.app/it/">
     <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/">
     <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/">
     <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
     <title>ScreenClips — screeny przestają ginąć w Zdjęciach</title>
     <script>
@@ -28,9 +29,10 @@
           es: html.dataset.langTargetEs,
           it: html.dataset.langTargetIt,
           fr: html.dataset.langTargetFr,
-          tr: html.dataset.langTargetTr
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk
         };
-        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr'];
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -41,8 +43,8 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr'));
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
@@ -71,6 +73,7 @@
               <a href="./it/" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
               <a href="./fr/" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
               <a href="./tr/" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="./uk/" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
             </div>
           </details>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips na Facebooku">

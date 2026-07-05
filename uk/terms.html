@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="uk" data-lang="uk" data-lang-target-pl="../terms.html" data-lang-target-en="../en/terms.html" data-lang-target-de="../de/terms.html" data-lang-target-es="../es/terms.html" data-lang-target-it="../it/terms.html" data-lang-target-fr="../fr/terms.html" data-lang-target-tr="../tr/terms.html" data-lang-target-uk="./terms.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Умови користування застосунком ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/terms.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/terms.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/terms.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/terms.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/terms.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/terms.html">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/terms.html">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/terms.html">
+    <title>Умови — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Навігація документа">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Повернутися на головну</a>
+          <details class="language-switcher" aria-label="Мова">
+            <summary aria-label="Мова"><span class="language-current"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></span></summary>
+            <div class="language-menu">
+              <a href="../terms.html" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/terms.html" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/terms.html" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/terms.html" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/terms.html" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/terms.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../tr/terms.html" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="./terms.html" hreflang="uk" lang="uk" data-lang-switch="uk" aria-current="page"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips у Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Умови користування ScreenClips</h1>
+          <p>Дата набрання чинності: 16.06.2026</p>
+          <p>Версія: 1.0</p>
+          <h2>1. Постачальник</h2>
+          <p>Постачальником застосунку ScreenClips є Canario-Lab.</p>
+          <p>Ці умови визначають правила користування застосунком, зокрема безкоштовними функціями, Premium, резервними копіями, експортом і розширенням поширення.</p>
+          <h2>2. Характер застосунку</h2>
+          <p>ScreenClips — це локальний iOS-інструмент для впорядкування скріншотів у Кліпи та бібліотеки. Застосунок допомагає групувати зображення, нотатки й контекст, щоб користувач міг легше повертатися до своїх матеріалів.</p>
+          <p>ScreenClips не є хмарним сервісом, зовнішнім сховищем даних, соціальною мережею, менеджером авторських прав або послугою, що гарантує постійне архівування поза пристроєм користувача.</p>
+          <h2>3. Технічні вимоги</h2>
+          <p>Для користування застосунком потрібен сумісний пристрій Apple і версія iOS, яку підтримує застосунок.</p>
+          <p>Деякі функції можуть вимагати доступу до Фотографій, системного аркуша поширення, файлів, Face ID, App Store, Apple ID або інтернет-з'єднання, особливо під час купівлі чи відновлення Premium.</p>
+          <h2>4. Дані користувача та відповідальність за вміст</h2>
+          <p>Користувач відповідає за скріншоти, нотатки, назви Кліпів, бібліотеки та інші матеріали, додані до застосунку, включно з правом зберігати, експортувати й поширювати такі матеріали.</p>
+          <p>Видалення скріншота з Кліпа не видаляє оригінальне фото з бібліотеки Фотографій. Водночас видалення даних у ScreenClips може видалити локальну копію, яку зберігає застосунок.</p>
+          <h2>5. Резервні копії та експорт</h2>
+          <p>Резервна копія ScreenClips — це локальний файл .screenclipbackup, який створюється на запит користувача. Відновлення резервної копії замінює поточний стан застосунку даними з вибраного файлу.</p>
+          <p>Користувач відповідає за безпечне зберігання резервних копій, PDF та інших експортів, а також за наслідки передавання їх до зовнішніх сервісів, як-от iCloud Drive, пошта, месенджери або інші застосунки.</p>
+          <h2>6. Безкоштовна версія та Premium</h2>
+          <p>ScreenClips є freemium-застосунком. Безкоштовна версія має обмеження місткості: максимум 2 бібліотеки, 5 Кліпів і 20 скріншотів загалом.</p>
+          <p>ScreenClips Premium розблоковує ліміти для бібліотек, Кліпів і скріншотів. Premium не змінює локальний характер застосунку й не створює зовнішньої копії даних користувача.</p>
+          <h2>7. Lifetime-покупка та платежі</h2>
+          <p>Цільова платіжна модель ScreenClips — одноразова Lifetime-покупка в App Store, яку обробляє Apple і перевіряє RevenueCat.</p>
+          <p>Застосунок не пропонує місячних чи річних підписок і не має пробного періоду. Lifetime-покупка не поновлюється автоматично.</p>
+          <p>Платіж стягується з Apple ID після підтвердження покупки. Canario-Lab не обробляє дані платіжної картки користувача.</p>
+          <h2>8. Відновлення покупки</h2>
+          <p>Користувач може відновити Lifetime-покупку на сумісному пристрої Apple за допомогою механізмів Apple і RevenueCat, доступних у застосунку.</p>
+          <p>Premium-доступ підтверджується на основі entitlement ScreenClips Pro, який повертає RevenueCat. Для доступу може знадобитися інтернет-з'єднання та коректна конфігурація App Store або RevenueCat.</p>
+          <h2>9. Доступність і зміни застосунку</h2>
+          <p>Canario-Lab докладає зусиль, щоб застосунок працював належно, але ScreenClips надається у стані “як є” і може містити помилки, обмеження або тимчасові перерви в роботі.</p>
+          <p>Функції застосунку, ліміти безкоштовної версії, Premium-пропозиція та зміст цих умов можуть змінюватися разом із розвитком продукту, вимогами App Store або правовими змінами.</p>
+          <h2>10. Відповідальність</h2>
+          <p>У межах, дозволених законом, Canario-Lab не відповідає за втрату даних, спричинену видаленням застосунку, пошкодженням пристрою, неправильним використанням резервної копії, помилковим поширенням файлів, діями зовнішніх сервісів або відсутністю власної резервної копії з боку користувача.</p>
+          <p>Користувач має самостійно захищати важливі матеріали й зберігати копії файлів, які хоче мати довгостроково.</p>
+          <h2>11. Заключні положення</h2>
+          <p>У питаннях, не врегульованих цими умовами, застосовуються відповідні норми права.</p>
+          <p>Якщо будь-яке положення умов буде визнане недійсним, інші положення залишаються чинними.</p>
+          <p>Актуальна версія умов користування буде доступна в застосунку.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="privacy.html">Приватність</a>
+          <a href="terms.html" aria-current="page">Умови</a>
+          <a href="mailto:screenclips@screenclips.app">Контакт</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
