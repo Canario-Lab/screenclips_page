@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="el" data-lang="el" data-lang-target-pl="../privacy.html" data-lang-target-en="../en/privacy.html" data-lang-target-de="../de/privacy.html" data-lang-target-es="../es/privacy.html" data-lang-target-it="../it/privacy.html" data-lang-target-fr="../fr/privacy.html" data-lang-target-tr="../tr/privacy.html" data-lang-target-uk="../uk/privacy.html" data-lang-target-sv="../sv/privacy.html" data-lang-target-no="../no/privacy.html" data-lang-target-fi="../fi/privacy.html" data-lang-target-el="./privacy.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Πολιτική απορρήτου για την εφαρμογή ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/privacy.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/privacy.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/privacy.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/privacy.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/privacy.html">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/privacy.html">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/privacy.html">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/privacy.html">
+    <link rel="alternate" hreflang="no" href="https://screenclips.app/no/privacy.html">
+    <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/privacy.html">
+    <link rel="alternate" hreflang="el" href="https://screenclips.app/el/privacy.html">
+    <title>Πολιτική απορρήτου — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk,
+          sv: html.dataset.langTargetSv,
+          no: html.dataset.langTargetNo,
+          fi: html.dataset.langTargetFi,
+          el: html.dataset.langTargetEl
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi', 'el'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Πλοήγηση εγγράφου">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Πίσω στην αρχική</a>
+          <details class="language-switcher" aria-label="Γλώσσα">
+            <summary aria-label="Γλώσσα"><span class="language-current"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></span></summary>
+            <div class="language-menu">
+              <a href="../privacy.html" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/privacy.html" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/privacy.html" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/privacy.html" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/privacy.html" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/privacy.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../tr/privacy.html" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/privacy.html" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="../sv/privacy.html" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+              <a href="../no/privacy.html" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
+              <a href="../fi/privacy.html" hreflang="fi" lang="fi" data-lang-switch="fi"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+              <a href="./privacy.html" hreflang="el" lang="el" data-lang-switch="el" aria-current="page"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="Το ScreenClips στο Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Πολιτική απορρήτου</h1>
+          <p>Ισχύει από: 16.06.2026</p>
+          <p>Έκδοση: 1.0</p>
+          <h2>1) Υπεύθυνος επεξεργασίας</h2>
+          <p>Υπεύθυνος επεξεργασίας είναι η Canario-Lab / η εφαρμογή ScreenClips.</p>
+          <p>Το ScreenClips είναι μια τοπική εφαρμογή iOS για την οργάνωση screenshots σε Clips και βιβλιοθήκες. Η εφαρμογή δεν απαιτεί λογαριασμό χρήστη ούτε εγγραφή.</p>
+          <h2>2) Δεδομένα που αποθηκεύονται τοπικά</h2>
+          <p>Τα δεδομένα που δημιουργούνται στην εφαρμογή, όπως Clips, βιβλιοθήκες, σημειώσεις, εικονίδια, screenshots, ρυθμίσεις γλώσσας, ρυθμίσεις Face ID και πληροφορίες για αντίγραφα ασφαλείας, αποθηκεύονται τοπικά στη συσκευή του χρήστη ή στον τοπικό χώρο App Group που χρησιμοποιείται από την εφαρμογή και την επέκταση κοινής χρήσης.</p>
+          <p>Τα δεδομένα αυτά δεν αποστέλλονται αυτόματα στην Canario-Lab ή σε διακομιστές της Canario-Lab.</p>
+          <h2>3) Φωτογραφίες, screenshots και Share Extension</h2>
+          <p>Η εφαρμογή χρησιμοποιεί πρόσβαση στις Φωτογραφίες μόνο στον βαθμό που χρειάζεται για να προστεθούν στο Clip οι εικόνες που επιλέγει ο χρήστης. Το ScreenClips αποθηκεύει για χρήση μέσα στην εφαρμογή ένα δικό του βελτιστοποιημένο αντίγραφο του screenshot.</p>
+          <p>Όταν ένα screenshot αφαιρείται από ένα Clip, αφαιρείται μόνο από τα δεδομένα του ScreenClips. Η αρχική εικόνα στη βιβλιοθήκη Φωτογραφιών του χρήστη δεν διαγράφεται.</p>
+          <p>Το Share Extension επιτρέπει την αποστολή επιλεγμένων εικόνων από το φύλλο κοινής χρήσης του συστήματος στο ScreenClips. Η επέκταση γράφει δεδομένα στο ίδιο τοπικό store μέσω του App Group group.com.canario-lab.screenclip.shared.</p>
+          <h2>4) Αντίγραφα ασφαλείας, εξαγωγή και κοινή χρήση</h2>
+          <p>Το αντίγραφο ασφαλείας δημιουργεί ένα τοπικό αρχείο .screenclipbackup που περιέχει Clips, βιβλιοθήκες, screenshots και ρυθμίσεις της εφαρμογής. Το αρχείο αποθηκεύεται ή κοινοποιείται με τις λειτουργίες συστήματος που επιλέγει ο χρήστης.</p>
+          <p>Η επαναφορά από αντίγραφο ασφαλείας αντικαθιστά την τρέχουσα τοπική κατάσταση της εφαρμογής με τα δεδομένα του επιλεγμένου αρχείου. Ο χρήστης είναι υπεύθυνος για τη φύλαξη και την προστασία αντιγράφων ασφαλείας, PDF και άλλου υλικού που εξάγεται εκτός εφαρμογής.</p>
+          <h2>5) Face ID και ασφάλεια συσκευής</h2>
+          <p>Αν ο χρήστης ενεργοποιήσει κλείδωμα με Face ID, ο έλεγχος ταυτότητας γίνεται από το iOS μέσω LocalAuthentication. Το ScreenClips δεν λαμβάνει και δεν αποθηκεύει βιομετρικά δεδομένα.</p>
+          <p>Επειδή τα δεδομένα της εφαρμογής παραμένουν τοπικά, είναι σημαντικό η ίδια η συσκευή να προστατεύεται με κωδικό, Face ID ή άλλες λειτουργίες ασφαλείας του συστήματος.</p>
+          <h2>6) Αγορές Premium, Apple και RevenueCat</h2>
+          <p>Το ScreenClips μπορεί να προσφέρει Premium ως εφάπαξ αγορά Lifetime στο App Store. Η εφαρμογή δεν προσφέρει μηνιαίες ή ετήσιες συνδρομές και δεν παρέχει δοκιμαστική περίοδο.</p>
+          <p>Οι πληρωμές διεκπεραιώνονται από την Apple μέσω του App Store και του StoreKit. Το ScreenClips χρησιμοποιεί το RevenueCat για την εμφάνιση της προσφοράς, την επαλήθευση του δικαιώματος ScreenClips Pro, την επαναφορά αγορών και την εμφάνιση τεχνικού RevenueCat ID στην εφαρμογή.</p>
+          <p>Σε αυτό το πλαίσιο, η Apple και το RevenueCat μπορούν να επεξεργάζονται τεχνικά δεδομένα αγοράς, όπως αναγνωριστικά συναλλαγών, αναγνωριστικά προϊόντων, κατάσταση πρόσβασης Premium και ένα ανώνυμο αναγνωριστικό χρήστη εφαρμογής που χρησιμοποιείται για την επιβεβαίωση της πρόσβασης.</p>
+          <p>Η Canario-Lab δεν επεξεργάζεται στοιχεία κάρτας πληρωμής του χρήστη.</p>
+          <h2>7) Αποδέκτες δεδομένων</h2>
+          <p>Δεδομένα μπορούν να υποβληθούν σε επεξεργασία από εξωτερικές υπηρεσίες μόνο στον βαθμό που απαιτείται για λειτουργίες που επιλέγει ο χρήστης ή για τη λειτουργία αγορών:</p>
+          <ul>
+            <li>Apple, στο πλαίσιο του App Store, StoreKit, πληρωμών, επιλογής αρχείων συστήματος, Φωτογραφιών, Face ID και κοινής χρήσης.</li>
+            <li>RevenueCat, για τη διαχείριση της προσφοράς, την επαλήθευση Premium και την επαναφορά της αγοράς Lifetime.</li>
+            <li>Πάροχοι συστήματος που επιλέγει ο ίδιος ο χρήστης όταν PDF, αντίγραφο ασφαλείας ή άλλο αρχείο εξάγεται ή κοινοποιείται εκτός ScreenClips.</li>
+            <li>Δημόσιες αρχές, αν το απαιτεί η ισχύουσα νομοθεσία.</li>
+          </ul>
+          <h2>8) Χρόνος διατήρησης</h2>
+          <p>Τα δεδομένα που αποθηκεύονται στο ScreenClips παραμένουν τοπικά μέχρι ο χρήστης να τα διαγράψει, να επαναφέρει άλλο αντίγραφο ασφαλείας, να αφαιρέσει την εφαρμογή ή να τα διαγράψουν μηχανισμοί του iOS.</p>
+          <p>Τα εξαγόμενα αντίγραφα ασφαλείας, PDF και αρχεία που κοινοποιούνται εκτός εφαρμογής βρίσκονται υπό τον έλεγχο του χρήστη και των υπηρεσιών παραλήπτη.</p>
+          <p>Τα δεδομένα αγορών που διαχειρίζονται η Apple και το RevenueCat διατηρούνται σύμφωνα με τους δικούς τους κανόνες.</p>
+          <h2>9) Δικαιώματα χρήστη</h2>
+          <p>Αν η Canario-Lab επεξεργάζεται προσωπικά δεδομένα σε συγκεκριμένη περίπτωση, για παράδειγμα κατά την επικοινωνία υποστήριξης, ο χρήστης μπορεί να ζητήσει πρόσβαση, διόρθωση, διαγραφή, περιορισμό επεξεργασίας, να αντιταχθεί στην επεξεργασία και να υποβάλει καταγγελία στην αρμόδια εποπτική αρχή.</p>
+          <p>Για θέματα απορρήτου μπορεί να χρησιμοποιηθεί το κανάλι επικοινωνίας που αναφέρεται στο App Store ή στην εφαρμογή.</p>
+          <h2>10) Αλλαγές στην πολιτική</h2>
+          <p>Η πολιτική απορρήτου μπορεί να ενημερωθεί όταν αλλάζουν οι λειτουργίες του ScreenClips, το μοντέλο πληρωμής ή οι νομικές απαιτήσεις. Η τρέχουσα έκδοση είναι διαθέσιμη στην εφαρμογή.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="privacy.html" aria-current="page">Απόρρητο</a>
+          <a href="terms.html">Όροι</a>
+          <a href="mailto:screenclips@screenclips.app">Επικοινωνία</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

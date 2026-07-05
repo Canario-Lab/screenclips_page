@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl" data-lang="pl" data-lang-target-pl="./privacy.html" data-lang-target-en="./en/privacy.html" data-lang-target-de="./de/privacy.html" data-lang-target-es="./es/privacy.html" data-lang-target-it="./it/privacy.html" data-lang-target-fr="./fr/privacy.html" data-lang-target-tr="./tr/privacy.html" data-lang-target-uk="./uk/privacy.html" data-lang-target-sv="./sv/privacy.html" data-lang-target-no="./no/privacy.html" data-lang-target-fi="fi/privacy.html">
+<html lang="pl" data-lang="pl" data-lang-target-pl="./privacy.html" data-lang-target-en="./en/privacy.html" data-lang-target-de="./de/privacy.html" data-lang-target-es="./es/privacy.html" data-lang-target-it="./it/privacy.html" data-lang-target-fr="./fr/privacy.html" data-lang-target-tr="./tr/privacy.html" data-lang-target-uk="./uk/privacy.html" data-lang-target-sv="./sv/privacy.html" data-lang-target-no="./no/privacy.html" data-lang-target-fi="fi/privacy.html" data-lang-target-el="el/privacy.html">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +16,7 @@
     <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/privacy.html">
     <link rel="alternate" hreflang="no" href="https://screenclips.app/no/privacy.html">
     <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/privacy.html">
+    <link rel="alternate" hreflang="el" href="https://screenclips.app/el/privacy.html">
     <title>Polityka prywatności — ScreenClips</title>
     <script>
       (() => {
@@ -32,9 +33,10 @@
           uk: html.dataset.langTargetUk,
           sv: html.dataset.langTargetSv,
           no: html.dataset.langTargetNo,
-          fi: html.dataset.langTargetFi
+          fi: html.dataset.langTargetFi,
+          el: html.dataset.langTargetEl
         };
-        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi'];
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi', 'el'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -45,8 +47,8 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi'));
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
@@ -77,6 +79,7 @@
               <a href="./sv/privacy.html" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
               <a href="./no/privacy.html" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
               <a href="fi/privacy.html" hreflang="fi" lang="fi" data-lang-switch="fi"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+              <a href="el/privacy.html" hreflang="el" lang="el" data-lang-switch="el"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
             </div>
           </details>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips na Facebooku">

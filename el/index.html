@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="el" data-lang="el" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-it="../it/" data-lang-target-fr="../fr/" data-lang-target-tr="../tr/" data-lang-target-uk="../uk/" data-lang-target-sv="../sv/" data-lang-target-no="../no/" data-lang-target-fi="../fi/" data-lang-target-el="./">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Το ScreenClips οργανώνει τα στιγμιότυπα οθόνης σε Clips με ονόματα, σημειώσεις και βιβλιοθήκες. Χωρίς λογαριασμό, χωρίς cloud, χωρίς άλλο χάος.">
+    <meta property="og:title" content="ScreenClips — τα screenshots δεν χάνονται πια στις Φωτογραφίες">
+    <meta property="og:description" content="Μετέτρεψε σκόρπια screenshots σε Clips με πλαίσιο, σημειώσεις και βιβλιοθήκες.">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/">
+    <link rel="alternate" hreflang="no" href="https://screenclips.app/no/">
+    <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/">
+    <link rel="alternate" hreflang="el" href="https://screenclips.app/el/">
+    <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
+    <title>ScreenClips — τα screenshots δεν χάνονται πια στις Φωτογραφίες</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk,
+          sv: html.dataset.langTargetSv,
+          no: html.dataset.langTargetNo,
+          fi: html.dataset.langTargetFi,
+          el: html.dataset.langTargetEl
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi', 'el'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body>
+    <main>
+      <nav class="nav" aria-label="Κύρια πλοήγηση">
+        <a class="brand" href="#top" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="nav-links">
+          <a href="#pos-leitourgei">Πώς λειτουργεί</a>
+          <a href="#dynatotites">Δυνατότητες</a>
+          <a href="#aporrito">Απόρρητο</a>
+          <details class="language-switcher" aria-label="Γλώσσα">
+            <summary aria-label="Γλώσσα"><span class="language-current"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></span></summary>
+            <div class="language-menu">
+              <a href="../" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../tr/" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="../sv/" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+              <a href="../no/" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
+              <a href="../fi/" hreflang="fi" lang="fi" data-lang-switch="fi"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+              <a href="./" hreflang="el" lang="el" data-lang-switch="el" aria-current="page"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="Το ScreenClips στο Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+          <a class="app-store-button nav-cta" href="https://apps.apple.com/app/id6771277332" aria-label="Λήψη του ScreenClips από το App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Λήψη στο</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero section-shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Οργάνωση screenshots για iPhone</div>
+          <h1>Τα screenshots δεν χάνονται πια στις Φωτογραφίες.</h1>
+          <p class="lead">Μετέτρεψε τα σκόρπια στιγμιότυπα οθόνης σε Clips με όνομα, σημείωση και δική τους βιβλιοθήκη. Χωρίς λογαριασμό, χωρίς cloud και χωρίς καθημερινό ψάξιμο στο άλμπουμ.</p>
+          <div class="hero-actions">
+            <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Λήψη του ScreenClips από το App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Λήψη στο</small><strong>App Store</strong></span>
+          </a>
+            <a class="secondary-link" href="#pos-leitourgei">Δες πώς λειτουργεί</a>
+          </div>
+          <div class="trust-row" aria-label="Χωρίς λογαριασμό"><span>Χωρίς λογαριασμό</span><span>Τοπικά στο iPhone</span><span>Premium μία φορά</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="Προεπισκόπηση της εφαρμογής ScreenClips">
+          <div class="floating-card card-left"><strong>Βιβλιοθήκες</strong><small>Συνταγές · Εισιτήρια · Μελέτη</small></div>
+          <div class="phone hero-phone">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Αρχική οθόνη του ScreenClips με βιβλιοθήκες και Clips" loading="lazy" src="../screens/home.webp">
+            </div>
+          </div>
+          <div class="floating-card card-right"><strong>Clips με πλαίσιο</strong><small>Όνομα, σημείωση, screenshots</small></div>
+        </div>
+      </section>
+
+      <section class="problem section-shell compact">
+        <div class="section-heading">
+          <span class="kicker">Το πρόβλημα</span>
+          <h2>Οι Φωτογραφίες είναι καλές για φωτογραφίες. Όχι πάντα για σημαντικά screenshots.</h2>
+          <p>Αποδείξεις, συνταγές, εισιτήρια, ιδέες και αποσπάσματα άρθρων καταλήγουν ανάμεσα σε selfies, memes και τυχαίες λήψεις. Το cloud υπάρχει, αλλά η διεύθυνση του ξενοδοχείου από την περασμένη εβδομάδα μπορεί ακόμα να είναι άφαντη.</p>
+        </div>
+        <div class="problem-grid"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">▣</span>
+            <h3>Το screenshot χάνεται στη ροή</h3>
+            <p>Αποθηκεύεις κάτι σημαντικό και μια εβδομάδα μετά ξεφυλλίζεις τις Φωτογραφίες σαν παλιό φάκελο.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">✎</span>
+            <h3>Το πλαίσιο εξαφανίζεται</h3>
+            <p>Μόνο η εικόνα συχνά δεν αρκεί. Το ScreenClips σου δίνει χώρο για όνομα και σημείωση.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">☰</span>
+            <h3>Όλα μπερδεύονται</h3>
+            <p>Αγορές, δουλειά, ταξίδια και μελέτη αξίζουν δικές τους θέσεις, όχι έναν μεγάλο σωρό στις Φωτογραφίες.</p>
+          </article></div>
+      </section>
+
+      <section id="pos-leitourgei" class="how section-shell">
+        <div class="section-heading narrow">
+          <span class="kicker">Πώς λειτουργεί</span>
+          <h2>Τρία βήματα. Χωρίς να φτιάχνεις άλλο ένα σύστημα για να οργανώσεις το σύστημά σου.</h2>
+        </div>
+        <div class="steps"><div class="step-card">
+            <span>01</span>
+            <h3>Φτιάξε μια βιβλιοθήκη</h3>
+            <p>Μάζεψε συνταγές, αποδείξεις, εισιτήρια, έρευνα, σημειώσεις μελέτης ή ό,τι θέλεις να βρίσκεις αργότερα.</p>
+          </div>
+<div class="step-card">
+            <span>02</span>
+            <h3>Πρόσθεσε ένα Clip</h3>
+            <p>Ένα Clip συγκεντρώνει όλα γύρω από ένα συγκεκριμένο θέμα. Έχει όνομα, περιγραφή και τα δικά του screenshots.</p>
+          </div>
+<div class="step-card">
+            <span>03</span>
+            <h3>Επέστρεψε χωρίς ψάξιμο</h3>
+            <p>Άνοιξε τη βιβλιοθήκη, διάλεξε το Clip και συνέχισε από εκεί που σταμάτησες. Χωρίς ατελείωτη βόλτα στο άλμπουμ.</p>
+          </div></div>
+        <div class="showcase-grid">
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Λίστα Clips στο ScreenClips" loading="lazy" src="../screens/clips.webp">
+            </div>
+          </div>
+          <div class="showcase-copy">
+            <span class="kicker">Από χάος σε πλαίσιο</span>
+            <h2>Βιβλιοθήκες και Clips αντί για ένα μεγάλο συρτάρι στις Φωτογραφίες.</h2>
+            <p>Το ScreenClips δεν προσπαθεί να μαντέψει τα πάντα για εσένα. Σου δίνει μια απλή δομή: βιβλιοθήκη για το θέμα, Clip για το αντικείμενο, screenshots και εικόνες μέσα.</p>
+            <div class="mini-list"><span>✓ όνομα και περιγραφή για κάθε Clip</span><span>✓ screenshots και εικόνες σε ένα σημείο</span><span>✓ γρήγορη επιστροφή σε ό,τι αποθήκευσες</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="use-cases section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">Παραδείγματα</span>
+          <h2>Για πράγματα που πραγματικά κρατάς με screenshot.</h2>
+        </div>
+        <div class="use-case-grid"><div class="use-case">
+            <span aria-hidden="true">▤</span>
+            <strong>Αποδείξεις</strong>
+            <small>λογαριασμοί και τεκμήρια</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">✈</span>
+            <strong>Ταξίδια</strong>
+            <small>εισιτήρια, διευθύνσεις, κρατήσεις</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☕</span>
+            <strong>Συνταγές</strong>
+            <small>από το διαδίκτυο και οικογενειακές συνομιλίες</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">◈</span>
+            <strong>Ιδέες</strong>
+            <small>έμπνευση και έρευνα</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">Aa</span>
+            <strong>Μελέτη</strong>
+            <small>λέξεις, σημειώσεις, υλικό</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☺</span>
+            <strong>Memes</strong>
+            <small>ακόμα και το αστείο χάος θέλει λίγη τάξη</small>
+          </div></div>
+      </section>
+
+      <section id="dynatotites" class="features section-shell">
+        <div class="feature-layout">
+          <div class="feature-copy">
+            <span class="kicker">Δυνατότητες</span>
+            <h2>Ό,τι χρειάζεσαι για να βάλεις τάξη στα screenshots. Χωρίς δράμα.</h2>
+            <div class="feature-list"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">＋</span>
+            <h3>Πρόσθεσε screenshots και εικόνες</h3>
+            <p>Μάζεψε περιεχόμενο σε Clips και συμπλήρωνέ το όσο μεγαλώνει το θέμα.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">⇪</span>
+            <h3>Εξαγωγή σε PDF</h3>
+            <p>Όταν ένα Clip πρέπει να σταλεί ή να μείνει έξω από την εφαρμογή, γίνεται ένα καθαρό αρχείο.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">♡</span>
+            <h3>Σημείωσε τα σημαντικά</h3>
+            <p>Εκεί που πριν υπήρχε μόνο κύλιση και αναστεναγμός, έχεις αγαπημένα, σημαίες και τάξη.</p>
+          </article></div>
+          </div>
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Λεπτομέρεια Clip με ενέργειες για screenshot, εικόνα και εξαγωγή PDF" loading="lazy" src="../screens/detail.webp">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="aporrito" class="privacy section-shell compact">
+        <div class="privacy-card">
+          <div>
+            <span class="kicker light">Απόρρητο</span>
+            <h2>Τα screenshots σου μένουν σε εσένα.</h2>
+            <p>Το ScreenClips λειτουργεί τοπικά. Δεν χρειάζεται να φτιάξεις λογαριασμό ούτε να δώσεις αποδείξεις, σημειώσεις και σχέδια σε άλλη μία υπηρεσία μόνο και μόνο για να έχεις τάξη.</p>
+          </div>
+          <div class="privacy-points"><span>Χωρίς λογαριασμό</span><span>Χωρίς cloud</span><span>Χωρίς διαφημίσεις</span></div>
+        </div>
+      </section>
+
+      <section class="premium section-shell">
+        <div class="premium-copy">
+          <span class="kicker">Premium</span>
+          <h2>Ξεκίνα απλά. Άνοιξε περισσότερο χώρο όταν το ScreenClips γίνει το δικό σου σύστημα.</h2>
+          <p>Το Premium δεν κάνει την εφαρμογή πιο περίπλοκη. Απλώς δίνει περισσότερο χώρο για βιβλιοθήκες, Clips και screenshots. Η τιμή εμφανίζεται στο App Store.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Λήψη του ScreenClips από το App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Λήψη στο</small><strong>App Store</strong></span>
+          </a>
+        </div>
+        <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Οθόνη ScreenClips Premium" loading="lazy" src="../screens/paywall1.webp">
+            </div>
+          </div>
+      </section>
+
+      <section class="faq section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">FAQ</span>
+          <h2>Σύντομες απαντήσεις, γιατί η ζωή είναι ήδη αρκετά μεγάλη.</h2>
+        </div>
+        <div class="faq-list"><details open>
+            <summary>Διαγράφει το ScreenClips εικόνες από τη βιβλιοθήκη φωτογραφιών μου;</summary>
+            <p>Όχι. Όταν αφαιρείς μια εικόνα από ένα Clip, το αρχικό αρχείο παραμένει στις Φωτογραφίες.</p>
+          </details>
+<details>
+            <summary>Λειτουργεί η εφαρμογή χωρίς internet;</summary>
+            <p>Ναι. Το ScreenClips είναι φτιαγμένο ως τοπικός οργανωτής στο iPhone.</p>
+          </details>
+<details>
+            <summary>Πρέπει να δημιουργήσω λογαριασμό;</summary>
+            <p>Όχι. Το ScreenClips δεν απαιτεί λογαριασμό για να οργανώνεις Clips.</p>
+          </details>
+<details>
+            <summary>Μπορώ να προσθέσω και κανονικές φωτογραφίες;</summary>
+            <p>Ναι. Όταν ανήκουν στο ίδιο Clip, μπορείς να προσθέσεις και screenshots και φωτογραφίες.</p>
+          </details></div>
+      </section>
+
+      <section class="final-cta section-shell">
+        <div class="final-card">
+          <div class="app-icon" aria-hidden="true"></div>
+          <h2>Σταμάτα να ψάχνεις screenshots. Άρχισε να τα ξαναβρίσκεις.</h2>
+          <p>Το ScreenClips βάζει τάξη σε όσα αποθήκευσες για "αργότερα". Αυτή τη φορά, το "αργότερα" βρίσκεται στ' αλήθεια.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Λήψη του ScreenClips από το App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Λήψη στο</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html">Απόρρητο</a>
+          <a href="./terms.html">Όροι</a>
+          <a href="mailto:screenclips@screenclips.app">Επικοινωνία</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fi" data-lang="fi" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-it="../it/" data-lang-target-fr="../fr/" data-lang-target-tr="../tr/" data-lang-target-uk="../uk/" data-lang-target-sv="../sv/" data-lang-target-no="../no/" data-lang-target-fi="./">
+<html lang="fi" data-lang="fi" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-it="../it/" data-lang-target-fr="../fr/" data-lang-target-tr="../tr/" data-lang-target-uk="../uk/" data-lang-target-sv="../sv/" data-lang-target-no="../no/" data-lang-target-fi="./" data-lang-target-el="../el/">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +19,7 @@
     <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/">
     <link rel="alternate" hreflang="no" href="https://screenclips.app/no/">
     <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/">
+    <link rel="alternate" hreflang="el" href="https://screenclips.app/el/">
     <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
     <title>ScreenClips — kuvakaappaukset eivät enää katoa Kuviin</title>
     <script>
@@ -36,9 +37,10 @@
           uk: html.dataset.langTargetUk,
           sv: html.dataset.langTargetSv,
           no: html.dataset.langTargetNo,
-          fi: html.dataset.langTargetFi
+          fi: html.dataset.langTargetFi,
+          el: html.dataset.langTargetEl
         };
-        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi'];
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi', 'el'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -49,8 +51,8 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi'));
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
@@ -83,6 +85,7 @@
               <a href="../sv/" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
               <a href="../no/" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
               <a href="./" hreflang="fi" lang="fi" data-lang-switch="fi" aria-current="page"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+              <a href="../el/" hreflang="el" lang="el" data-lang-switch="el"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
             </div>
           </details>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips Facebookissa">

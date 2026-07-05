@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="el" data-lang="el" data-lang-target-pl="../terms.html" data-lang-target-en="../en/terms.html" data-lang-target-de="../de/terms.html" data-lang-target-es="../es/terms.html" data-lang-target-it="../it/terms.html" data-lang-target-fr="../fr/terms.html" data-lang-target-tr="../tr/terms.html" data-lang-target-uk="../uk/terms.html" data-lang-target-sv="../sv/terms.html" data-lang-target-no="../no/terms.html" data-lang-target-fi="../fi/terms.html" data-lang-target-el="./terms.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Όροι χρήσης για την εφαρμογή ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/terms.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/terms.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/terms.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/terms.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/terms.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/terms.html">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/terms.html">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/terms.html">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/terms.html">
+    <link rel="alternate" hreflang="no" href="https://screenclips.app/no/terms.html">
+    <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/terms.html">
+    <link rel="alternate" hreflang="el" href="https://screenclips.app/el/terms.html">
+    <title>Όροι — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk,
+          sv: html.dataset.langTargetSv,
+          no: html.dataset.langTargetNo,
+          fi: html.dataset.langTargetFi,
+          el: html.dataset.langTargetEl
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi', 'el'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Πλοήγηση εγγράφου">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Πίσω στην αρχική</a>
+          <details class="language-switcher" aria-label="Γλώσσα">
+            <summary aria-label="Γλώσσα"><span class="language-current"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></span></summary>
+            <div class="language-menu">
+              <a href="../terms.html" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/terms.html" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/terms.html" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/terms.html" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/terms.html" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/terms.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../tr/terms.html" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/terms.html" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="../sv/terms.html" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+              <a href="../no/terms.html" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
+              <a href="../fi/terms.html" hreflang="fi" lang="fi" data-lang-switch="fi"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+              <a href="./terms.html" hreflang="el" lang="el" data-lang-switch="el" aria-current="page"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="Το ScreenClips στο Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Όροι χρήσης του ScreenClips</h1>
+          <p>Ισχύει από: 16.06.2026</p>
+          <p>Έκδοση: 1.0</p>
+          <h2>1. Πάροχος</h2>
+          <p>Πάροχος της εφαρμογής ScreenClips είναι η Canario-Lab.</p>
+          <p>Οι παρόντες όροι διέπουν τη χρήση της εφαρμογής, συμπεριλαμβανομένων των δωρεάν λειτουργιών, του Premium, των αντιγράφων ασφαλείας, της εξαγωγής και της επέκτασης κοινής χρήσης.</p>
+          <h2>2. Χαρακτήρας της εφαρμογής</h2>
+          <p>Το ScreenClips είναι ένα τοπικό εργαλείο iOS για την οργάνωση screenshots σε Clips και βιβλιοθήκες. Η εφαρμογή βοηθά τον χρήστη να συγκεντρώνει εικόνες, σημειώσεις και πλαίσιο, ώστε το υλικό να είναι πιο εύκολο να βρεθεί ξανά.</p>
+          <p>Το ScreenClips δεν είναι υπηρεσία cloud, εξωτερική αποθήκευση δεδομένων, κοινωνικό δίκτυο, εργαλείο διαχείρισης πνευματικών δικαιωμάτων ή υπηρεσία που εγγυάται μόνιμη αρχειοθέτηση έξω από τη συσκευή του χρήστη.</p>
+          <h2>3. Τεχνικές απαιτήσεις</h2>
+          <p>Για τη χρήση της εφαρμογής απαιτείται συμβατή συσκευή Apple και έκδοση iOS που υποστηρίζεται από την εφαρμογή.</p>
+          <p>Ορισμένες λειτουργίες μπορεί να απαιτούν πρόσβαση στις Φωτογραφίες, στο φύλλο κοινής χρήσης του συστήματος, σε αρχεία, στο Face ID, στο App Store, στο Apple ID ή σε σύνδεση στο internet, ιδίως κατά την αγορά ή την επαναφορά Premium.</p>
+          <h2>4. Δεδομένα χρήστη και ευθύνη για περιεχόμενο</h2>
+          <p>Ο χρήστης είναι υπεύθυνος για τα screenshots, τις σημειώσεις, τα ονόματα Clips, τις βιβλιοθήκες και άλλο υλικό που προσθέτει στην εφαρμογή, καθώς και για το δικαίωμα αποθήκευσης, εξαγωγής και κοινοποίησης αυτού του υλικού.</p>
+          <p>Η αφαίρεση ενός screenshot από ένα Clip δεν αφαιρεί το αρχικό αρχείο από τις Φωτογραφίες. Η διαγραφή δεδομένων στο ScreenClips μπορεί όμως να αφαιρέσει το τοπικό αντίγραφο που αποθηκεύει η εφαρμογή.</p>
+          <h2>5. Αντίγραφα ασφαλείας και εξαγωγή</h2>
+          <p>Το αντίγραφο ασφαλείας ScreenClips είναι ένα τοπικό αρχείο .screenclipbackup που δημιουργείται κατόπιν αιτήματος του χρήστη. Η επαναφορά αντιγράφου ασφαλείας αντικαθιστά την τρέχουσα κατάσταση της εφαρμογής με τα δεδομένα του επιλεγμένου αρχείου.</p>
+          <p>Ο χρήστης είναι υπεύθυνος για την ασφαλή φύλαξη αντιγράφων ασφαλείας, PDF και άλλων εξαγωγών, καθώς και για τις συνέπειες της αποστολής τους σε εξωτερικές υπηρεσίες όπως iCloud Drive, email, εφαρμογές μηνυμάτων ή άλλες εφαρμογές.</p>
+          <h2>6. Δωρεάν έκδοση και Premium</h2>
+          <p>Το ScreenClips είναι εφαρμογή freemium. Η δωρεάν έκδοση έχει όρια χωρητικότητας: έως 2 βιβλιοθήκες, 5 Clips και 20 screenshots συνολικά.</p>
+          <p>Το ScreenClips Premium ξεκλειδώνει τα όρια για βιβλιοθήκες, Clips και screenshots. Το Premium δεν αλλάζει τον τοπικό χαρακτήρα της εφαρμογής και δεν δημιουργεί εξωτερικό αντίγραφο των δεδομένων του χρήστη.</p>
+          <h2>7. Αγορά Lifetime και πληρωμές</h2>
+          <p>Το προβλεπόμενο μοντέλο πληρωμής του ScreenClips είναι μια εφάπαξ αγορά Lifetime στο App Store, την οποία χειρίζεται η Apple και επαληθεύει το RevenueCat.</p>
+          <p>Η εφαρμογή δεν προσφέρει μηνιαίες ή ετήσιες συνδρομές και δεν παρέχει δοκιμαστική περίοδο. Η αγορά Lifetime δεν ανανεώνεται αυτόματα.</p>
+          <p>Η πληρωμή χρεώνεται στο Apple ID του χρήστη μετά την επιβεβαίωση της αγοράς. Η Canario-Lab δεν επεξεργάζεται στοιχεία κάρτας πληρωμής του χρήστη.</p>
+          <h2>8. Επαναφορά αγοράς</h2>
+          <p>Ο χρήστης μπορεί να επαναφέρει την αγορά Lifetime σε συμβατή συσκευή Apple χρησιμοποιώντας τους μηχανισμούς της Apple και του RevenueCat που υπάρχουν στην εφαρμογή.</p>
+          <p>Η πρόσβαση Premium επιβεβαιώνεται με βάση το δικαίωμα ScreenClips Pro που επιστρέφει το RevenueCat. Η πρόσβαση μπορεί να απαιτεί σύνδεση στο internet και σωστή διαμόρφωση του App Store ή του RevenueCat.</p>
+          <h2>9. Διαθεσιμότητα και αλλαγές</h2>
+          <p>Η Canario-Lab προσπαθεί ώστε η εφαρμογή να λειτουργεί σωστά, αλλά το ScreenClips παρέχεται ως έχει και μπορεί να περιέχει σφάλματα, περιορισμούς ή προσωρινές διακοπές.</p>
+          <p>Οι λειτουργίες της εφαρμογής, τα όρια της δωρεάν έκδοσης, η προσφορά Premium και οι παρόντες όροι μπορούν να αλλάξουν καθώς εξελίσσεται το προϊόν, αλλάζουν οι απαιτήσεις του App Store ή αλλάζουν οι νομικές απαιτήσεις.</p>
+          <h2>10. Ευθύνη</h2>
+          <p>Στον βαθμό που επιτρέπεται από τον νόμο, η Canario-Lab δεν ευθύνεται για απώλεια δεδομένων που οφείλεται σε διαγραφή της εφαρμογής, βλάβη της συσκευής, εσφαλμένη χρήση αντιγράφου ασφαλείας, ακούσια κοινοποίηση αρχείων, λειτουργία εξωτερικών υπηρεσιών ή έλλειψη προσωπικού αντιγράφου ασφαλείας από τον χρήστη.</p>
+          <p>Ο χρήστης πρέπει να προστατεύει ο ίδιος σημαντικό υλικό και να διατηρεί αντίγραφα αρχείων που θέλει να κρατήσει μακροπρόθεσμα.</p>
+          <h2>11. Τελικές διατάξεις</h2>
+          <p>Για θέματα που δεν ρυθμίζονται από τους παρόντες όρους εφαρμόζεται η σχετική νομοθεσία.</p>
+          <p>Αν κάποια διάταξη των όρων κριθεί άκυρη, οι υπόλοιπες διατάξεις παραμένουν σε ισχύ.</p>
+          <p>Η τρέχουσα έκδοση των όρων είναι διαθέσιμη στην εφαρμογή.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="privacy.html">Απόρρητο</a>
+          <a href="terms.html" aria-current="page">Όροι</a>
+          <a href="mailto:screenclips@screenclips.app">Επικοινωνία</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
