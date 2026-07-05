@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="uk" data-lang="uk" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-it="../it/" data-lang-target-fr="../fr/" data-lang-target-tr="../tr/" data-lang-target-uk="./" data-lang-target-sv="../sv/" data-lang-target-no="../no/" data-lang-target-fi="../fi/" data-lang-target-el="../el/" data-lang-target-pt-pt="../pt-pt/" data-lang-target-pt-br="../pt-br/" data-lang-target-zh-hans="../zh-hans/">
+<html lang="uk" data-lang="uk" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-es-mx="../es-mx/" data-lang-target-it="../it/" data-lang-target-fr="../fr/" data-lang-target-tr="../tr/" data-lang-target-uk="./" data-lang-target-sv="../sv/" data-lang-target-no="../no/" data-lang-target-fi="../fi/" data-lang-target-el="../el/" data-lang-target-pt-pt="../pt-pt/" data-lang-target-pt-br="../pt-br/" data-lang-target-zh-hans="../zh-hans/">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,7 @@
     <link rel="alternate" hreflang="en" href="https://screenclips.app/en/">
     <link rel="alternate" hreflang="de" href="https://screenclips.app/de/">
     <link rel="alternate" hreflang="es" href="https://screenclips.app/es/">
+    <link rel="alternate" hreflang="es-MX" href="https://screenclips.app/es-mx/">
     <link rel="alternate" hreflang="it" href="https://screenclips.app/it/">
     <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/">
     <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/">
@@ -34,6 +35,7 @@
           en: html.dataset.langTargetEn,
           de: html.dataset.langTargetDe,
           es: html.dataset.langTargetEs,
+          'es-mx': html.dataset.langTargetEsMx,
           it: html.dataset.langTargetIt,
           fr: html.dataset.langTargetFr,
           tr: html.dataset.langTargetTr,
@@ -46,7 +48,7 @@
           'pt-br': html.dataset.langTargetPtBr,
           'zh-hans': html.dataset.langTargetZhHans
         };
-        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi', 'el', 'pt-pt', 'pt-br', 'zh-hans'];
+        const supported = ['pl', 'en', 'de', 'es', 'es-mx', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi', 'el', 'pt-pt', 'pt-br', 'zh-hans'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -57,8 +59,8 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el') || language.startsWith('pt-br') || language.startsWith('pt-pt') || language.startsWith('pt') || language.startsWith('zh-cn') || language.startsWith('zh-hans') || language === 'zh');
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : matched && matched.startsWith('pt-br') ? 'pt-br' : matched && matched.startsWith('pt-pt') ? 'pt-pt' : matched && matched.startsWith('pt') ? 'pt-br' : matched && (matched.startsWith('zh-cn') || matched.startsWith('zh-hans') || matched === 'zh') ? 'zh-hans' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es-mx') || language.startsWith('es-419') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el') || language.startsWith('pt-br') || language.startsWith('pt-pt') || language.startsWith('pt') || language.startsWith('zh-cn') || language.startsWith('zh-hans') || language === 'zh');
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && (matched.startsWith('es-mx') || matched.startsWith('es-419')) ? 'es-mx' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : matched && matched.startsWith('pt-br') ? 'pt-br' : matched && matched.startsWith('pt-pt') ? 'pt-pt' : matched && matched.startsWith('pt') ? 'pt-br' : matched && (matched.startsWith('zh-cn') || matched.startsWith('zh-hans') || matched === 'zh') ? 'zh-hans' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
@@ -84,6 +86,7 @@
               <a href="../en/" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
               <a href="../de/" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
               <a href="../es/" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../es-mx/" hreflang="es-MX" lang="es-MX" data-lang-switch="es-mx"><span class="language-flag" aria-hidden="true">🇲🇽</span><span>MX</span></a>
               <a href="../it/" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
               <a href="../fr/" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
               <a href="../tr/" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
