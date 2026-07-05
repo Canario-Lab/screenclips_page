@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru" data-lang="ru" data-lang-target-pl="../privacy.html" data-lang-target-en="../en/privacy.html" data-lang-target-de="../de/privacy.html" data-lang-target-es="../es/privacy.html" data-lang-target-es-mx="../es-mx/privacy.html" data-lang-target-it="../it/privacy.html" data-lang-target-fr="../fr/privacy.html" data-lang-target-tr="../tr/privacy.html" data-lang-target-uk="../uk/privacy.html" data-lang-target-ru="./privacy.html" data-lang-target-sv="../sv/privacy.html" data-lang-target-no="../no/privacy.html" data-lang-target-da="../da/privacy.html" data-lang-target-fi="../fi/privacy.html" data-lang-target-el="../el/privacy.html" data-lang-target-pt-pt="../pt-pt/privacy.html" data-lang-target-pt-br="../pt-br/privacy.html" data-lang-target-hu="../hu/privacy.html" data-lang-target-zh-hans="../zh-hans/privacy.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Политика конфиденциальности приложения ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/privacy.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/privacy.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/privacy.html">
+    <link rel="alternate" hreflang="es-MX" href="https://screenclips.app/es-mx/privacy.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/privacy.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/privacy.html">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/privacy.html">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/privacy.html">
+    <link rel="alternate" hreflang="ru" href="https://screenclips.app/ru/privacy.html">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/privacy.html">
+    <link rel="alternate" hreflang="no" href="https://screenclips.app/no/privacy.html">
+    <link rel="alternate" hreflang="da" href="https://screenclips.app/da/privacy.html">
+    <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/privacy.html">
+    <link rel="alternate" hreflang="el" href="https://screenclips.app/el/privacy.html">
+    <link rel="alternate" hreflang="pt-PT" href="https://screenclips.app/pt-pt/privacy.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://screenclips.app/pt-br/privacy.html">
+    <link rel="alternate" hreflang="hu" href="https://screenclips.app/hu/privacy.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://screenclips.app/zh-hans/privacy.html">
+    <title>Политика конфиденциальности — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          'es-mx': html.dataset.langTargetEsMx,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk,
+          ru: html.dataset.langTargetRu,
+          sv: html.dataset.langTargetSv,
+          no: html.dataset.langTargetNo,
+          da: html.dataset.langTargetDa,
+          fi: html.dataset.langTargetFi,
+          el: html.dataset.langTargetEl,
+          'pt-pt': html.dataset.langTargetPtPt,
+          'pt-br': html.dataset.langTargetPtBr,
+          hu: html.dataset.langTargetHu,
+          'zh-hans': html.dataset.langTargetZhHans
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'es-mx', 'it', 'fr', 'tr', 'uk', 'ru', 'sv', 'no', 'da', 'fi', 'el', 'pt-pt', 'pt-br', 'hu', 'zh-hans'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('hu') || language.startsWith('da') || language.startsWith('ru') || language.startsWith('es-mx') || language.startsWith('es-419') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el') || language.startsWith('pt-br') || language.startsWith('pt-pt') || language.startsWith('pt') || language.startsWith('zh-cn') || language.startsWith('zh-hans') || language === 'zh');
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('hu') ? 'hu' : matched && matched.startsWith('da') ? 'da' : matched && matched.startsWith('ru') ? 'ru' : matched && (matched.startsWith('es-mx') || matched.startsWith('es-419')) ? 'es-mx' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : matched && matched.startsWith('pt-br') ? 'pt-br' : matched && matched.startsWith('pt-pt') ? 'pt-pt' : matched && matched.startsWith('pt') ? 'pt-br' : matched && (matched.startsWith('zh-cn') || matched.startsWith('zh-hans') || matched === 'zh') ? 'zh-hans' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Навигация по документу">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Вернуться на главную</a>
+          <details class="language-switcher" aria-label="Язык">
+            <summary aria-label="Язык"><span class="language-current"><span class="language-flag" aria-hidden="true">🇷🇺</span><span>RU</span></span></summary>
+            <div class="language-menu">
+              <a href="../privacy.html" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/privacy.html" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/privacy.html" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/privacy.html" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../es-mx/privacy.html" hreflang="es-MX" lang="es-MX" data-lang-switch="es-mx"><span class="language-flag" aria-hidden="true">🇲🇽</span><span>MX</span></a>
+              <a href="../it/privacy.html" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/privacy.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../tr/privacy.html" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/privacy.html" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="./privacy.html" hreflang="ru" lang="ru" data-lang-switch="ru" aria-current="page"><span class="language-flag" aria-hidden="true">🇷🇺</span><span>RU</span></a>
+              <a href="../sv/privacy.html" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+              <a href="../no/privacy.html" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
+              <a href="../da/privacy.html" hreflang="da" lang="da" data-lang-switch="da"><span class="language-flag" aria-hidden="true">🇩🇰</span><span>DA</span></a>
+              <a href="../fi/privacy.html" hreflang="fi" lang="fi" data-lang-switch="fi"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+              <a href="../el/privacy.html" hreflang="el" lang="el" data-lang-switch="el"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
+              <a href="../pt-pt/privacy.html" hreflang="pt-PT" lang="pt-PT" data-lang-switch="pt-pt"><span class="language-flag" aria-hidden="true">🇵🇹</span><span>PT</span></a>
+              <a href="../pt-br/privacy.html" hreflang="pt-BR" lang="pt-BR" data-lang-switch="pt-br"><span class="language-flag" aria-hidden="true">🇧🇷</span><span>BR</span></a>
+              <a href="../hu/privacy.html" hreflang="hu" lang="hu" data-lang-switch="hu"><span class="language-flag" aria-hidden="true">🇭🇺</span><span>HU</span></a>
+              <a href="../zh-hans/privacy.html" hreflang="zh-Hans" lang="zh-Hans" data-lang-switch="zh-hans"><span class="language-flag" aria-hidden="true">🇨🇳</span><span>ZH</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips в Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Политика конфиденциальности</h1>
+          <p>Дата вступления в силу: 16 июня 2026 г.</p>
+          <p>Версия: 1.0</p>
+          <h2>1) Оператор данных</h2>
+          <p>Оператором персональных данных является Canario-Lab / приложение ScreenClips.</p>
+          <p>ScreenClips — локальное iOS-приложение для организации скриншотов в Клипы и библиотеки. Приложение не требует учетной записи или регистрации.</p>
+          <h2>2) Данные, хранящиеся локально</h2>
+          <p>Данные, созданные в приложении, включая Клипы, библиотеки, заметки, иконки, экраны, языковые настройки, настройки Face ID и сведения о резервных копиях, хранятся локально на устройстве пользователя или в локальном контейнере App Group, общем для основного приложения и расширения общего доступа.</p>
+          <p>Эти данные не отправляются автоматически в Canario-Lab или на серверы Canario-Lab.</p>
+          <h2>3) Фото, экраны и расширение общего доступа</h2>
+          <p>Приложение использует доступ к Фото только для добавления выбранных пользователем изображений в Клип. ScreenClips хранит собственную оптимизированную копию экрана для использования внутри приложения.</p>
+          <p>Удаление экрана из Клипа удаляет его только из данных ScreenClips. Оригинальное фото не удаляется из библиотеки Фото пользователя.</p>
+          <p>Расширение общего доступа позволяет отправлять выбранные изображения из системного меню «Поделиться» в ScreenClips. Расширение записывает данные в то же локальное хранилище через App Group group.com.canario-lab.screenclip.shared.</p>
+          <h2>4) Резервные копии, экспорт и общий доступ</h2>
+          <p>Резервная копия создает локальный файл .screenclipbackup, содержащий Клипы, библиотеки, экраны и настройки приложения. Файл сохраняется или передается через системные механизмы, выбранные пользователем.</p>
+          <p>Восстановление резервной копии заменяет текущее локальное состояние приложения данными из выбранного файла. Пользователь отвечает за хранение и защиту экспортированных резервных копий, PDF-файлов и любых материалов, переданных за пределы приложения.</p>
+          <h2>5) Face ID и безопасность устройства</h2>
+          <p>Если пользователь включает блокировку приложения через Face ID, аутентификация выполняется iOS через LocalAuthentication. ScreenClips не получает и не хранит биометрические данные.</p>
+          <p>Поскольку данные приложения хранятся локально, защита самого устройства код-паролем, Face ID или другими системными механизмами безопасности остается важной частью защиты.</p>
+          <h2>6) Покупки Premium, Apple и RevenueCat</h2>
+          <p>ScreenClips может предлагать платный Premium-доступ как единовременную пожизненную покупку в App Store. Приложение не предлагает месячную или годовую подписку и не предлагает пробный период.</p>
+          <p>Платежи обрабатываются Apple через App Store и StoreKit. ScreenClips использует RevenueCat для показа предложения, проверки права ScreenClips Pro, восстановления покупки и отображения технического RevenueCat ID в приложении.</p>
+          <p>В этом контексте Apple и RevenueCat могут обрабатывать технические данные покупки, такие как идентификаторы транзакций, идентификаторы продуктов, статус Premium-доступа и анонимный идентификатор пользователя приложения, используемый для подтверждения доступа.</p>
+          <p>Canario-Lab не обрабатывает данные платежной карты пользователя.</p>
+          <h2>7) Получатели данных</h2>
+          <p>Данные могут обрабатываться внешними сервисами только в объеме, необходимом для выбранных пользователем функций или обработки покупок:</p>
+          <ul>
+            <li>Apple — для App Store, StoreKit, платежей, системных средств выбора файлов, Фото, Face ID и общего доступа.</li>
+            <li>RevenueCat — для обработки предложения, проверки Premium и восстановления пожизненной покупки.</li>
+            <li>Системные провайдеры, выбранные пользователем, если пользователь экспортирует PDF, резервную копию или передает файл за пределы ScreenClips.</li>
+            <li>Государственные органы, если это требуется применимым законодательством.</li>
+          </ul>
+          <h2>8) Срок хранения</h2>
+          <p>Данные, сохраненные в ScreenClips, остаются локальными до тех пор, пока пользователь не удалит их, не восстановит другую резервную копию, не удалит приложение или не удалит данные через системные механизмы iOS.</p>
+          <p>Экспортированные резервные копии, PDF-файлы и файлы, переданные за пределы приложения, остаются под контролем пользователя и сервисов, куда они были отправлены.</p>
+          <p>Данные покупок, обрабатываемые Apple и RevenueCat, хранятся в соответствии с политиками этих сервисов.</p>
+          <h2>9) Права пользователя</h2>
+          <p>Если Canario-Lab обрабатывает персональные данные пользователя в конкретном случае, например при обращении в поддержку, пользователь может запросить доступ, исправление, удаление, ограничение обработки, возразить против обработки и подать жалобу в компетентный надзорный орган.</p>
+          <p>По вопросам приватности используйте контактный канал, указанный в App Store или в приложении.</p>
+          <h2>10) Изменения этой политики</h2>
+          <p>Эта Политика конфиденциальности может обновляться при изменении функций ScreenClips, платежной модели или юридических требований. Актуальная версия будет доступна в приложении.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html" aria-current="page">Политика конфиденциальности</a>
+          <a href="./terms.html">Условия</a>
+          <a href="mailto:screenclips@screenclips.app">Контакты</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
