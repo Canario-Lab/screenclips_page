@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-lang="es" data-lang-target-pl="../privacy.html" data-lang-target-en="../en/privacy.html" data-lang-target-de="../de/privacy.html" data-lang-target-es="./privacy.html" data-lang-target-it="../it/privacy.html" data-lang-target-fr="../fr/privacy.html" data-lang-target-tr="../tr/privacy.html" data-lang-target-uk="../uk/privacy.html" data-lang-target-sv="../sv/privacy.html" data-lang-target-no="../no/privacy.html" data-lang-target-fi="../fi/privacy.html" data-lang-target-el="../el/privacy.html" data-lang-target-pt-pt="../pt-pt/privacy.html" data-lang-target-pt-br="../pt-br/privacy.html">
+<html lang="es" data-lang="es" data-lang-target-pl="../privacy.html" data-lang-target-en="../en/privacy.html" data-lang-target-de="../de/privacy.html" data-lang-target-es="./privacy.html" data-lang-target-it="../it/privacy.html" data-lang-target-fr="../fr/privacy.html" data-lang-target-tr="../tr/privacy.html" data-lang-target-uk="../uk/privacy.html" data-lang-target-sv="../sv/privacy.html" data-lang-target-no="../no/privacy.html" data-lang-target-fi="../fi/privacy.html" data-lang-target-el="../el/privacy.html" data-lang-target-pt-pt="../pt-pt/privacy.html" data-lang-target-pt-br="../pt-br/privacy.html" data-lang-target-zh-hans="../zh-hans/privacy.html">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +19,7 @@
     <link rel="alternate" hreflang="el" href="https://screenclips.app/el/privacy.html">
     <link rel="alternate" hreflang="pt-PT" href="https://screenclips.app/pt-pt/privacy.html">
     <link rel="alternate" hreflang="pt-BR" href="https://screenclips.app/pt-br/privacy.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://screenclips.app/zh-hans/privacy.html">
     <title>Política de privacidad — ScreenClips</title>
     <script>
       (() => {
@@ -38,9 +39,10 @@
           fi: html.dataset.langTargetFi,
           el: html.dataset.langTargetEl,
           'pt-pt': html.dataset.langTargetPtPt,
-          'pt-br': html.dataset.langTargetPtBr
+          'pt-br': html.dataset.langTargetPtBr,
+          'zh-hans': html.dataset.langTargetZhHans
         };
-        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi', 'el', 'pt-pt', 'pt-br'];
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi', 'el', 'pt-pt', 'pt-br', 'zh-hans'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -51,8 +53,8 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el') || language.startsWith('pt-br') || language.startsWith('pt-pt') || language.startsWith('pt'));
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : matched && matched.startsWith('pt-br') ? 'pt-br' : matched && matched.startsWith('pt-pt') ? 'pt-pt' : matched && matched.startsWith('pt') ? 'pt-br' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el') || language.startsWith('pt-br') || language.startsWith('pt-pt') || language.startsWith('pt') || language.startsWith('zh-cn') || language.startsWith('zh-hans') || language === 'zh');
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : matched && matched.startsWith('pt-br') ? 'pt-br' : matched && matched.startsWith('pt-pt') ? 'pt-pt' : matched && matched.startsWith('pt') ? 'pt-br' : matched && (matched.startsWith('zh-cn') || matched.startsWith('zh-hans') || matched === 'zh') ? 'zh-hans' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
@@ -86,6 +88,7 @@
               <a href="../el/privacy.html" hreflang="el" lang="el" data-lang-switch="el"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
               <a href="../pt-pt/privacy.html" hreflang="pt-PT" lang="pt-PT" data-lang-switch="pt-pt"><span class="language-flag" aria-hidden="true">🇵🇹</span><span>PT</span></a>
               <a href="../pt-br/privacy.html" hreflang="pt-BR" lang="pt-BR" data-lang-switch="pt-br"><span class="language-flag" aria-hidden="true">🇧🇷</span><span>BR</span></a>
+              <a href="../zh-hans/privacy.html" hreflang="zh-Hans" lang="zh-Hans" data-lang-switch="zh-hans"><span class="language-flag" aria-hidden="true">🇨🇳</span><span>ZH</span></a>
             </div>
           </details>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips en Facebook">
