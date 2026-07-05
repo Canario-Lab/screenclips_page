@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it" data-lang="it" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-it="./" data-lang-target-fr="../fr/" data-lang-target-tr="../tr/" data-lang-target-uk="../uk/">
+<html lang="it" data-lang="it" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-it="./" data-lang-target-fr="../fr/" data-lang-target-tr="../tr/" data-lang-target-uk="../uk/" data-lang-target-sv="../sv/">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +16,7 @@
     <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/">
     <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/">
     <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/">
     <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
     <title>ScreenClips — gli screenshot non spariscono più in Foto</title>
     <script>
@@ -30,9 +31,10 @@
           it: html.dataset.langTargetIt,
           fr: html.dataset.langTargetFr,
           tr: html.dataset.langTargetTr,
-          uk: html.dataset.langTargetUk
+          uk: html.dataset.langTargetUk,
+          sv: html.dataset.langTargetSv
         };
-        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk'];
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -43,8 +45,8 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua'));
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
@@ -74,6 +76,7 @@
               <a href="../fr/" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
               <a href="../tr/" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
               <a href="../uk/" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="../sv/" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
             </div>
           </details>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips su Facebook">

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl" data-lang="pl" data-lang-target-pl="./privacy.html" data-lang-target-en="./en/privacy.html" data-lang-target-de="./de/privacy.html" data-lang-target-es="./es/privacy.html" data-lang-target-it="./it/privacy.html" data-lang-target-fr="./fr/privacy.html" data-lang-target-tr="./tr/privacy.html" data-lang-target-uk="./uk/privacy.html">
+<html lang="pl" data-lang="pl" data-lang-target-pl="./privacy.html" data-lang-target-en="./en/privacy.html" data-lang-target-de="./de/privacy.html" data-lang-target-es="./es/privacy.html" data-lang-target-it="./it/privacy.html" data-lang-target-fr="./fr/privacy.html" data-lang-target-tr="./tr/privacy.html" data-lang-target-uk="./uk/privacy.html" data-lang-target-sv="./sv/privacy.html">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,7 @@
     <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/privacy.html">
     <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/privacy.html">
     <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/privacy.html">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/privacy.html">
     <title>Polityka prywatności — ScreenClips</title>
     <script>
       (() => {
@@ -26,9 +27,10 @@
           it: html.dataset.langTargetIt,
           fr: html.dataset.langTargetFr,
           tr: html.dataset.langTargetTr,
-          uk: html.dataset.langTargetUk
+          uk: html.dataset.langTargetUk,
+          sv: html.dataset.langTargetSv
         };
-        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk'];
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -39,8 +41,8 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua'));
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
@@ -68,6 +70,7 @@
               <a href="./fr/privacy.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
               <a href="./tr/privacy.html" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
               <a href="./uk/privacy.html" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="./sv/privacy.html" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
             </div>
           </details>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips na Facebooku">

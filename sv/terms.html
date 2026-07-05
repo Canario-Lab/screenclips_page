@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="sv" data-lang="sv" data-lang-target-pl="../terms.html" data-lang-target-en="../en/terms.html" data-lang-target-de="../de/terms.html" data-lang-target-es="../es/terms.html" data-lang-target-it="../it/terms.html" data-lang-target-fr="../fr/terms.html" data-lang-target-tr="../tr/terms.html" data-lang-target-uk="../uk/terms.html" data-lang-target-sv="./terms.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Användarvillkor för appen ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/terms.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/terms.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/terms.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/terms.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/terms.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/terms.html">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/terms.html">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/terms.html">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/terms.html">
+    <title>Villkor — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk,
+          sv: html.dataset.langTargetSv
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Dokumentnavigering">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Till startsidan</a>
+          <details class="language-switcher" aria-label="Språk">
+            <summary aria-label="Språk"><span class="language-current"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></span></summary>
+            <div class="language-menu">
+              <a href="../terms.html" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/terms.html" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/terms.html" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/terms.html" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/terms.html" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/terms.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../tr/terms.html" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/terms.html" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="./terms.html" hreflang="sv" lang="sv" data-lang-switch="sv" aria-current="page"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips på Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Användarvillkor för ScreenClips</h1>
+          <p>Gäller från: 16.06.2026</p>
+          <p>Version: 1.0</p>
+          <h2>1. Leverantör</h2>
+          <p>Leverantör av appen ScreenClips är Canario-Lab.</p>
+          <p>Dessa villkor reglerar användning av appen, inklusive kostnadsfria funktioner, Premium, säkerhetskopior, export och delningstillägget.</p>
+          <h2>2. Appens karaktär</h2>
+          <p>ScreenClips är ett lokalt iOS-verktyg för att ordna skärmbilder i Clips och bibliotek. Appen hjälper användaren att samla bilder, anteckningar och sammanhang så att material blir lättare att hitta igen.</p>
+          <p>ScreenClips är inte en molntjänst, extern datalagring, socialt nätverk, upphovsrättshanterare eller en tjänst som garanterar permanent arkivering utanför användarens enhet.</p>
+          <h2>3. Tekniska krav</h2>
+          <p>För att använda appen krävs en kompatibel Apple-enhet och en iOS-version som stöds av appen.</p>
+          <p>Vissa funktioner kan kräva åtkomst till Bilder, systemets delningsvy, filer, Face ID, App Store, Apple ID eller internetanslutning, särskilt vid köp eller återställning av Premium.</p>
+          <h2>4. Användardata och ansvar för innehåll</h2>
+          <p>Användaren ansvarar för skärmbilder, anteckningar, Clip-namn, bibliotek och annat material som läggs till i appen, inklusive rätten att lagra, exportera och dela materialet.</p>
+          <p>Att ta bort en skärmbild från ett Clip tar inte bort originalet från Bilder. Däremot kan radering av data i ScreenClips ta bort den lokala kopia som appen sparar.</p>
+          <h2>5. Säkerhetskopior och export</h2>
+          <p>En ScreenClips-säkerhetskopia är en lokal .screenclipbackup-fil som skapas på användarens begäran. Återställning av en säkerhetskopia ersätter appens nuvarande tillstånd med data från den valda filen.</p>
+          <p>Användaren ansvarar för säker förvaring av säkerhetskopior, PDF-filer och andra exporter samt för konsekvenserna av att skicka dem till externa tjänster som iCloud Drive, e-post, meddelandeappar eller andra appar.</p>
+          <h2>6. Kostnadsfri version och Premium</h2>
+          <p>ScreenClips är en freemium-app. Den kostnadsfria versionen har kapacitetsgränser: högst 2 bibliotek, 5 Clips och 20 skärmbilder totalt.</p>
+          <p>ScreenClips Premium låser upp gränserna för bibliotek, Clips och skärmbilder. Premium ändrar inte appens lokala karaktär och skapar ingen extern kopia av användarens data.</p>
+          <h2>7. Lifetime-köp och betalningar</h2>
+          <p>ScreenClips avsedda betalningsmodell är ett engångsköp av typen Lifetime i App Store, hanterat av Apple och verifierat av RevenueCat.</p>
+          <p>Appen erbjuder inget månads- eller årsabonnemang och ingen provperiod. Lifetime-köpet förnyas inte automatiskt.</p>
+          <p>Betalningen debiteras användarens Apple ID efter bekräftelse av köpet. Canario-Lab behandlar inte användarens betalkortsuppgifter.</p>
+          <h2>8. Återställning av köp</h2>
+          <p>Användaren kan återställa Lifetime-köpet på en kompatibel Apple-enhet med hjälp av de Apple- och RevenueCat-mekanismer som finns i appen.</p>
+          <p>Premium-åtkomst bekräftas utifrån entitlementen ScreenClips Pro som returneras av RevenueCat. Åtkomst kan kräva internetanslutning och korrekt konfiguration av App Store eller RevenueCat.</p>
+          <h2>9. Tillgänglighet och ändringar</h2>
+          <p>Canario-Lab strävar efter att appen ska fungera korrekt, men ScreenClips tillhandahålls i befintligt skick och kan innehålla fel, begränsningar eller tillfälliga avbrott.</p>
+          <p>Appens funktioner, gränser i den kostnadsfria versionen, Premium-erbjudandet och dessa villkor kan ändras när produkten utvecklas, App Store-krav ändras eller rättsliga krav förändras.</p>
+          <h2>10. Ansvar</h2>
+          <p>I den utsträckning lagen tillåter ansvarar Canario-Lab inte för dataförlust som beror på att appen tas bort, enheten skadas, en säkerhetskopia används fel, filer delas av misstag, externa tjänster agerar på ett visst sätt eller användaren saknar egen säkerhetskopia.</p>
+          <p>Användaren bör själv skydda viktigt material och behålla kopior av filer som ska sparas långsiktigt.</p>
+          <h2>11. Slutbestämmelser</h2>
+          <p>För frågor som inte regleras av dessa villkor gäller tillämplig lag.</p>
+          <p>Om någon bestämmelse i villkoren visar sig vara ogiltig fortsätter övriga bestämmelser att gälla.</p>
+          <p>Den aktuella versionen av villkoren finns i appen.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="privacy.html">Integritet</a>
+          <a href="terms.html" aria-current="page">Villkor</a>
+          <a href="mailto:screenclips@screenclips.app">Kontakt</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
