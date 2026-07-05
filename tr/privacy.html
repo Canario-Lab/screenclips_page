@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="tr" data-lang="tr" data-lang-target-pl="../privacy.html" data-lang-target-en="../en/privacy.html" data-lang-target-de="../de/privacy.html" data-lang-target-es="../es/privacy.html" data-lang-target-it="../it/privacy.html" data-lang-target-fr="../fr/privacy.html" data-lang-target-tr="./privacy.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="ScreenClips uygulamasının gizlilik politikası.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/privacy.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/privacy.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/privacy.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/privacy.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/privacy.html">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/privacy.html">
+    <title>Gizlilik Politikası — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Belge gezinmesi">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Ana sayfaya dön</a>
+          <details class="language-switcher" aria-label="Dil">
+            <summary aria-label="Dil"><span class="language-current"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></span></summary>
+            <div class="language-menu">
+              <a href="../privacy.html" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/privacy.html" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/privacy.html" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/privacy.html" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/privacy.html" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/privacy.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="./privacy.html" hreflang="tr" lang="tr" data-lang-switch="tr" aria-current="page"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips Facebook'ta">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Gizlilik Politikası</h1>
+          <p>Yürürlük tarihi: 16.06.2026</p>
+          <p>Sürüm: 1.0</p>
+          <h2>1) Veri sorumlusu</h2>
+          <p>Kişisel verilerin sorumlusu Canario-Lab / ScreenClips uygulamasıdır.</p>
+          <p>ScreenClips, ekran görüntülerini Clip'ler ve kitaplıklar halinde düzenleyen yerel bir iOS uygulamasıdır. Uygulama kullanıcı hesabı ya da kayıt gerektirmez.</p>
+          <h2>2) Yerel olarak saklanan veriler</h2>
+          <p>Uygulamada oluşturduğun veriler, yani Clip'ler, kitaplıklar, notlar, ikonlar, ekran görüntüleri, dil ayarları, Face ID ayarları ve yedek bilgileri, cihazında veya ana uygulama ile paylaşım uzantısının kullandığı yerel App Group alanında saklanır.</p>
+          <p>Bu veriler otomatik olarak Canario-Lab'e ya da Canario-Lab sunucularına gönderilmez.</p>
+          <h2>3) Fotoğraflar, ekran görüntüleri ve Share Extension</h2>
+          <p>Uygulama Fotoğraflar erişimini yalnızca kullanıcının seçtiği görüntüleri bir Clip'e eklemek için kullanır. ScreenClips, uygulama içinde kullanmak üzere ekran görüntüsünün kendi optimize edilmiş kopyasını kaydeder.</p>
+          <p>Bir ekran görüntüsünü Clip'ten kaldırmak yalnızca ScreenClips içindeki kopyayı kaldırır. Fotoğraflar kitaplığındaki orijinal görüntüyü silmez.</p>
+          <p>Share Extension, sistem paylaşım sayfasından seçtiğin görüntüleri ScreenClips'e göndermeni sağlar. Uzantı verileri aynı yerel store'a, group.com.canario-lab.screenclip.shared App Group alanı üzerinden yazar.</p>
+          <h2>4) Yedekler, dışa aktarma ve paylaşım</h2>
+          <p>Yedekleme, Clip'leri, kitaplıkları, ekran görüntülerini ve uygulama ayarlarını içeren yerel bir .screenclipbackup dosyası oluşturur. Dosya, kullanıcının seçtiği sistem araçlarıyla kaydedilir veya paylaşılır.</p>
+          <p>Yedekten geri yükleme, uygulamanın mevcut yerel durumunu seçilen dosyadaki verilerle değiştirir. Uygulama dışına aktarılan yedeklerin, PDF'lerin ve diğer materyallerin saklanmasından ve korunmasından kullanıcı sorumludur.</p>
+          <h2>5) Face ID ve cihaz güvenliği</h2>
+          <p>Face ID kilidi açıldığında kimlik doğrulama iOS tarafından LocalAuthentication üzerinden yürütülür. ScreenClips biyometrik verileri almaz ve saklamaz.</p>
+          <p>Uygulama verileri yerel olarak tutulduğu için cihazın parola, Face ID veya diğer sistem güvenlik özellikleriyle korunması önemlidir.</p>
+          <h2>6) Premium satın alma, Apple ve RevenueCat</h2>
+          <p>ScreenClips, App Store'da tek seferlik Lifetime satın alma olarak Premium erişim sunabilir. Uygulamada aylık veya yıllık abonelik ve deneme süresi yoktur.</p>
+          <p>Ödemeler Apple tarafından App Store ve StoreKit üzerinden işlenir. ScreenClips, teklifi göstermek, ScreenClips Pro yetkisini doğrulamak, satın almayı geri yüklemek ve uygulama içinde teknik RevenueCat ID'yi göstermek için RevenueCat kullanır.</p>
+          <p>Bu kapsamda Apple ve RevenueCat; işlem kimlikleri, ürün kimlikleri, Premium erişim durumu ve erişimi doğrulamak için kullanılan anonim uygulama kullanıcı kimliği gibi teknik satın alma verilerini işleyebilir.</p>
+          <p>Canario-Lab kullanıcının ödeme kartı verilerini işlemez.</p>
+          <h2>7) Veri alıcıları</h2>
+          <p>Veriler yalnızca kullanıcının seçtiği işlevler veya satın alma süreci için gerekli olduğunda dış hizmetler tarafından işlenebilir:</p>
+          <ul>
+            <li>Apple; App Store, StoreKit, ödemeler, sistem dosya seçimleri, Fotoğraflar, Face ID ve paylaşım işlevleri kapsamında.</li>
+            <li>RevenueCat; tekliflerin gösterilmesi, Premium doğrulaması ve Lifetime satın almanın geri yüklenmesi kapsamında.</li>
+            <li>Kullanıcının PDF, yedek veya dosyayı ScreenClips dışına aktarması halinde, kullanıcının seçtiği sistem sağlayıcıları.</li>
+            <li>Geçerli hukuk bunu gerektirirse yetkili kamu kurumları.</li>
+          </ul>
+          <h2>8) Saklama süresi</h2>
+          <p>ScreenClips'te kaydedilen veriler, kullanıcı silene, başka bir yedek geri yüklenene, uygulama kaldırılana veya iOS mekanizmaları tarafından silinene kadar yerel olarak kalır.</p>
+          <p>Uygulama dışına aktarılan yedekler, PDF'ler ve paylaşılan dosyalar kullanıcının ve gönderildikleri hizmetlerin kontrolündedir.</p>
+          <p>Apple ve RevenueCat tarafından işlenen satın alma verileri bu hizmetlerin kendi kurallarına göre saklanır.</p>
+          <h2>9) Kullanıcı hakları</h2>
+          <p>Canario-Lab belirli bir durumda, örneğin destek iletişimi sırasında, kullanıcının kişisel verilerini işlerse kullanıcı verilerine erişim, düzeltme, silme, işlemeyi kısıtlama, itiraz etme ve yetkili denetim makamına şikayette bulunma haklarını kullanabilir.</p>
+          <p>Gizlilik konularında App Store'da veya uygulamada belirtilen iletişim kanalını kullanabilirsin.</p>
+          <h2>10) Politikadaki değişiklikler</h2>
+          <p>Bu gizlilik politikası ScreenClips özellikleri, ödeme modeli veya yasal gereklilikler değiştikçe güncellenebilir. Güncel sürüm uygulama içinde bulunur.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="privacy.html" aria-current="page">Gizlilik</a>
+          <a href="terms.html">Koşullar</a>
+          <a href="mailto:screenclips@screenclips.app">İletişim</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

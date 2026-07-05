@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="tr" data-lang="tr" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-it="../it/" data-lang-target-fr="../fr/" data-lang-target-tr="./">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="ScreenClips ekran görüntülerini ad, not ve kitaplıklarla Clip'ler halinde düzenler. Hesapsız, bulutsuz, dağınıklıksız.">
+    <meta property="og:title" content="ScreenClips — ekran görüntülerin Fotoğraflar'da kaybolmasın">
+    <meta property="og:description" content="Dağınık ekran görüntülerini bağlamı, notu ve kitaplığı olan Clip'lere dönüştür.">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/">
+    <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
+    <title>ScreenClips — ekran görüntülerin Fotoğraflar'da kaybolmasın</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body>
+    <main>
+      <nav class="nav" aria-label="Ana gezinme">
+        <a class="brand" href="#top" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="nav-links">
+          <a href="#nasil-calisir">Nasıl çalışır</a>
+          <a href="#ozellikler">Özellikler</a>
+          <a href="#gizlilik">Gizlilik</a>
+          <details class="language-switcher" aria-label="Dil">
+            <summary aria-label="Dil"><span class="language-current"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></span></summary>
+            <div class="language-menu">
+              <a href="../" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="./" hreflang="tr" lang="tr" data-lang-switch="tr" aria-current="page"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips Facebook'ta">
+            <span aria-hidden="true">f</span>
+          </a>
+          <a class="app-store-button nav-cta" href="https://apps.apple.com/app/id6771277332" aria-label="ScreenClips'i App Store'dan indir">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>App Store'dan</small><strong>indir</strong></span>
+          </a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero section-shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> iPhone için ekran görüntüsü düzenleyici</div>
+          <h1>Ekran görüntülerin Fotoğraflar'da kaybolmasın.</h1>
+          <p class="lead">Dağınık ekran görüntülerini adı, notu ve kendi kitaplığı olan Clip'lere dönüştür. Hesap yok, bulut yok, aradığın şeyi bulmak için galeride kazı çalışması yok.</p>
+          <div class="hero-actions">
+            <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="ScreenClips'i App Store'dan indir">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>App Store'dan</small><strong>indir</strong></span>
+          </a>
+            <a class="secondary-link" href="#nasil-calisir">Nasıl çalıştığını gör</a>
+          </div>
+          <div class="trust-row" aria-label="Hesap yok"><span>Hesap yok</span><span>Yerelde çalışır</span><span>Tek seferlik Premium</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="ScreenClips uygulama önizlemesi">
+          <div class="floating-card card-left"><strong>Kitaplıklar</strong><small>Tarifler · Biletler · Çalışma</small></div>
+          <div class="phone hero-phone">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Kitaplıklar ve Clip'ler bulunan ScreenClips ana ekranı" loading="lazy" src="../screens/home.webp">
+            </div>
+          </div>
+          <div class="floating-card card-right"><strong>Bağlamlı Clip'ler</strong><small>Ad, not, ekran görüntüleri</small></div>
+        </div>
+      </section>
+
+      <section class="problem section-shell compact">
+        <div class="section-heading">
+          <span class="kicker">Sorun</span>
+          <h2>Fotoğraflar fotoğraflar için harika. Önemli ekran görüntüleri içinse pek değil.</h2>
+          <p>Fişler, tarifler, biletler, fikirler ve makale parçaları; selfie'lerin, memlerin ve yanlışlıkla çekilen görüntülerin arasında kayboluyor. Bulutu icat ettik, yine de otelin adresinin olduğu ekran görüntüsünü bulamıyoruz.</p>
+        </div>
+        <div class="problem-grid"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">▣</span>
+            <h3>Ekran görüntüsü kalabalıkta kaybolur</h3>
+            <p>Önemli bir şeyi kaydedersin, bir hafta sonra galeriyi dosya inceler gibi tararsın.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">✎</span>
+            <h3>Bağlam kaybolur</h3>
+            <p>Tek başına görüntü çoğu zaman yetmez. ScreenClips ad ve not eklemeni sağlar.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">☰</span>
+            <h3>Konular birbirine karışır</h3>
+            <p>Alışveriş, iş, seyahat ve çalışma ayrı yerleri hak eder; Fotoğraflar'da tek bir yığın olmayı değil.</p>
+          </article></div>
+      </section>
+
+      <section id="nasil-calisir" class="how section-shell">
+        <div class="section-heading narrow">
+          <span class="kicker">Nasıl çalışır</span>
+          <h2>Üç adım. Kendi sistemini yönetmek için yeni bir sistem kurmadan.</h2>
+        </div>
+        <div class="steps"><div class="step-card">
+            <span>01</span>
+            <h3>Bir kitaplık oluştur</h3>
+            <p>Tarifleri, fişleri, biletleri, araştırmaları, ders notlarını veya tekrar bulmak istediğin her şeyi ayır.</p>
+          </div>
+<div class="step-card">
+            <span>02</span>
+            <h3>Clip ekle</h3>
+            <p>Clip, belirli bir konu etrafındaki her şeyi toplar. Bir adı, açıklaması ve kendi ekran görüntüleri vardır.</p>
+          </div>
+<div class="step-card">
+            <span>03</span>
+            <h3>Aramadan geri dön</h3>
+            <p>Kitaplığı aç, Clip'i seç ve her şey yanında olsun. Galeride uzun yürüyüşlere gerek yok.</p>
+          </div></div>
+        <div class="showcase-grid">
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="ScreenClips içinde Clip listesi" loading="lazy" src="../screens/clips.webp">
+            </div>
+          </div>
+          <div class="showcase-copy">
+            <span class="kicker">Dağınıklıktan bağlama</span>
+            <h2>Fotoğraflar'daki büyük çekmece yerine kitaplıklar ve Clip'ler.</h2>
+            <p>ScreenClips senin yerine her şeyi tahmin etmeye çalışmaz. Basit bir yapı verir: konu için kitaplık, somut iş için Clip, içinde ekran görüntüleri ve fotoğraflar.</p>
+            <div class="mini-list"><span>✓ her Clip için ad ve açıklama</span><span>✓ ekran görüntüleri ve fotoğraflar tek yerde</span><span>✓ kaydettiğine hızlı geri dönüş</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="use-cases section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">Örnekler</span>
+          <h2>Gerçekten ekran görüntüsüyle sakladığın şeyler için.</h2>
+        </div>
+        <div class="use-case-grid"><div class="use-case">
+            <span aria-hidden="true">▤</span>
+            <strong>Fişler</strong>
+            <small>faturalar ve belgeler</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">✈</span>
+            <strong>Seyahat</strong>
+            <small>biletler, adresler, rezervasyonlar</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☕</span>
+            <strong>Tarifler</strong>
+            <small>internetten ve aile sohbetlerinden</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">◈</span>
+            <strong>Fikirler</strong>
+            <small>ilham ve araştırma</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">Aa</span>
+            <strong>Çalışma</strong>
+            <small>kelimeler, notlar, materyaller</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☺</span>
+            <strong>Memler</strong>
+            <small>çünkü komik dağınıklık da biraz düzen ister</small>
+          </div></div>
+      </section>
+
+      <section id="ozellikler" class="features section-shell">
+        <div class="feature-layout">
+          <div class="feature-copy">
+            <span class="kicker">Özellikler</span>
+            <h2>Ekran görüntülerini düzenlemek için gereken her şey. Dramasız.</h2>
+            <div class="feature-list"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">＋</span>
+            <h3>Ekran görüntüsü ve fotoğraf ekle</h3>
+            <p>İçeriği Clip'lerin içinde topla, konu büyüdükçe eklemeye devam et.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">⇪</span>
+            <h3>PDF olarak dışa aktar</h3>
+            <p>Bir Clip'i göndermek veya uygulama dışında saklamak istediğinde temiz bir dosyaya dönüştür.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">♡</span>
+            <h3>Önemli olanı işaretle</h3>
+            <p>Eskiden sadece kaydırma ve iç çekme olan yerde favoriler, işaretler ve düzen.</p>
+          </article></div>
+          </div>
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Ekran görüntüsü, fotoğraf ekleme ve PDF dışa aktarma eylemleriyle Clip detayı" loading="lazy" src="../screens/detail.webp">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gizlilik" class="privacy section-shell compact">
+        <div class="privacy-card">
+          <div>
+            <span class="kicker light">Gizlilik</span>
+            <h2>Ekran görüntülerin sende kalır.</h2>
+            <p>ScreenClips yerelde çalışır. Düzen kurmak için hesap açmana ya da fişlerini, notlarını ve planlarını başka bir hizmete teslim etmene gerek yok.</p>
+          </div>
+          <div class="privacy-points"><span>Hesap yok</span><span>Bulut yok</span><span>Reklam yok</span></div>
+        </div>
+      </section>
+
+      <section class="premium section-shell">
+        <div class="premium-copy">
+          <span class="kicker">Premium</span>
+          <h2>Düzenli başla. ScreenClips kendi sistemin olduğunda daha fazla alan aç.</h2>
+          <p>Premium uygulamayı karmaşıklaştırmaz. Kitaplıklar, Clip'ler ve ekran görüntüleri için daha fazla alan verir. Fiyat App Store'da gösterilir.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="ScreenClips'i App Store'dan indir">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>App Store'dan</small><strong>indir</strong></span>
+          </a>
+        </div>
+        <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="ScreenClips Premium ekranı" loading="lazy" src="../screens/paywall1.webp">
+            </div>
+          </div>
+      </section>
+
+      <section class="faq section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">SSS</span>
+          <h2>Kısa cevaplar, çünkü hayat zaten yeterince uzun.</h2>
+        </div>
+        <div class="faq-list"><details open>
+            <summary>ScreenClips galerimdeki fotoğrafları siler mi?</summary>
+            <p>Hayır. Bir görüntüyü Clip'ten kaldırmak Fotoğraflar'daki orijinali silmez.</p>
+          </details>
+<details>
+            <summary>Uygulama internetsiz çalışır mı?</summary>
+            <p>Evet. ScreenClips iPhone'unda yerel çalışan bir düzenleyici olarak tasarlandı.</p>
+          </details>
+<details>
+            <summary>Hesap açmam gerekiyor mu?</summary>
+            <p>Hayır. ScreenClips, Clip'lerini düzenlemek için hesap gerektirmez.</p>
+          </details>
+<details>
+            <summary>Normal fotoğraflar da ekleyebilir miyim?</summary>
+            <p>Evet. Bir Clip'e ait olduklarında ekran görüntülerini ve fotoğrafları ekleyebilirsin.</p>
+          </details></div>
+      </section>
+
+      <section class="final-cta section-shell">
+        <div class="final-card">
+          <div class="app-icon" aria-hidden="true"></div>
+          <h2>Ekran görüntüsü aramayı bırak. Onlara geri dönmeye başla.</h2>
+          <p>ScreenClips “sonra bakarım” diye sakladığın şeyleri düzenler. Bu kez sonra gerçekten bulunabilir.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="ScreenClips'i App Store'dan indir">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>App Store'dan</small><strong>indir</strong></span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html">Gizlilik</a>
+          <a href="./terms.html">Koşullar</a>
+          <a href="mailto:screenclips@screenclips.app">İletişim</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
