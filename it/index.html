@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it" data-lang="it" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-it="./">
+<html lang="it" data-lang="it" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-it="./" data-lang-target-fr="../fr/">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,7 @@
     <link rel="alternate" hreflang="de" href="https://screenclips.app/de/">
     <link rel="alternate" hreflang="es" href="https://screenclips.app/es/">
     <link rel="alternate" hreflang="it" href="https://screenclips.app/it/">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/">
     <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
     <title>ScreenClips — gli screenshot non spariscono più in Foto</title>
     <script>
@@ -24,9 +25,10 @@
           en: html.dataset.langTargetEn,
           de: html.dataset.langTargetDe,
           es: html.dataset.langTargetEs,
-          it: html.dataset.langTargetIt
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr
         };
-        const supported = ['pl', 'en', 'de', 'es', 'it'];
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -37,14 +39,14 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it'));
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
       })();
     </script>
-    <link rel="stylesheet" href="../styles.css?v=20260704-it">
+    <link rel="stylesheet" href="../styles.css?v=20260705-fr">
   </head>
   <body>
     <main>
@@ -63,6 +65,7 @@
             <a href="../de/" hreflang="de" lang="de" data-lang-switch="de">DE</a>
             <a href="../es/" hreflang="es" lang="es" data-lang-switch="es">ES</a>
             <a href="./" hreflang="it" lang="it" data-lang-switch="it" aria-current="page">IT</a>
+            <a href="../fr/" hreflang="fr" lang="fr" data-lang-switch="fr">FR</a>
           </div>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips su Facebook">
             <span aria-hidden="true">f</span>
@@ -94,7 +97,7 @@
           <div class="phone hero-phone">
             <div class="phone-frame">
               <span class="phone-island"></span>
-              <img alt="Schermata principale di ScreenClips con librerie e Clip" loading="lazy" src="../screens/home.webp">
+              <img alt="Schermata principale di ScreenClips con librerie e Clip" loading="lazy" src="../screens/it-home.png">
             </div>
           </div>
           <div class="floating-card card-right"><strong>Clip con contesto</strong><small>Nome, nota, screenshot</small></div>
@@ -148,7 +151,7 @@
           <div class="phone ">
             <div class="phone-frame">
               <span class="phone-island"></span>
-              <img alt="Elenco delle Clip in ScreenClips" loading="lazy" src="../screens/clips.webp">
+              <img alt="Elenco delle Clip in ScreenClips" loading="lazy" src="../screens/it-clips.png">
             </div>
           </div>
           <div class="showcase-copy">
@@ -221,7 +224,7 @@
           <div class="phone ">
             <div class="phone-frame">
               <span class="phone-island"></span>
-              <img alt="Dettaglio di una Clip con azioni per aggiungere screenshot, foto ed esportare in PDF" loading="lazy" src="../screens/detail.webp">
+              <img alt="Dettaglio di una Clip con azioni per aggiungere screenshot, foto ed esportare in PDF" loading="lazy" src="../screens/it-detail.png">
             </div>
           </div>
         </div>
@@ -251,7 +254,7 @@
         <div class="phone ">
             <div class="phone-frame">
               <span class="phone-island"></span>
-              <img alt="Schermata Premium di ScreenClips" loading="lazy" src="../screens/paywall1.webp">
+              <img alt="Schermata Premium di ScreenClips" loading="lazy" src="../screens/it-paywall.png">
             </div>
           </div>
       </section>

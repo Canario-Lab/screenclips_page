@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it" data-lang="it" data-lang-target-pl="../terms.html" data-lang-target-en="../en/terms.html" data-lang-target-de="../de/terms.html" data-lang-target-es="../es/terms.html" data-lang-target-it="./terms.html">
+<html lang="it" data-lang="it" data-lang-target-pl="../terms.html" data-lang-target-en="../en/terms.html" data-lang-target-de="../de/terms.html" data-lang-target-es="../es/terms.html" data-lang-target-it="./terms.html" data-lang-target-fr="../fr/terms.html">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
     <link rel="alternate" hreflang="de" href="https://screenclips.app/de/terms.html">
     <link rel="alternate" hreflang="es" href="https://screenclips.app/es/terms.html">
     <link rel="alternate" hreflang="it" href="https://screenclips.app/it/terms.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/terms.html">
     <title>Condizioni — ScreenClips</title>
     <script>
       (() => {
@@ -20,9 +21,10 @@
           en: html.dataset.langTargetEn,
           de: html.dataset.langTargetDe,
           es: html.dataset.langTargetEs,
-          it: html.dataset.langTargetIt
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr
         };
-        const supported = ['pl', 'en', 'de', 'es', 'it'];
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr'];
         const key = 'screenclips-language';
         let stored = null;
         try { stored = localStorage.getItem(key); } catch (_) {}
@@ -33,14 +35,14 @@
         });
         if (supported.includes(stored)) return;
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it'));
-        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : 'en';
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : 'en';
         if (current === 'pl' && preferred !== current && targets[preferred]) {
           window.location.replace(targets[preferred] + window.location.hash);
         }
       })();
     </script>
-    <link rel="stylesheet" href="../styles.css?v=20260704-it">
+    <link rel="stylesheet" href="../styles.css?v=20260705-fr">
   </head>
   <body class="legal-page">
     <main class="legal-shell">
@@ -57,6 +59,7 @@
             <a href="../de/terms.html" hreflang="de" lang="de" data-lang-switch="de">DE</a>
             <a href="../es/terms.html" hreflang="es" lang="es" data-lang-switch="es">ES</a>
             <a href="./terms.html" hreflang="it" lang="it" data-lang-switch="it" aria-current="page">IT</a>
+            <a href="../fr/terms.html" hreflang="fr" lang="fr" data-lang-switch="fr">FR</a>
           </div>
           <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips su Facebook">
             <span aria-hidden="true">f</span>

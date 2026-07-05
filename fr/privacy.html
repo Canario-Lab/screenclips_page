@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr" data-lang="fr" data-lang-target-pl="../privacy.html" data-lang-target-en="../en/privacy.html" data-lang-target-de="../de/privacy.html" data-lang-target-es="../es/privacy.html" data-lang-target-it="../it/privacy.html" data-lang-target-fr="./privacy.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="thème-color" content="#F4EEE4">
+    <meta name="description" content="Politique de confidentialité de l'app ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/privacy.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/privacy.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/privacy.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/privacy.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/privacy.html">
+    <title>Politique de confidentialité — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-fr">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Navigation du document">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Retour à l'accueil</a>
+          <div class="language-switcher" aria-label="Langue">
+            <a href="../privacy.html" hreflang="pl" lang="pl" data-lang-switch="pl">PL</a>
+            <a href="../en/privacy.html" hreflang="en" lang="en" data-lang-switch="en">EN</a>
+            <a href="../de/privacy.html" hreflang="de" lang="de" data-lang-switch="de">DE</a>
+            <a href="../es/privacy.html" hreflang="es" lang="es" data-lang-switch="es">ES</a>
+            <a href="../it/privacy.html" hreflang="it" lang="it" data-lang-switch="it">IT</a>
+            <a href="./privacy.html" hreflang="fr" lang="fr" data-lang-switch="fr" aria-current="page">FR</a>
+          </div>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips sur Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Politique de confidentialité</h1>
+          <p>Date d'entrée en vigueur: 16 juin 2026</p>
+          <p>Version: 1.0</p>
+          <h2>1) Responsable du traitement</h2>
+          <p>Le responsable des données personnelles est Canario-Lab / l'app ScreenClips.</p>
+          <p>ScreenClips est une app locale pour iOS qui organise les captures d’écran en Clips et en bibliothèques. L'app ne demande ni compte utilisateur ni inscription.</p>
+          <h2>2) Données enregistrées localement</h2>
+          <p>Les données créées dans l'app, notamment les Clips, bibliothèques, notes, icônes, captures d’écran, réglages de langue, réglages Face ID et informations de sauvegarde, sont stockées localement sur l'appareil de l'utilisateur ou dans le conteneur local App Group partagé par l'app principale et l'extension de partage.</p>
+          <p>Ces données ne sont pas envoyées automatiquement a Canario-Lab ni à des serveurs de Canario-Lab.</p>
+          <h2>3) Photos, captures et Share Extension</h2>
+          <p>L'app utilise l'accès à Photos uniquement pour ajouter à un Clip les images choisies par l'utilisateur. ScreenClips enregistre sa propre copie optimisée de la capture pour l'utiliser dans l'app.</p>
+          <p>Supprimer une capture d'un Clip la supprime seulement des données de ScreenClips. Cela ne supprime pas la photo originale de la photothèque de l'utilisateur.</p>
+          <p>La Share Extension permet d'envoyer vers ScreenClips des images sélectionnées depuis la feuille de partage du système. L'extension écrit les données dans le même stockage local via l'App Group group.com.canario-lab.screenclip.shared.</p>
+          <h2>4) Sauvegardes, exportation et partage</h2>
+          <p>Une sauvegarde crée un fichier local .screenclipbackup contenant les Clips, bibliothèques, captures et réglages de l'app. Le fichier est enregistré ou partagé via les mécanismes système choisis par l'utilisateur.</p>
+          <p>Restaurer une sauvegarde remplace l'état local actuel de l'app par les données du fichier sélectionné. L'utilisateur est responsable de la conservation et de la protection des fichiers de sauvegarde exportés, des PDF et de tout autre contenu partagé en dehors de l'app.</p>
+          <h2>5) Face ID et sécurité de l'appareil</h2>
+          <p>Si l'utilisateur active le verrouillage par Face ID, l'authentification est gérée par iOS via LocalAuthentication. ScreenClips ne reçoit et ne conserve aucune donnée biométrique.</p>
+          <p>Comme les données de l'app sont stockées localement, protéger l'appareil avec un code, Face ID ou d'autres mécanismes système reste une partie importante de la sécurité.</p>
+          <h2>6) Achats Premium, Apple et RevenueCat</h2>
+          <p>ScreenClips peut proposer l'accès Premium sous forme d'achat Lifetime unique sur l'App Store. L'app ne propose pas d'abonnement mensuel ou annuel ni de période d'essai.</p>
+          <p>Les paiements sont gérés par Apple via l'App Store et StoreKit. ScreenClips utilise RevenueCat pour afficher l'offre, vérifier l'entitlement ScreenClips Pro, restaurer les achats et afficher dans l'app l'identifiant technique RevenueCat.</p>
+          <p>Dans ce cadre, Apple et RevenueCat peuvent traiter des données techniques d'achat, comme les identifiants de transaction, les identifiants de produit, le statut de l'accès Premium et un identifiant anonyme de l'utilisateur de l'app servant à confirmer l'accès.</p>
+          <p>Canario-Lab ne traite pas les données de carte de paiement de l'utilisateur.</p>
+          <h2>7) Destinataires des données</h2>
+          <p>Les données peuvent être traitées par des services externes uniquement dans la mesure nécessaire aux fonctions choisies par l'utilisateur ou à la gestion des achats:</p>
+          <ul>
+            <li>Apple, pour l'App Store, StoreKit, les paiements, les sélecteurs de fichiers système, Photos, Face ID et le partage.</li>
+            <li>RevenueCat, pour gérer l'offre, vérifier Premium et restaurer l'achat Lifetime.</li>
+            <li>Les fournisseurs système choisis par l'utilisateur, si l'utilisateur exporte un PDF, une sauvegarde ou partage un fichier en dehors de ScreenClips.</li>
+            <li>Les autorités publiques, lorsque la loi applicable l'exige.</li>
+          </ul>
+          <h2>8) Durée de conservation</h2>
+          <p>Les données enregistrées dans ScreenClips restent localement jusqu'à ce que l'utilisateur les supprime, restaure une autre sauvegarde, désinstalle l'app ou que les données soient supprimées par les mécanismes système d'iOS.</p>
+          <p>Les sauvegardes exportées, PDF et fichiers partagés hors de l'app restent sous le contrôle de l'utilisateur et des services auxquels ils ont été envoyés.</p>
+          <p>Les données d'achat gérées par Apple et RevenueCat sont conservées selon les politiques de ces services.</p>
+          <h2>9) Droits de l'utilisateur</h2>
+          <p>Si Canario-Lab traite des données personnelles de l'utilisateur dans un cas précis, par exemple lors d'un contact avec l'assistance, l'utilisateur peut demander l'accès, la rectification, l'effacement, la limitation du traitement, l'opposition au traitement et déposer une réclamation auprès de l'autorité de contrôle compétente.</p>
+          <p>Pour toute question relative à la confidentialité, utilisez le canal de contact indiqué dans l'App Store ou dans l'app.</p>
+          <h2>10) Modifications de cette politique</h2>
+          <p>Cette Politique de confidentialité peut être mise à jour en fonction des changements apportés aux fonctions de ScreenClips, au modèle de paiement ou aux exigences légales. La version actuelle sera disponible dans l'app.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html" aria-current="page">Confidentialité</a>
+          <a href="./terms.html">Conditions</a>
+          <a href="mailto:screenclips@screenclips.app">Contact</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
