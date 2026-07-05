@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fi" data-lang="fi" data-lang-target-pl="../terms.html" data-lang-target-en="../en/terms.html" data-lang-target-de="../de/terms.html" data-lang-target-es="../es/terms.html" data-lang-target-it="../it/terms.html" data-lang-target-fr="../fr/terms.html" data-lang-target-tr="../tr/terms.html" data-lang-target-uk="../uk/terms.html" data-lang-target-sv="../sv/terms.html" data-lang-target-no="../no/terms.html" data-lang-target-fi="./terms.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="ScreenClips-sovelluksen käyttöehdot.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/terms.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/terms.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/terms.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/terms.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/terms.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/terms.html">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/terms.html">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/terms.html">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/terms.html">
+    <link rel="alternate" hreflang="no" href="https://screenclips.app/no/terms.html">
+    <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/terms.html">
+    <title>Ehdot — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk,
+          sv: html.dataset.langTargetSv,
+          no: html.dataset.langTargetNo,
+          fi: html.dataset.langTargetFi
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Asiakirjan navigointi">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Takaisin etusivulle</a>
+          <details class="language-switcher" aria-label="Kieli">
+            <summary aria-label="Kieli"><span class="language-current"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></span></summary>
+            <div class="language-menu">
+              <a href="../terms.html" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/terms.html" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/terms.html" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/terms.html" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/terms.html" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/terms.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../tr/terms.html" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/terms.html" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="../sv/terms.html" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+              <a href="../no/terms.html" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
+              <a href="./terms.html" hreflang="fi" lang="fi" data-lang-switch="fi" aria-current="page"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips Facebookissa">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>ScreenClipsin käyttöehdot</h1>
+          <p>Voimassa alkaen: 16.06.2026</p>
+          <p>Versio: 1.0</p>
+          <h2>1. Palveluntarjoaja</h2>
+          <p>ScreenClips-sovelluksen tarjoaja on Canario-Lab.</p>
+          <p>Nämä ehdot koskevat sovelluksen käyttöä, mukaan lukien maksuttomat ominaisuudet, Premium, varmuuskopiot, vienti ja jakolaajennus.</p>
+          <h2>2. Sovelluksen luonne</h2>
+          <p>ScreenClips on paikallinen iOS-työkalu kuvakaappausten järjestämiseen Clipeiksi ja kirjastoiksi. Sovellus auttaa kokoamaan kuvat, muistiinpanot ja kontekstin niin, että materiaaliin on helpompi palata.</p>
+          <p>ScreenClips ei ole pilvipalvelu, ulkoinen tallennuspalvelu, sosiaalinen verkosto, tekijänoikeuksien hallintatyökalu eikä palvelu, joka takaa pysyvän arkistoinnin käyttäjän laitteen ulkopuolella.</p>
+          <h2>3. Tekniset vaatimukset</h2>
+          <p>Sovelluksen käyttö edellyttää yhteensopivaa Apple-laitetta ja sovelluksen tukemaa iOS-versiota.</p>
+          <p>Osa ominaisuuksista voi edellyttää pääsyä Kuviin, järjestelmän jakonäkymään, tiedostoihin, Face ID:hen, App Storeen, Apple ID:hen tai internetyhteyteen, erityisesti Premiumin ostamisen tai palauttamisen yhteydessä.</p>
+          <h2>4. Käyttäjän tiedot ja vastuu sisällöstä</h2>
+          <p>Käyttäjä vastaa sovellukseen lisäämistään kuvakaappauksista, muistiinpanoista, Clipien nimistä, kirjastoista ja muusta materiaalista sekä oikeudesta tallentaa, viedä ja jakaa kyseistä materiaalia.</p>
+          <p>Kuvakaappauksen poistaminen Clipistä ei poista alkuperäistä kuvaa Kuvat-kirjastosta. ScreenClipsin tietojen poistaminen voi kuitenkin poistaa sovelluksen tallentaman paikallisen kopion.</p>
+          <h2>5. Varmuuskopiot ja vienti</h2>
+          <p>ScreenClips-varmuuskopio on paikallinen .screenclipbackup-tiedosto, joka luodaan käyttäjän pyynnöstä. Varmuuskopion palauttaminen korvaa sovelluksen nykyisen tilan valitun tiedoston tiedoilla.</p>
+          <p>Käyttäjä vastaa varmuuskopioiden, PDF-tiedostojen ja muiden vientien turvallisesta säilyttämisestä sekä seurauksista, jos ne lähetetään ulkoisiin palveluihin, kuten iCloud Driveen, sähköpostiin, viestisovelluksiin tai muihin sovelluksiin.</p>
+          <h2>6. Maksuton versio ja Premium</h2>
+          <p>ScreenClips on freemium-sovellus. Maksuttomassa versiossa on kapasiteettirajat: enintään 2 kirjastoa, 5 Clipiä ja yhteensä 20 kuvakaappausta.</p>
+          <p>ScreenClips Premium avaa kirjastojen, Clipien ja kuvakaappausten rajat. Premium ei muuta sovelluksen paikallista luonnetta eikä luo ulkoista kopiota käyttäjän tiedoista.</p>
+          <h2>7. Lifetime-osto ja maksut</h2>
+          <p>ScreenClipsin tarkoitettu maksullinen malli on App Storessa tehtävä kertaluonteinen Lifetime-osto, jonka Apple käsittelee ja RevenueCat varmistaa.</p>
+          <p>Sovellus ei tarjoa kuukausi- tai vuositilauksia eikä kokeilujaksoa. Lifetime-osto ei uusiudu automaattisesti.</p>
+          <p>Maksu veloitetaan käyttäjän Apple ID:ltä oston vahvistamisen jälkeen. Canario-Lab ei käsittele käyttäjän maksukorttitietoja.</p>
+          <h2>8. Oston palauttaminen</h2>
+          <p>Käyttäjä voi palauttaa Lifetime-oston yhteensopivalla Apple-laitteella sovelluksessa olevien Applen ja RevenueCatin mekanismien avulla.</p>
+          <p>Premium-käyttöoikeus vahvistetaan RevenueCatin palauttaman ScreenClips Pro -oikeuden perusteella. Käyttöoikeus voi edellyttää internetyhteyttä ja App Storen tai RevenueCatin oikeaa määritystä.</p>
+          <h2>9. Saatavuus ja muutokset</h2>
+          <p>Canario-Lab pyrkii siihen, että sovellus toimii oikein, mutta ScreenClips tarjotaan sellaisenaan ja se voi sisältää virheitä, rajoituksia tai tilapäisiä katkoksia.</p>
+          <p>Sovelluksen ominaisuudet, maksuttoman version rajat, Premium-tarjous ja nämä ehdot voivat muuttua tuotteen kehittyessä, App Storen vaatimusten muuttuessa tai oikeudellisten vaatimusten muuttuessa.</p>
+          <h2>10. Vastuu</h2>
+          <p>Lain sallimissa rajoissa Canario-Lab ei vastaa tietojen menetyksestä, joka johtuu sovelluksen poistamisesta, laitteen vahingoittumisesta, varmuuskopion virheellisestä käytöstä, tiedostojen vahingossa jakamisesta, ulkoisten palveluiden toiminnasta tai siitä, ettei käyttäjällä ole omaa varmuuskopiota.</p>
+          <p>Käyttäjän tulee itse suojata tärkeä materiaali ja säilyttää kopiot tiedostoista, jotka hän haluaa pitää pitkällä aikavälillä.</p>
+          <h2>11. Loppumääräykset</h2>
+          <p>Näissä ehdoissa käsittelemättömiin asioihin sovelletaan asiaankuuluvaa lakia.</p>
+          <p>Jos jokin ehtojen kohta todetaan pätemättömäksi, muut kohdat pysyvät voimassa.</p>
+          <p>Ehtojen ajantasainen versio on saatavilla sovelluksessa.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="privacy.html">Yksityisyys</a>
+          <a href="terms.html" aria-current="page">Ehdot</a>
+          <a href="mailto:screenclips@screenclips.app">Yhteystiedot</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

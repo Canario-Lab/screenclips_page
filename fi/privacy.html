@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fi" data-lang="fi" data-lang-target-pl="../privacy.html" data-lang-target-en="../en/privacy.html" data-lang-target-de="../de/privacy.html" data-lang-target-es="../es/privacy.html" data-lang-target-it="../it/privacy.html" data-lang-target-fr="../fr/privacy.html" data-lang-target-tr="../tr/privacy.html" data-lang-target-uk="../uk/privacy.html" data-lang-target-sv="../sv/privacy.html" data-lang-target-no="../no/privacy.html" data-lang-target-fi="./privacy.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="ScreenClips-sovelluksen tietosuojakäytäntö.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/privacy.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/privacy.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/privacy.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/privacy.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/privacy.html">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/privacy.html">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/privacy.html">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/privacy.html">
+    <link rel="alternate" hreflang="no" href="https://screenclips.app/no/privacy.html">
+    <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/privacy.html">
+    <title>Tietosuojakäytäntö — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          pl: html.dataset.langTargetPl,
+          en: html.dataset.langTargetEn,
+          de: html.dataset.langTargetDe,
+          es: html.dataset.langTargetEs,
+          it: html.dataset.langTargetIt,
+          fr: html.dataset.langTargetFr,
+          tr: html.dataset.langTargetTr,
+          uk: html.dataset.langTargetUk,
+          sv: html.dataset.langTargetSv,
+          no: html.dataset.langTargetNo,
+          fi: html.dataset.langTargetFi
+        };
+        const supported = ['pl', 'en', 'de', 'es', 'it', 'fr', 'tr', 'uk', 'sv', 'no', 'fi'];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi'));
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Asiakirjan navigointi">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Takaisin etusivulle</a>
+          <details class="language-switcher" aria-label="Kieli">
+            <summary aria-label="Kieli"><span class="language-current"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></span></summary>
+            <div class="language-menu">
+              <a href="../privacy.html" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/privacy.html" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/privacy.html" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/privacy.html" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../it/privacy.html" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/privacy.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../tr/privacy.html" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/privacy.html" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="../sv/privacy.html" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+              <a href="../no/privacy.html" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
+              <a href="./privacy.html" hreflang="fi" lang="fi" data-lang-switch="fi" aria-current="page"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips Facebookissa">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+      <article class="legal-card">
+        <h1>Tietosuojakäytäntö</h1>
+          <p>Voimassa alkaen: 16.06.2026</p>
+          <p>Versio: 1.0</p>
+          <h2>1) Rekisterinpitäjä</h2>
+          <p>Rekisterinpitäjä on Canario-Lab / ScreenClips-sovellus.</p>
+          <p>ScreenClips on paikallinen iOS-sovellus kuvakaappausten järjestämiseen Clipeiksi ja kirjastoiksi. Sovellus ei edellytä käyttäjätiliä eikä rekisteröitymistä.</p>
+          <h2>2) Paikallisesti tallennetut tiedot</h2>
+          <p>Sovelluksessa luodut tiedot, kuten Clipit, kirjastot, muistiinpanot, kuvakkeet, kuvakaappaukset, kieliasetukset, Face ID -asetukset ja varmuuskopioihin liittyvät tiedot, tallennetaan paikallisesti käyttäjän laitteelle tai sovelluksen ja jakolaajennuksen käyttämään paikalliseen App Group -säilöön.</p>
+          <p>Näitä tietoja ei lähetetä automaattisesti Canario-Labille tai Canario-Labin palvelimille.</p>
+          <h2>3) Kuvat, kuvakaappaukset ja Share Extension</h2>
+          <p>Sovellus käyttää Kuvat-kirjaston käyttöoikeutta vain siinä määrin kuin käyttäjän valitsemien kuvien lisääminen Clipiin edellyttää. ScreenClips tallentaa sovelluksen käyttöä varten oman optimoidun kopion kuvakaappauksesta.</p>
+          <p>Kun kuvakaappaus poistetaan Clipistä, se poistetaan vain ScreenClipsin tiedoista. Alkuperäistä kuvaa käyttäjän Kuvat-kirjastosta ei poisteta.</p>
+          <p>Share Extension mahdollistaa valittujen kuvien lähettämisen järjestelmän jakonäkymästä ScreenClipsiin. Laajennus kirjoittaa tiedot samaan paikalliseen storeen App Groupin group.com.canario-lab.screenclip.shared kautta.</p>
+          <h2>4) Varmuuskopiot, vienti ja jakaminen</h2>
+          <p>Varmuuskopio luo paikallisen .screenclipbackup-tiedoston, joka sisältää Clipit, kirjastot, kuvakaappaukset ja sovelluksen asetukset. Tiedosto tallennetaan tai jaetaan käyttäjän valitsemilla järjestelmätoiminnoilla.</p>
+          <p>Varmuuskopiosta palauttaminen korvaa sovelluksen nykyisen paikallisen tilan valitun tiedoston tiedoilla. Käyttäjä vastaa sovelluksen ulkopuolelle vietyjen varmuuskopioiden, PDF-tiedostojen ja muun materiaalin säilyttämisestä ja suojaamisesta.</p>
+          <h2>5) Face ID ja laitteen suojaus</h2>
+          <p>Jos käyttäjä ottaa Face ID -lukituksen käyttöön, iOS hoitaa tunnistautumisen LocalAuthenticationin kautta. ScreenClips ei vastaanota eikä tallenna biometrisiä tietoja.</p>
+          <p>Koska sovelluksen tiedot säilytetään paikallisesti, itse laitteen suojaaminen pääsykoodilla, Face ID:llä tai muilla järjestelmän turvatoiminnoilla on tärkeää.</p>
+          <h2>6) Premium-ostot, Apple ja RevenueCat</h2>
+          <p>ScreenClips voi tarjota Premiumin App Storessa kertaluonteisena Lifetime-ostona. Sovellus ei tarjoa kuukausi- tai vuositilauksia eikä kokeilujaksoa.</p>
+          <p>Maksut käsittelee Apple App Storen ja StoreKitin kautta. ScreenClips käyttää RevenueCatia tarjouksen näyttämiseen, ScreenClips Pro -oikeuden varmistamiseen, ostojen palauttamiseen ja teknisen RevenueCat ID:n näyttämiseen sovelluksessa.</p>
+          <p>Tässä yhteydessä Apple ja RevenueCat voivat käsitellä teknisiä ostotietoja, kuten tapahtumatunnuksia, tuotetunnuksia, Premium-käyttöoikeuden tilaa ja anonyymiä sovelluksen käyttäjätunnusta, jota käytetään käyttöoikeuden vahvistamiseen.</p>
+          <p>Canario-Lab ei käsittele käyttäjän maksukorttitietoja.</p>
+          <h2>7) Tietojen vastaanottajat</h2>
+          <p>Tietoja voivat käsitellä ulkoiset palvelut vain käyttäjän valitsemien toimintojen tai ostojen toiminnan edellyttämässä laajuudessa:</p>
+          <ul>
+            <li>Apple, App Storen, StoreKitin, maksujen, järjestelmän tiedostovalitsimen, Kuvien, Face ID:n ja jakamisen yhteydessä.</li>
+            <li>RevenueCat, tarjouksen hallintaan, Premiumin vahvistamiseen ja Lifetime-oston palauttamiseen.</li>
+            <li>Järjestelmäpalvelut, jotka käyttäjä itse valitsee, kun PDF, varmuuskopio tai muu tiedosto viedään tai jaetaan ScreenClipsin ulkopuolelle.</li>
+            <li>Viranomaiset, jos sovellettava laki sitä edellyttää.</li>
+          </ul>
+          <h2>8) Säilytysaika</h2>
+          <p>ScreenClipsiin tallennetut tiedot säilyvät paikallisesti, kunnes käyttäjä poistaa ne, palauttaa toisen varmuuskopion, poistaa sovelluksen tai iOS:n mekanismit poistavat tiedot.</p>
+          <p>Sovelluksen ulkopuolelle viedyt varmuuskopiot, PDF-tiedostot ja jaetut tiedostot ovat käyttäjän ja vastaanottavien palveluiden hallinnassa.</p>
+          <p>Applen ja RevenueCatin käsittelemät ostotiedot säilytetään näiden palveluiden omien sääntöjen mukaisesti.</p>
+          <h2>9) Käyttäjän oikeudet</h2>
+          <p>Jos Canario-Lab käsittelee henkilötietoja tietyssä tilanteessa, esimerkiksi tukiyhteydenoton yhteydessä, käyttäjä voi pyytää pääsyä tietoihin, oikaisua, poistamista, käsittelyn rajoittamista, vastustaa käsittelyä ja tehdä valituksen toimivaltaiselle valvontaviranomaiselle.</p>
+          <p>Tietosuoja-asioissa voi käyttää App Storessa tai sovelluksessa ilmoitettua yhteydenottokanavaa.</p>
+          <h2>10) Käytännön muutokset</h2>
+          <p>Tietosuojakäytäntöä voidaan päivittää, kun ScreenClipsin ominaisuudet, maksullinen malli tai oikeudelliset vaatimukset muuttuvat. Ajantasainen versio on saatavilla sovelluksessa.</p>
+      </article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="privacy.html" aria-current="page">Yksityisyys</a>
+          <a href="terms.html">Ehdot</a>
+          <a href="mailto:screenclips@screenclips.app">Yhteystiedot</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
