@@ -130,6 +130,19 @@ main { overflow: hidden; }
   background: url("./assets/quebec-flag.svg") center / cover no-repeat;
   box-shadow: 0 0 0 1px rgba(33,25,19,.12);
 }
+.language-flag.catalonia-flag {
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #ffd800 0,
+    #ffd800 11.111%,
+    #da121a 11.111%,
+    #da121a 22.222%
+  );
+  box-shadow: 0 0 0 1px rgba(33,25,19,.12);
+}
 .language-menu {
   position: absolute;
   top: calc(100% + 8px);
