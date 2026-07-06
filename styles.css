@@ -157,6 +157,27 @@ main { overflow: hidden; }
   background: var(--soft);
 }
 
+[dir="rtl"] .nav-links {
+  padding-right: 0;
+  padding-left: 22px;
+}
+[dir="rtl"] .language-switcher summary::after {
+  margin-left: 0;
+  margin-right: 9px;
+}
+[dir="rtl"] .language-menu {
+  right: auto;
+  left: 0;
+}
+[dir="rtl"] .hero-copy,
+[dir="rtl"] .section-heading,
+[dir="rtl"] .showcase-copy,
+[dir="rtl"] .feature-copy,
+[dir="rtl"] .premium-copy,
+[dir="rtl"] .legal-card {
+  text-align: right;
+}
+
 .facebook-button {
   position: relative;
   width: 46px;
