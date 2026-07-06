@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" role="img" aria-label="Quebec flag">
+  <rect width="120" height="80" fill="#003da5"/>
+  <rect x="48" width="24" height="80" fill="#fff"/>
+  <rect y="28" width="120" height="24" fill="#fff"/>
+  <defs>
+    <g id="fleur" fill="#fff">
+      <path d="M0-14C5-8 7-4 7 1c0 5-3 8-7 11-4-3-7-6-7-11 0-5 2-9 7-15z"/>
+      <path d="M-2 4c-7-3-13 1-15 8 7 1 12-2 16-7z"/>
+      <path d="M2 4c7-3 13 1 15 8-7 1-12-2-16-7z"/>
+      <rect x="-2" y="8" width="4" height="11" rx="1"/>
+    </g>
+  </defs>
+  <g transform="translate(30 17) scale(.5)"><use href="#fleur"/></g>
+  <g transform="translate(90 17) scale(.5)"><use href="#fleur"/></g>
+  <g transform="translate(30 63) scale(.5)"><use href="#fleur"/></g>
+  <g transform="translate(90 63) scale(.5)"><use href="#fleur"/></g>
+</svg>

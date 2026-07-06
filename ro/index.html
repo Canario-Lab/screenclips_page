@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ro" data-lang="ro" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-es-mx="../es-mx/" data-lang-target-it="../it/" data-lang-target-fr="../fr/" data-lang-target-fr-ca="../fr-ca/" data-lang-target-tr="../tr/" data-lang-target-uk="../uk/" data-lang-target-ru="../ru/" data-lang-target-nl="../nl/" data-lang-target-ro="./" data-lang-target-cs="../cs/" data-lang-target-ja="../ja/" data-lang-target-vi="../vi/" data-lang-target-ko="../ko/" data-lang-target-sv="../sv/" data-lang-target-no="../no/" data-lang-target-da="../da/" data-lang-target-fi="../fi/" data-lang-target-el="../el/" data-lang-target-pt-pt="../pt-pt/" data-lang-target-pt-br="../pt-br/" data-lang-target-hu="../hu/" data-lang-target-zh-hans="../zh-hans/">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="ScreenClips transformă capturile de ecran răzlețe în Clipuri organizate, cu nume, notițe și biblioteci. Fără cont, fără cloud, fără haos.">
+    <meta property="og:title" content="ScreenClips — capturile de ecran nu se mai pierd în Poze">
+    <meta property="og:description" content="Transformă capturile răzlețe în Clipuri cu context, notițe și biblioteci.">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/">
+    <link rel="alternate" hreflang="es-MX" href="https://screenclips.app/es-mx/">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/">
+    <link rel="alternate" hreflang="fr-CA" href="https://screenclips.app/fr-ca/">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/">
+    <link rel="alternate" hreflang="ru" href="https://screenclips.app/ru/">
+    <link rel="alternate" hreflang="nl" href="https://screenclips.app/nl/">
+    <link rel="alternate" hreflang="ro" href="https://screenclips.app/ro/">
+    <link rel="alternate" hreflang="cs" href="https://screenclips.app/cs/">
+    <link rel="alternate" hreflang="ja" href="https://screenclips.app/ja/">
+    <link rel="alternate" hreflang="vi" href="https://screenclips.app/vi/">
+    <link rel="alternate" hreflang="ko" href="https://screenclips.app/ko/">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/">
+    <link rel="alternate" hreflang="no" href="https://screenclips.app/no/">
+    <link rel="alternate" hreflang="da" href="https://screenclips.app/da/">
+    <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/">
+    <link rel="alternate" hreflang="el" href="https://screenclips.app/el/">
+    <link rel="alternate" hreflang="pt-PT" href="https://screenclips.app/pt-pt/">
+    <link rel="alternate" hreflang="pt-BR" href="https://screenclips.app/pt-br/">
+    <link rel="alternate" hreflang="hu" href="https://screenclips.app/hu/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://screenclips.app/zh-hans/">
+    <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
+    <title>ScreenClips — capturile de ecran nu se mai pierd în Poze</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          "pl": html.dataset.langTargetPl,
+          "en": html.dataset.langTargetEn,
+          "de": html.dataset.langTargetDe,
+          "es": html.dataset.langTargetEs,
+          "es-mx": html.dataset.langTargetEsMx,
+          "it": html.dataset.langTargetIt,
+          "fr": html.dataset.langTargetFr,
+          "fr-ca": html.dataset.langTargetFrCa,
+          "tr": html.dataset.langTargetTr,
+          "uk": html.dataset.langTargetUk,
+          "ru": html.dataset.langTargetRu,
+          "nl": html.dataset.langTargetNl,
+          "ro": html.dataset.langTargetRo,
+          "cs": html.dataset.langTargetCs,
+          "ja": html.dataset.langTargetJa,
+          "vi": html.dataset.langTargetVi,
+          "ko": html.dataset.langTargetKo,
+          "sv": html.dataset.langTargetSv,
+          "no": html.dataset.langTargetNo,
+          "da": html.dataset.langTargetDa,
+          "fi": html.dataset.langTargetFi,
+          "el": html.dataset.langTargetEl,
+          "pt-pt": html.dataset.langTargetPtPt,
+          "pt-br": html.dataset.langTargetPtBr,
+          "hu": html.dataset.langTargetHu,
+          "zh-hans": html.dataset.langTargetZhHans
+        };
+        const supported = ["pl", "en", "de", "es", "es-mx", "it", "fr", "fr-ca", "tr", "uk", "ru", "nl", "ro", "cs", "ja", "vi", "ko", "sv", "no", "da", "fi", "el", "pt-pt", "pt-br", "hu", "zh-hans"];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('hu') || language.startsWith('da') || language.startsWith('ru') || language.startsWith('nl') || language.startsWith('ro') || language.startsWith('cs') || language.startsWith('ja') || language.startsWith('vi') || language.startsWith('ko') || language.startsWith('es-mx') || language.startsWith('es-419') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr-ca') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el') || language.startsWith('pt-br') || language.startsWith('pt-pt') || language.startsWith('pt') || language.startsWith('zh-cn') || language.startsWith('zh-hans') || language === 'zh');
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('hu') ? 'hu' : matched && matched.startsWith('da') ? 'da' : matched && matched.startsWith('ru') ? 'ru' : matched && matched.startsWith('nl') ? 'nl' : matched && matched.startsWith('ro') ? 'ro' : matched && matched.startsWith('cs') ? 'cs' : matched && matched.startsWith('ja') ? 'ja' : matched && matched.startsWith('vi') ? 'vi' : matched && matched.startsWith('ko') ? 'ko' : matched && (matched.startsWith('es-mx') || matched.startsWith('es-419')) ? 'es-mx' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr-ca') ? 'fr-ca' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : matched && matched.startsWith('pt-br') ? 'pt-br' : matched && matched.startsWith('pt-pt') ? 'pt-pt' : matched && matched.startsWith('pt') ? 'pt-br' : matched && (matched.startsWith('zh-cn') || matched.startsWith('zh-hans') || matched === 'zh') ? 'zh-hans' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body>
+    <main>
+      <nav class="nav" aria-label="Navigare principală">
+        <a class="brand" href="#top" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="nav-links">
+          <a href="#cum-functioneaza">Cum funcționează</a>
+          <a href="#features">Funcții</a>
+          <a href="#privacy">Confidențialitate</a>
+          <details class="language-switcher" aria-label="Limbă">
+            <summary aria-label="Limbă"><span class="language-current"><span class="language-flag" aria-hidden="true">🇷🇴</span><span>RO</span></span></summary>
+            <div class="language-menu">
+              <a href="../" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../es-mx/" hreflang="es-MX" lang="es-MX" data-lang-switch="es-mx"><span class="language-flag" aria-hidden="true">🇲🇽</span><span>MX</span></a>
+              <a href="../it/" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../fr-ca/" hreflang="fr-CA" lang="fr-CA" data-lang-switch="fr-ca"><span class="language-flag quebec-flag" aria-hidden="true"></span><span>CA</span></a>
+              <a href="../tr/" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="../ru/" hreflang="ru" lang="ru" data-lang-switch="ru"><span class="language-flag" aria-hidden="true">🇷🇺</span><span>RU</span></a>
+              <a href="../nl/" hreflang="nl" lang="nl" data-lang-switch="nl"><span class="language-flag" aria-hidden="true">🇳🇱</span><span>NL</span></a>
+              <a href="./" hreflang="ro" lang="ro" data-lang-switch="ro" aria-current="page"><span class="language-flag" aria-hidden="true">🇷🇴</span><span>RO</span></a>
+              <a href="../cs/" hreflang="cs" lang="cs" data-lang-switch="cs"><span class="language-flag" aria-hidden="true">🇨🇿</span><span>CS</span></a>
+              <a href="../ja/" hreflang="ja" lang="ja" data-lang-switch="ja"><span class="language-flag" aria-hidden="true">🇯🇵</span><span>JA</span></a>
+              <a href="../vi/" hreflang="vi" lang="vi" data-lang-switch="vi"><span class="language-flag" aria-hidden="true">🇻🇳</span><span>VI</span></a>
+              <a href="../ko/" hreflang="ko" lang="ko" data-lang-switch="ko"><span class="language-flag" aria-hidden="true">🇰🇷</span><span>KO</span></a>
+              <a href="../sv/" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+              <a href="../no/" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
+              <a href="../da/" hreflang="da" lang="da" data-lang-switch="da"><span class="language-flag" aria-hidden="true">🇩🇰</span><span>DA</span></a>
+              <a href="../fi/" hreflang="fi" lang="fi" data-lang-switch="fi"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+              <a href="../el/" hreflang="el" lang="el" data-lang-switch="el"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
+              <a href="../pt-pt/" hreflang="pt-PT" lang="pt-PT" data-lang-switch="pt-pt"><span class="language-flag" aria-hidden="true">🇵🇹</span><span>PT</span></a>
+              <a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang-switch="pt-br"><span class="language-flag" aria-hidden="true">🇧🇷</span><span>BR</span></a>
+              <a href="../hu/" hreflang="hu" lang="hu" data-lang-switch="hu"><span class="language-flag" aria-hidden="true">🇭🇺</span><span>HU</span></a>
+              <a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang-switch="zh-hans"><span class="language-flag" aria-hidden="true">🇨🇳</span><span>ZH</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips pe Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+          <a class="app-store-button nav-cta" href="https://apps.apple.com/app/id6771277332" aria-label="Descarcă ScreenClips din App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Descarcă din</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero section-shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Organizator de capturi de ecran pentru iPhone</div>
+          <h1>Capturile de ecran nu se mai pierd în Poze.</h1>
+          <p class="lead">Transformă capturile răzlețe în Clipuri cu nume, notiță și bibliotecă. Fără cont, fără cloud și fără căutări nesfârșite prin Poze.</p>
+          <div class="hero-actions">
+            <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Descarcă ScreenClips din App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Descarcă din</small><strong>App Store</strong></span>
+          </a>
+            <a class="secondary-link" href="#cum-functioneaza">Vezi cum funcționează</a>
+          </div>
+          <div class="trust-row" aria-label="Fără cont"><span>Fără cont</span><span>Funcționează local</span><span>Deblocare Premium o singură dată</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="Previzualizare a aplicației ScreenClips">
+          <div class="floating-card card-left"><strong>Biblioteci</strong><small>Rețete · Bilete · Învățare</small></div>
+          <div class="phone hero-phone">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Ecranul principal ScreenClips cu biblioteci și Clipuri" loading="lazy" src="../screens/home.webp">
+            </div>
+          </div>
+          <div class="floating-card card-right"><strong>Clipuri cu context</strong><small>Nume, notiță, capturi</small></div>
+        </div>
+      </section>
+
+      <section class="problem section-shell compact">
+        <div class="section-heading">
+          <span class="kicker">Problemă</span>
+          <h2>Aplicația Poze e bună pentru fotografii. Capturile importante au nevoie de mai mult.</h2>
+          <p>Chitanțe, rețete, bilete, idei și fragmente de articole ajung lângă selfie-uri, meme-uri și poze făcute din greșeală tavanului. Am ajuns în cloud, dar tot pierdem captura cu adresa hotelului.</p>
+        </div>
+        <div class="problem-grid"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">▣</span>
+            <h3>Capturile dispar în aglomerație</h3>
+            <p>Salvezi ceva important, iar peste o săptămână derulezi prin Poze ca printr-o arhivă de probe.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">✎</span>
+            <h3>Contextul dispare</h3>
+            <p>De multe ori, imaginea singură nu ajunge. În ScreenClips îi poți adăuga un nume și o notiță.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">☰</span>
+            <h3>Subiectele se amestecă</h3>
+            <p>Călătoriile, munca, cumpărăturile și învățarea merită locuri separate, nu o singură grămadă nesfârșită în Poze.</p>
+          </article></div>
+      </section>
+
+      <section id="cum-functioneaza" class="how section-shell">
+        <div class="section-heading narrow">
+          <span class="kicker">Cum funcționează</span>
+          <h2>Trei pași. Fără încă un sistem de administrat.</h2>
+        </div>
+        <div class="steps"><div class="step-card">
+            <span>01</span>
+            <h3>Creează o bibliotecă</h3>
+            <p>Separă subiecte precum rețete, chitanțe, bilete, cercetare, învățare sau orice altceva la care vrei să revii.</p>
+          </div>
+<div class="step-card">
+            <span>02</span>
+            <h3>Adaugă un Clip</h3>
+            <p>Un Clip este o mică grupare pentru un singur lucru. Are nume, descriere și propriile capturi de ecran.</p>
+          </div>
+<div class="step-card">
+            <span>03</span>
+            <h3>Revii fără să cauți</h3>
+            <p>Deschizi o bibliotecă, alegi un Clip, iar tot ce îți trebuie este deja la un loc.</p>
+          </div></div>
+        <div class="showcase-grid">
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Listă de Clipuri în ScreenClips" loading="lazy" src="../screens/clips.webp">
+            </div>
+          </div>
+          <div class="showcase-copy">
+            <span class="kicker">Din haos în context</span>
+            <h2>Biblioteci și Clipuri în locul unei singure grămezi în Poze.</h2>
+            <p>ScreenClips nu încearcă să ghicească în locul tău. Îți dă o structură simplă: o bibliotecă pentru subiect, un Clip pentru lucrul concret, iar înăuntru capturi sau fotografii.</p>
+            <div class="mini-list"><span>✓ numele și descrierea Clipului</span><span>✓ capturi și fotografii într-un singur loc</span><span>✓ revenire rapidă la materialele salvate</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="use-cases section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">Utilizări</span>
+          <h2>Pentru lucrurile pe care chiar le salvezi ca pe capturi de ecran.</h2>
+        </div>
+        <div class="use-case-grid"><div class="use-case">
+            <span aria-hidden="true">▤</span>
+            <strong>Chitanțe</strong>
+            <small>facturi, dovezi de cumpărare</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">✈</span>
+            <strong>Călătorii</strong>
+            <small>bilete, adrese, rezervări</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☕</span>
+            <strong>Rețete</strong>
+            <small>de pe web și din chat-urile familiei</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">◈</span>
+            <strong>Idei</strong>
+            <small>inspirație și cercetare</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">Aa</span>
+            <strong>Învățare</strong>
+            <small>vocabular, notițe, materiale</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☺</span>
+            <strong>Meme-uri</strong>
+            <small>fiindcă lumea se poate clătina, dar măcar poate fi amuzantă</small>
+          </div></div>
+      </section>
+
+      <section id="features" class="features section-shell">
+        <div class="feature-layout">
+          <div class="feature-copy">
+            <span class="kicker">Funcții</span>
+            <h2>Tot ce îți trebuie ca să ții capturile sub control. Fără dramă.</h2>
+            <div class="feature-list"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">＋</span>
+            <h3>Adaugă capturi și fotografii</h3>
+            <p>Strânge materiale în Clipuri și completează-le pe măsură ce subiectul crește.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">⇪</span>
+            <h3>Exportă în PDF</h3>
+            <p>Transformă un Clip într-un fișier ușor de citit când vrei să îl trimiți sau să îl păstrezi în afara aplicației.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">♡</span>
+            <h3>Marchează ce contează</h3>
+            <p>Favorite, marcaje și ordine acolo unde înainte era doar derulare fără sfârșit.</p>
+          </article></div>
+          </div>
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Ecran de detaliu al unui Clip cu captură, fotografie și export PDF" loading="lazy" src="../screens/detail.webp">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="privacy section-shell compact">
+        <div class="privacy-card">
+          <div>
+            <span class="kicker light">Confidențialitate</span>
+            <h2>Capturile tale rămân la tine.</h2>
+            <p>ScreenClips funcționează local. Nu ai nevoie de cont ca să faci ordine și nu trebuie să dai chitanțele, notițele și planurile tale unui alt serviciu care vrea neapărat să „îmbunătățească experiența”.</p>
+          </div>
+          <div class="privacy-points"><span>Fără cont</span><span>Fără cloud</span><span>Fără reclame</span></div>
+        </div>
+      </section>
+
+      <section class="premium section-shell">
+        <div class="premium-copy">
+          <span class="kicker">Premium</span>
+          <h2>Începe cu ordine. Deblochează mai mult spațiu când ScreenClips devine sistemul tău.</h2>
+          <p>Premium nu complică aplicația. Îți oferă mai mult spațiu pentru biblioteci, Clipuri și capturi. Prețul este afișat în App Store.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Descarcă ScreenClips din App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Descarcă din</small><strong>App Store</strong></span>
+          </a>
+        </div>
+        <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Ecran ScreenClips Premium" loading="lazy" src="../screens/paywall1.webp">
+            </div>
+          </div>
+      </section>
+
+      <section class="faq section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">FAQ</span>
+          <h2>Răspunsuri scurte, fiindcă viața este deja destul de lungă.</h2>
+        </div>
+        <div class="faq-list"><details open>
+            <summary>ScreenClips șterge fotografiile din biblioteca mea?</summary>
+            <p>Nu. Eliminarea unui element dintr-un Clip nu șterge originalul din Poze.</p>
+          </details>
+<details>
+            <summary>Aplicația funcționează offline?</summary>
+            <p>Da. ScreenClips este gândită ca un organizator local pe iPhone.</p>
+          </details>
+<details>
+            <summary>Trebuie să creez un cont?</summary>
+            <p>Nu. ScreenClips nu are nevoie de cont ca să îți organizeze Clipurile.</p>
+          </details>
+<details>
+            <summary>Pot adăuga și fotografii obișnuite?</summary>
+            <p>Da. Poți adăuga capturi și fotografii atunci când aparțin unui Clip.</p>
+          </details></div>
+      </section>
+
+      <section class="final-cta section-shell">
+        <div class="final-card">
+          <div class="app-icon" aria-hidden="true"></div>
+          <h2>Nu mai căuta capturi. Revino la ele direct.</h2>
+          <p>ScreenClips organizează lucrurile pe care le salvezi „pentru mai târziu”. De data asta, acel mai târziu chiar poate fi găsit.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Descarcă ScreenClips din App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Descarcă din</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html">Politica de confidențialitate</a>
+          <a href="./terms.html">Termeni</a>
+          <a href="mailto:screenclips@screenclips.app">Contact</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -123,6 +123,13 @@ main { overflow: hidden; }
   font-size: 16px;
   line-height: 1;
 }
+.language-flag.quebec-flag {
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  background: url("./assets/quebec-flag.svg") center / cover no-repeat;
+  box-shadow: 0 0 0 1px rgba(33,25,19,.12);
+}
 .language-menu {
   position: absolute;
   top: calc(100% + 8px);

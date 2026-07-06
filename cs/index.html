@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="cs" data-lang="cs" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-es-mx="../es-mx/" data-lang-target-it="../it/" data-lang-target-fr="../fr/" data-lang-target-fr-ca="../fr-ca/" data-lang-target-tr="../tr/" data-lang-target-uk="../uk/" data-lang-target-ru="../ru/" data-lang-target-nl="../nl/" data-lang-target-ro="../ro/" data-lang-target-cs="./" data-lang-target-ja="../ja/" data-lang-target-vi="../vi/" data-lang-target-ko="../ko/" data-lang-target-sv="../sv/" data-lang-target-no="../no/" data-lang-target-da="../da/" data-lang-target-fi="../fi/" data-lang-target-el="../el/" data-lang-target-pt-pt="../pt-pt/" data-lang-target-pt-br="../pt-br/" data-lang-target-hu="../hu/" data-lang-target-zh-hans="../zh-hans/">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="ScreenClips promění volné snímky obrazovky v přehledné Clipy s názvy, poznámkami a knihovnami. Bez účtu, bez cloudu, bez nepořádku.">
+    <meta property="og:title" content="ScreenClips — snímky se přestanou ztrácet ve Fotkách">
+    <meta property="og:description" content="Proměň rozházené snímky v Clipy s kontextem, poznámkami a knihovnami.">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/">
+    <link rel="alternate" hreflang="es-MX" href="https://screenclips.app/es-mx/">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/">
+    <link rel="alternate" hreflang="fr-CA" href="https://screenclips.app/fr-ca/">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/">
+    <link rel="alternate" hreflang="ru" href="https://screenclips.app/ru/">
+    <link rel="alternate" hreflang="nl" href="https://screenclips.app/nl/">
+    <link rel="alternate" hreflang="ro" href="https://screenclips.app/ro/">
+    <link rel="alternate" hreflang="cs" href="https://screenclips.app/cs/">
+    <link rel="alternate" hreflang="ja" href="https://screenclips.app/ja/">
+    <link rel="alternate" hreflang="vi" href="https://screenclips.app/vi/">
+    <link rel="alternate" hreflang="ko" href="https://screenclips.app/ko/">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/">
+    <link rel="alternate" hreflang="no" href="https://screenclips.app/no/">
+    <link rel="alternate" hreflang="da" href="https://screenclips.app/da/">
+    <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/">
+    <link rel="alternate" hreflang="el" href="https://screenclips.app/el/">
+    <link rel="alternate" hreflang="pt-PT" href="https://screenclips.app/pt-pt/">
+    <link rel="alternate" hreflang="pt-BR" href="https://screenclips.app/pt-br/">
+    <link rel="alternate" hreflang="hu" href="https://screenclips.app/hu/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://screenclips.app/zh-hans/">
+    <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
+    <title>ScreenClips — snímky se přestanou ztrácet ve Fotkách</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          "pl": html.dataset.langTargetPl,
+          "en": html.dataset.langTargetEn,
+          "de": html.dataset.langTargetDe,
+          "es": html.dataset.langTargetEs,
+          "es-mx": html.dataset.langTargetEsMx,
+          "it": html.dataset.langTargetIt,
+          "fr": html.dataset.langTargetFr,
+          "fr-ca": html.dataset.langTargetFrCa,
+          "tr": html.dataset.langTargetTr,
+          "uk": html.dataset.langTargetUk,
+          "ru": html.dataset.langTargetRu,
+          "nl": html.dataset.langTargetNl,
+          "ro": html.dataset.langTargetRo,
+          "cs": html.dataset.langTargetCs,
+          "ja": html.dataset.langTargetJa,
+          "vi": html.dataset.langTargetVi,
+          "ko": html.dataset.langTargetKo,
+          "sv": html.dataset.langTargetSv,
+          "no": html.dataset.langTargetNo,
+          "da": html.dataset.langTargetDa,
+          "fi": html.dataset.langTargetFi,
+          "el": html.dataset.langTargetEl,
+          "pt-pt": html.dataset.langTargetPtPt,
+          "pt-br": html.dataset.langTargetPtBr,
+          "hu": html.dataset.langTargetHu,
+          "zh-hans": html.dataset.langTargetZhHans
+        };
+        const supported = ["pl", "en", "de", "es", "es-mx", "it", "fr", "fr-ca", "tr", "uk", "ru", "nl", "ro", "cs", "ja", "vi", "ko", "sv", "no", "da", "fi", "el", "pt-pt", "pt-br", "hu", "zh-hans"];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('hu') || language.startsWith('da') || language.startsWith('ru') || language.startsWith('nl') || language.startsWith('ro') || language.startsWith('cs') || language.startsWith('ja') || language.startsWith('vi') || language.startsWith('ko') || language.startsWith('es-mx') || language.startsWith('es-419') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr-ca') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el') || language.startsWith('pt-br') || language.startsWith('pt-pt') || language.startsWith('pt') || language.startsWith('zh-cn') || language.startsWith('zh-hans') || language === 'zh');
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('hu') ? 'hu' : matched && matched.startsWith('da') ? 'da' : matched && matched.startsWith('ru') ? 'ru' : matched && matched.startsWith('nl') ? 'nl' : matched && matched.startsWith('ro') ? 'ro' : matched && matched.startsWith('cs') ? 'cs' : matched && matched.startsWith('ja') ? 'ja' : matched && matched.startsWith('vi') ? 'vi' : matched && matched.startsWith('ko') ? 'ko' : matched && (matched.startsWith('es-mx') || matched.startsWith('es-419')) ? 'es-mx' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr-ca') ? 'fr-ca' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : matched && matched.startsWith('pt-br') ? 'pt-br' : matched && matched.startsWith('pt-pt') ? 'pt-pt' : matched && matched.startsWith('pt') ? 'pt-br' : matched && (matched.startsWith('zh-cn') || matched.startsWith('zh-hans') || matched === 'zh') ? 'zh-hans' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body>
+    <main>
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a class="brand" href="#top" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="nav-links">
+          <a href="#jak-to-funguje">Jak to funguje</a>
+          <a href="#features">Funkce</a>
+          <a href="#privacy">Soukromí</a>
+          <details class="language-switcher" aria-label="Jazyk">
+            <summary aria-label="Jazyk"><span class="language-current"><span class="language-flag" aria-hidden="true">🇨🇿</span><span>CS</span></span></summary>
+            <div class="language-menu">
+              <a href="../" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../es-mx/" hreflang="es-MX" lang="es-MX" data-lang-switch="es-mx"><span class="language-flag" aria-hidden="true">🇲🇽</span><span>MX</span></a>
+              <a href="../it/" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../fr-ca/" hreflang="fr-CA" lang="fr-CA" data-lang-switch="fr-ca"><span class="language-flag quebec-flag" aria-hidden="true"></span><span>CA</span></a>
+              <a href="../tr/" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="../ru/" hreflang="ru" lang="ru" data-lang-switch="ru"><span class="language-flag" aria-hidden="true">🇷🇺</span><span>RU</span></a>
+              <a href="../nl/" hreflang="nl" lang="nl" data-lang-switch="nl"><span class="language-flag" aria-hidden="true">🇳🇱</span><span>NL</span></a>
+              <a href="../ro/" hreflang="ro" lang="ro" data-lang-switch="ro"><span class="language-flag" aria-hidden="true">🇷🇴</span><span>RO</span></a>
+              <a href="./" hreflang="cs" lang="cs" data-lang-switch="cs" aria-current="page"><span class="language-flag" aria-hidden="true">🇨🇿</span><span>CS</span></a>
+              <a href="../ja/" hreflang="ja" lang="ja" data-lang-switch="ja"><span class="language-flag" aria-hidden="true">🇯🇵</span><span>JA</span></a>
+              <a href="../vi/" hreflang="vi" lang="vi" data-lang-switch="vi"><span class="language-flag" aria-hidden="true">🇻🇳</span><span>VI</span></a>
+              <a href="../ko/" hreflang="ko" lang="ko" data-lang-switch="ko"><span class="language-flag" aria-hidden="true">🇰🇷</span><span>KO</span></a>
+              <a href="../sv/" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+              <a href="../no/" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
+              <a href="../da/" hreflang="da" lang="da" data-lang-switch="da"><span class="language-flag" aria-hidden="true">🇩🇰</span><span>DA</span></a>
+              <a href="../fi/" hreflang="fi" lang="fi" data-lang-switch="fi"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+              <a href="../el/" hreflang="el" lang="el" data-lang-switch="el"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
+              <a href="../pt-pt/" hreflang="pt-PT" lang="pt-PT" data-lang-switch="pt-pt"><span class="language-flag" aria-hidden="true">🇵🇹</span><span>PT</span></a>
+              <a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang-switch="pt-br"><span class="language-flag" aria-hidden="true">🇧🇷</span><span>BR</span></a>
+              <a href="../hu/" hreflang="hu" lang="hu" data-lang-switch="hu"><span class="language-flag" aria-hidden="true">🇭🇺</span><span>HU</span></a>
+              <a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang-switch="zh-hans"><span class="language-flag" aria-hidden="true">🇨🇳</span><span>ZH</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips na Facebooku">
+            <span aria-hidden="true">f</span>
+          </a>
+          <a class="app-store-button nav-cta" href="https://apps.apple.com/app/id6771277332" aria-label="Stáhnout ScreenClips z App Storu">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Stáhnout z</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero section-shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Organizér snímků obrazovky pro iPhone</div>
+          <h1>Snímky se přestanou ztrácet ve Fotkách.</h1>
+          <p class="lead">Proměň volné snímky v Clipy s názvem, poznámkou a knihovnou. Bez účtu, bez cloudu a bez nekonečného hledání ve Fotkách.</p>
+          <div class="hero-actions">
+            <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Stáhnout ScreenClips z App Storu">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Stáhnout z</small><strong>App Store</strong></span>
+          </a>
+            <a class="secondary-link" href="#jak-to-funguje">Podívat se, jak to funguje</a>
+          </div>
+          <div class="trust-row" aria-label="Bez účtu"><span>Bez účtu</span><span>Funguje lokálně</span><span>Jednorázové odemknutí Premium</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="Náhled aplikace ScreenClips">
+          <div class="floating-card card-left"><strong>Knihovny</strong><small>Recepty · Vstupenky · Studium</small></div>
+          <div class="phone hero-phone">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Domovská obrazovka ScreenClips s knihovnami a Clipy" loading="lazy" src="../screens/home.webp">
+            </div>
+          </div>
+          <div class="floating-card card-right"><strong>Clipy s kontextem</strong><small>Název, poznámka, snímky</small></div>
+        </div>
+      </section>
+
+      <section class="problem section-shell compact">
+        <div class="section-heading">
+          <span class="kicker">Problém</span>
+          <h2>Fotky jsou skvělé pro fotky. Důležité snímky potřebují víc.</h2>
+          <p>Účtenky, recepty, vstupenky, nápady a úryvky článků končí vedle selfie, memů a omylem vyfoceného stropu. Máme cloud, ale stejně ztratíme snímek s adresou hotelu.</p>
+        </div>
+        <div class="problem-grid"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">▣</span>
+            <h3>Snímky mizí v davu</h3>
+            <p>Uložíš si něco důležitého a za týden projíždíš Fotky jako archiv důkazů.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">✎</span>
+            <h3>Kontext se ztratí</h3>
+            <p>Samotný obrázek často nestačí. Ve ScreenClips mu přidáš název a poznámku.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">☰</span>
+            <h3>Témata se míchají dohromady</h3>
+            <p>Cestování, práce, nákupy a učení si zaslouží vlastní místo, ne jednu nekonečnou hromadu ve Fotkách.</p>
+          </article></div>
+      </section>
+
+      <section id="jak-to-funguje" class="how section-shell">
+        <div class="section-heading narrow">
+          <span class="kicker">Jak to funguje</span>
+          <h2>Tři kroky. Žádný další systém na správu systému.</h2>
+        </div>
+        <div class="steps"><div class="step-card">
+            <span>01</span>
+            <h3>Vytvoř knihovnu</h3>
+            <p>Odděl témata jako recepty, účtenky, vstupenky, rešerše, učení nebo cokoli dalšího, k čemu se chceš vrátit.</p>
+          </div>
+<div class="step-card">
+            <span>02</span>
+            <h3>Přidej Clip</h3>
+            <p>Clip je malý balíček kolem jedné věci. Má název, popis a vlastní snímky.</p>
+          </div>
+<div class="step-card">
+            <span>03</span>
+            <h3>Vrať se bez lovení</h3>
+            <p>Otevři knihovnu, vyber Clip a všechno potřebné už je pohromadě.</p>
+          </div></div>
+        <div class="showcase-grid">
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Seznam Clipů ve ScreenClips" loading="lazy" src="../screens/clips.webp">
+            </div>
+          </div>
+          <div class="showcase-copy">
+            <span class="kicker">Od chaosu ke kontextu</span>
+            <h2>Knihovny a Clipy místo jedné obří skládky ve Fotkách.</h2>
+            <p>ScreenClips nehádá za tebe. Dává jednoduchou strukturu: knihovnu pro téma, Clip pro konkrétní věc a uvnitř snímky nebo fotky.</p>
+            <div class="mini-list"><span>✓ název a popis Clipu</span><span>✓ snímky a fotky na jednom místě</span><span>✓ rychlý návrat k uloženým materiálům</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="use-cases section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">Použití</span>
+          <h2>Pro věci, které si opravdu ukládáš jako snímky.</h2>
+        </div>
+        <div class="use-case-grid"><div class="use-case">
+            <span aria-hidden="true">▤</span>
+            <strong>Účtenky</strong>
+            <small>faktury, doklady o nákupu</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">✈</span>
+            <strong>Cestování</strong>
+            <small>vstupenky, adresy, rezervace</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☕</span>
+            <strong>Recepty</strong>
+            <small>z webu a rodinných chatů</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">◈</span>
+            <strong>Nápady</strong>
+            <small>inspirace a rešerše</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">Aa</span>
+            <strong>Učení</strong>
+            <small>slovíčka, poznámky, materiály</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☺</span>
+            <strong>Memy</strong>
+            <small>protože svět se může hroutit, ale aspoň u toho může být legrace</small>
+          </div></div>
+      </section>
+
+      <section id="features" class="features section-shell">
+        <div class="feature-layout">
+          <div class="feature-copy">
+            <span class="kicker">Funkce</span>
+            <h2>Všechno, co potřebuješ, aby byly snímky pod kontrolou. Bez dramatu.</h2>
+            <div class="feature-list"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">＋</span>
+            <h3>Přidávej snímky a fotky</h3>
+            <p>Sbírej materiály do Clipů a doplňuj je, jak téma roste.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">⇪</span>
+            <h3>Export do PDF</h3>
+            <p>Proměň Clip v čitelný soubor, když ho chceš poslat nebo uchovat mimo aplikaci.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">♡</span>
+            <h3>Označ, co je důležité</h3>
+            <p>Oblíbené, označení a pořádek tam, kde dřív bylo jen nekonečné scrollování.</p>
+          </article></div>
+          </div>
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Detail Clipu se snímkem, fotkou a exportem do PDF" loading="lazy" src="../screens/detail.webp">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="privacy section-shell compact">
+        <div class="privacy-card">
+          <div>
+            <span class="kicker light">Soukromí</span>
+            <h2>Tvoje snímky zůstávají u tebe.</h2>
+            <p>ScreenClips funguje lokálně. Nepotřebuješ účet, abys měl pořádek, a nemusíš svoje účtenky, poznámky a plány předávat další službě, která chce za každou cenu „vylepšovat zážitek“.</p>
+          </div>
+          <div class="privacy-points"><span>Bez účtu</span><span>Bez cloudu</span><span>Bez reklam</span></div>
+        </div>
+      </section>
+
+      <section class="premium section-shell">
+        <div class="premium-copy">
+          <span class="kicker">Premium</span>
+          <h2>Začni pořádkem. Odemkni víc místa, až se ScreenClips stane tvým systémem.</h2>
+          <p>Premium aplikaci nekomplikuje. Jen přidá víc místa pro knihovny, Clipy a snímky. Cena je uvedená v App Storu.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Stáhnout ScreenClips z App Storu">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Stáhnout z</small><strong>App Store</strong></span>
+          </a>
+        </div>
+        <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Obrazovka ScreenClips Premium" loading="lazy" src="../screens/paywall1.webp">
+            </div>
+          </div>
+      </section>
+
+      <section class="faq section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">FAQ</span>
+          <h2>Krátké odpovědi, protože život je dlouhý už tak dost.</h2>
+        </div>
+        <div class="faq-list"><details open>
+            <summary>Maže ScreenClips fotky z mojí knihovny?</summary>
+            <p>Ne. Odebrání položky z Clipu nesmaže originál z Fotek.</p>
+          </details>
+<details>
+            <summary>Funguje aplikace offline?</summary>
+            <p>Ano. ScreenClips je navržený jako lokální organizér na iPhonu.</p>
+          </details>
+<details>
+            <summary>Musím si vytvořit účet?</summary>
+            <p>Ne. ScreenClips nepotřebuje účet, aby organizoval tvoje Clipy.</p>
+          </details>
+<details>
+            <summary>Můžu přidávat i běžné fotky?</summary>
+            <p>Ano. Snímky i fotky můžeš přidat vždy, když patří do Clipu.</p>
+          </details></div>
+      </section>
+
+      <section class="final-cta section-shell">
+        <div class="final-card">
+          <div class="app-icon" aria-hidden="true"></div>
+          <h2>Přestaň snímky hledat. Začni se k nim vracet.</h2>
+          <p>ScreenClips organizuje věci, které si ukládáš „na později“. Tentokrát je to později opravdu dohledatelné.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Stáhnout ScreenClips z App Storu">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Stáhnout z</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html">Zásady ochrany osobních údajů</a>
+          <a href="./terms.html">Podmínky</a>
+          <a href="mailto:screenclips@screenclips.app">Kontakt</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

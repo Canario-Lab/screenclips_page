@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="cs" data-lang="cs" data-lang-target-pl="../terms.html" data-lang-target-en="../en/terms.html" data-lang-target-de="../de/terms.html" data-lang-target-es="../es/terms.html" data-lang-target-es-mx="../es-mx/terms.html" data-lang-target-it="../it/terms.html" data-lang-target-fr="../fr/terms.html" data-lang-target-fr-ca="../fr-ca/terms.html" data-lang-target-tr="../tr/terms.html" data-lang-target-uk="../uk/terms.html" data-lang-target-ru="../ru/terms.html" data-lang-target-nl="../nl/terms.html" data-lang-target-ro="../ro/terms.html" data-lang-target-cs="./terms.html" data-lang-target-ja="../ja/terms.html" data-lang-target-vi="../vi/terms.html" data-lang-target-ko="../ko/terms.html" data-lang-target-sv="../sv/terms.html" data-lang-target-no="../no/terms.html" data-lang-target-da="../da/terms.html" data-lang-target-fi="../fi/terms.html" data-lang-target-el="../el/terms.html" data-lang-target-pt-pt="../pt-pt/terms.html" data-lang-target-pt-br="../pt-br/terms.html" data-lang-target-hu="../hu/terms.html" data-lang-target-zh-hans="../zh-hans/terms.html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="Podmínky používání aplikace ScreenClips.">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/terms.html">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/terms.html">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/terms.html">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/terms.html">
+    <link rel="alternate" hreflang="es-MX" href="https://screenclips.app/es-mx/terms.html">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/terms.html">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/terms.html">
+    <link rel="alternate" hreflang="fr-CA" href="https://screenclips.app/fr-ca/terms.html">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/terms.html">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/terms.html">
+    <link rel="alternate" hreflang="ru" href="https://screenclips.app/ru/terms.html">
+    <link rel="alternate" hreflang="nl" href="https://screenclips.app/nl/terms.html">
+    <link rel="alternate" hreflang="ro" href="https://screenclips.app/ro/terms.html">
+    <link rel="alternate" hreflang="cs" href="https://screenclips.app/cs/terms.html">
+    <link rel="alternate" hreflang="ja" href="https://screenclips.app/ja/terms.html">
+    <link rel="alternate" hreflang="vi" href="https://screenclips.app/vi/terms.html">
+    <link rel="alternate" hreflang="ko" href="https://screenclips.app/ko/terms.html">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/terms.html">
+    <link rel="alternate" hreflang="no" href="https://screenclips.app/no/terms.html">
+    <link rel="alternate" hreflang="da" href="https://screenclips.app/da/terms.html">
+    <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/terms.html">
+    <link rel="alternate" hreflang="el" href="https://screenclips.app/el/terms.html">
+    <link rel="alternate" hreflang="pt-PT" href="https://screenclips.app/pt-pt/terms.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://screenclips.app/pt-br/terms.html">
+    <link rel="alternate" hreflang="hu" href="https://screenclips.app/hu/terms.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://screenclips.app/zh-hans/terms.html">
+    <title>Podmínky — ScreenClips</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          "pl": html.dataset.langTargetPl,
+          "en": html.dataset.langTargetEn,
+          "de": html.dataset.langTargetDe,
+          "es": html.dataset.langTargetEs,
+          "es-mx": html.dataset.langTargetEsMx,
+          "it": html.dataset.langTargetIt,
+          "fr": html.dataset.langTargetFr,
+          "fr-ca": html.dataset.langTargetFrCa,
+          "tr": html.dataset.langTargetTr,
+          "uk": html.dataset.langTargetUk,
+          "ru": html.dataset.langTargetRu,
+          "nl": html.dataset.langTargetNl,
+          "ro": html.dataset.langTargetRo,
+          "cs": html.dataset.langTargetCs,
+          "ja": html.dataset.langTargetJa,
+          "vi": html.dataset.langTargetVi,
+          "ko": html.dataset.langTargetKo,
+          "sv": html.dataset.langTargetSv,
+          "no": html.dataset.langTargetNo,
+          "da": html.dataset.langTargetDa,
+          "fi": html.dataset.langTargetFi,
+          "el": html.dataset.langTargetEl,
+          "pt-pt": html.dataset.langTargetPtPt,
+          "pt-br": html.dataset.langTargetPtBr,
+          "hu": html.dataset.langTargetHu,
+          "zh-hans": html.dataset.langTargetZhHans
+        };
+        const supported = ["pl", "en", "de", "es", "es-mx", "it", "fr", "fr-ca", "tr", "uk", "ru", "nl", "ro", "cs", "ja", "vi", "ko", "sv", "no", "da", "fi", "el", "pt-pt", "pt-br", "hu", "zh-hans"];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('hu') || language.startsWith('da') || language.startsWith('ru') || language.startsWith('nl') || language.startsWith('ro') || language.startsWith('cs') || language.startsWith('ja') || language.startsWith('vi') || language.startsWith('ko') || language.startsWith('es-mx') || language.startsWith('es-419') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr-ca') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el') || language.startsWith('pt-br') || language.startsWith('pt-pt') || language.startsWith('pt') || language.startsWith('zh-cn') || language.startsWith('zh-hans') || language === 'zh');
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('hu') ? 'hu' : matched && matched.startsWith('da') ? 'da' : matched && matched.startsWith('ru') ? 'ru' : matched && matched.startsWith('nl') ? 'nl' : matched && matched.startsWith('ro') ? 'ro' : matched && matched.startsWith('cs') ? 'cs' : matched && matched.startsWith('ja') ? 'ja' : matched && matched.startsWith('vi') ? 'vi' : matched && matched.startsWith('ko') ? 'ko' : matched && (matched.startsWith('es-mx') || matched.startsWith('es-419')) ? 'es-mx' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr-ca') ? 'fr-ca' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : matched && matched.startsWith('pt-br') ? 'pt-br' : matched && matched.startsWith('pt-pt') ? 'pt-pt' : matched && matched.startsWith('pt') ? 'pt-br' : matched && (matched.startsWith('zh-cn') || matched.startsWith('zh-hans') || matched === 'zh') ? 'zh-hans' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body class="legal-page">
+    <main class="legal-shell">
+      <nav class="legal-nav" aria-label="Navigace dokumentu">
+        <a class="brand" href="./" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="legal-actions">
+          <a class="secondary-link" href="./">Zpět na hlavní stránku</a>
+          <details class="language-switcher" aria-label="Jazyk">
+            <summary aria-label="Jazyk"><span class="language-current"><span class="language-flag" aria-hidden="true">🇨🇿</span><span>CS</span></span></summary>
+            <div class="language-menu">
+              <a href="../terms.html" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/terms.html" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/terms.html" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/terms.html" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../es-mx/terms.html" hreflang="es-MX" lang="es-MX" data-lang-switch="es-mx"><span class="language-flag" aria-hidden="true">🇲🇽</span><span>MX</span></a>
+              <a href="../it/terms.html" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/terms.html" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="../fr-ca/terms.html" hreflang="fr-CA" lang="fr-CA" data-lang-switch="fr-ca"><span class="language-flag quebec-flag" aria-hidden="true"></span><span>CA</span></a>
+              <a href="../tr/terms.html" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/terms.html" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="../ru/terms.html" hreflang="ru" lang="ru" data-lang-switch="ru"><span class="language-flag" aria-hidden="true">🇷🇺</span><span>RU</span></a>
+              <a href="../nl/terms.html" hreflang="nl" lang="nl" data-lang-switch="nl"><span class="language-flag" aria-hidden="true">🇳🇱</span><span>NL</span></a>
+              <a href="../ro/terms.html" hreflang="ro" lang="ro" data-lang-switch="ro"><span class="language-flag" aria-hidden="true">🇷🇴</span><span>RO</span></a>
+              <a href="./terms.html" hreflang="cs" lang="cs" data-lang-switch="cs" aria-current="page"><span class="language-flag" aria-hidden="true">🇨🇿</span><span>CS</span></a>
+              <a href="../ja/terms.html" hreflang="ja" lang="ja" data-lang-switch="ja"><span class="language-flag" aria-hidden="true">🇯🇵</span><span>JA</span></a>
+              <a href="../vi/terms.html" hreflang="vi" lang="vi" data-lang-switch="vi"><span class="language-flag" aria-hidden="true">🇻🇳</span><span>VI</span></a>
+              <a href="../ko/terms.html" hreflang="ko" lang="ko" data-lang-switch="ko"><span class="language-flag" aria-hidden="true">🇰🇷</span><span>KO</span></a>
+              <a href="../sv/terms.html" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+              <a href="../no/terms.html" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
+              <a href="../da/terms.html" hreflang="da" lang="da" data-lang-switch="da"><span class="language-flag" aria-hidden="true">🇩🇰</span><span>DA</span></a>
+              <a href="../fi/terms.html" hreflang="fi" lang="fi" data-lang-switch="fi"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+              <a href="../el/terms.html" hreflang="el" lang="el" data-lang-switch="el"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
+              <a href="../pt-pt/terms.html" hreflang="pt-PT" lang="pt-PT" data-lang-switch="pt-pt"><span class="language-flag" aria-hidden="true">🇵🇹</span><span>PT</span></a>
+              <a href="../pt-br/terms.html" hreflang="pt-BR" lang="pt-BR" data-lang-switch="pt-br"><span class="language-flag" aria-hidden="true">🇧🇷</span><span>BR</span></a>
+              <a href="../hu/terms.html" hreflang="hu" lang="hu" data-lang-switch="hu"><span class="language-flag" aria-hidden="true">🇭🇺</span><span>HU</span></a>
+              <a href="../zh-hans/terms.html" hreflang="zh-Hans" lang="zh-Hans" data-lang-switch="zh-hans"><span class="language-flag" aria-hidden="true">🇨🇳</span><span>ZH</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips na Facebooku">
+            <span aria-hidden="true">f</span>
+          </a>
+        </div>
+      </nav>
+
+<article class="legal-card">
+  <h1>Podmínky používání ScreenClips</h1>
+    <p>Datum účinnosti: 16. června 2026</p>
+    <p>Verze: 1.0</p>
+    <h2>1. Poskytovatel služby</h2>
+    <p>Poskytovatelem aplikace ScreenClips je Canario-Lab.</p>
+    <p>Tyto Podmínky určují pravidla používání aplikace, včetně bezplatných funkcí, Premium, záloh, exportu a rozšíření pro sdílení.</p>
+    <h2>2. Povaha aplikace</h2>
+    <p>ScreenClips je lokální iOS nástroj pro organizaci snímků obrazovky do Clipů a knihoven. Aplikace pomáhá seskupovat obrázky, poznámky a kontext, aby se uživatel snáze vracel ke svým materiálům.</p>
+    <p>ScreenClips není cloudová služba, externí služba ukládání dat, sociální síť, služba správy autorských práv ani služba, která zaručuje trvalou archivaci mimo zařízení uživatele.</p>
+    <h2>3. Technické požadavky</h2>
+    <p>Používání aplikace vyžaduje kompatibilní zařízení Apple a verzi iOS podporovanou aplikací.</p>
+    <p>Některé funkce mohou vyžadovat přístup k Fotkám, systémovému panelu sdílení, Souborům, Face ID, App Storu, Apple ID nebo internetovému připojení, zejména při nákupu nebo obnově Premium.</p>
+    <h2>4. Data uživatele a odpovědnost za obsah</h2>
+    <p>Uživatel odpovídá za snímky, poznámky, názvy Clipů, knihovny a další materiály přidané do aplikace, včetně práva je ukládat, exportovat a sdílet.</p>
+    <p>Odebrání snímku z Clipu nesmaže původní fotku z knihovny Fotky. Smazání dat ve ScreenClips může odstranit lokální kopii uloženou aplikací.</p>
+    <h2>5. Zálohy a export</h2>
+    <p>Záloha ScreenClips je lokální soubor .screenclipbackup vytvořený na žádost uživatele. Obnovení zálohy nahradí aktuální stav aplikace daty z vybraného souboru.</p>
+    <p>Uživatel odpovídá za bezpečné uložení záložních souborů, PDF a dalších exportů a za důsledky jejich odeslání do externích služeb, jako je iCloud Drive, e-mail, komunikátory nebo jiné aplikace.</p>
+    <h2>6. Bezplatná verze a Premium</h2>
+    <p>ScreenClips je freemium aplikace. Bezplatná verze má kapacitní limity: až 2 knihovny, 5 Clipů a celkem 20 snímků.</p>
+    <p>ScreenClips Premium odemyká kapacitní limity pro knihovny, Clipy a snímky. Premium nemění lokální povahu aplikace a nevytváří externí kopii dat uživatele.</p>
+    <h2>7. Nákup Lifetime a platby</h2>
+    <p>Cílový platební model ScreenClips je jednorázový nákup Lifetime v App Storu, zpracovaný Applem a ověřovaný přes RevenueCat.</p>
+    <p>Aplikace nenabízí měsíční ani roční předplatné a nenabízí zkušební období. Nákup Lifetime se automaticky neobnovuje.</p>
+    <p>Platba je po potvrzení nákupu stržena z účtu Apple ID uživatele. Canario-Lab nezpracovává údaje o platební kartě uživatele.</p>
+    <h2>8. Obnovení nákupu</h2>
+    <p>Uživatel může obnovit nákup Lifetime na kompatibilním zařízení Apple pomocí mechanismů Apple a RevenueCat dostupných v aplikaci.</p>
+    <p>Přístup Premium je potvrzen podle oprávnění ScreenClips Pro vráceného RevenueCatem. Přístup může vyžadovat internetové připojení a správnou konfiguraci App Storu nebo RevenueCatu.</p>
+    <h2>9. Dostupnost a změny aplikace</h2>
+    <p>Canario-Lab se snaží udržovat aplikaci funkční, ale ScreenClips je poskytována tak, jak je dostupná, a může obsahovat chyby, omezení nebo dočasné výpadky.</p>
+    <p>Funkce aplikace, limity bezplatné verze, nabídka Premium a tyto Podmínky se mohou měnit podle vývoje produktu, změn požadavků App Storu nebo právních požadavků.</p>
+    <h2>10. Odpovědnost</h2>
+    <p>V rozsahu povoleném zákonem Canario-Lab neodpovídá za ztrátu dat způsobenou odstraněním aplikace, poškozením zařízení, nesprávným použitím zálohy, omylem při sdílení souborů, jednáním externích služeb nebo tím, že uživatel nemá vlastní záložní kopii.</p>
+    <p>Uživatel by měl samostatně chránit důležité materiály a udržovat kopie souborů, které chce uchovat dlouhodobě.</p>
+    <h2>11. Závěrečná ustanovení</h2>
+    <p>Ve věcech neupravených těmito Podmínkami se použije platné právo.</p>
+    <p>Pokud bude některé ustanovení těchto Podmínek shledáno neplatným, ostatní ustanovení zůstávají v platnosti.</p>
+    <p>Aktuální verze těchto Podmínek bude dostupná v aplikaci.</p>
+</article>
+
+      <footer class="footer legal-footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html">Zásady ochrany osobních údajů</a>
+          <a href="./terms.html" aria-current="page">Podmínky</a>
+          <a href="mailto:screenclips@screenclips.app">Kontakt</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

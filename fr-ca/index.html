@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="fr-CA" data-lang="fr-ca" data-lang-target-pl="../" data-lang-target-en="../en/" data-lang-target-de="../de/" data-lang-target-es="../es/" data-lang-target-es-mx="../es-mx/" data-lang-target-it="../it/" data-lang-target-fr="../fr/" data-lang-target-fr-ca="./" data-lang-target-tr="../tr/" data-lang-target-uk="../uk/" data-lang-target-ru="../ru/" data-lang-target-nl="../nl/" data-lang-target-ro="../ro/" data-lang-target-cs="../cs/" data-lang-target-ja="../ja/" data-lang-target-vi="../vi/" data-lang-target-ko="../ko/" data-lang-target-sv="../sv/" data-lang-target-no="../no/" data-lang-target-da="../da/" data-lang-target-fi="../fi/" data-lang-target-el="../el/" data-lang-target-pt-pt="../pt-pt/" data-lang-target-pt-br="../pt-br/" data-lang-target-hu="../hu/" data-lang-target-zh-hans="../zh-hans/">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4EEE4">
+    <meta name="description" content="ScreenClips transforme les captures d’écran éparpillées en Clips organisés avec noms, notes et bibliothèques. Sans compte, sans nuage, sans désordre.">
+    <meta property="og:title" content="ScreenClips — vos captures arrêtent de se perdre dans Photos">
+    <meta property="og:description" content="Transformez des captures éparpillées en Clips avec contexte, notes et bibliothèques.">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="pl" href="https://screenclips.app/">
+    <link rel="alternate" hreflang="en" href="https://screenclips.app/en/">
+    <link rel="alternate" hreflang="de" href="https://screenclips.app/de/">
+    <link rel="alternate" hreflang="es" href="https://screenclips.app/es/">
+    <link rel="alternate" hreflang="es-MX" href="https://screenclips.app/es-mx/">
+    <link rel="alternate" hreflang="it" href="https://screenclips.app/it/">
+    <link rel="alternate" hreflang="fr" href="https://screenclips.app/fr/">
+    <link rel="alternate" hreflang="fr-CA" href="https://screenclips.app/fr-ca/">
+    <link rel="alternate" hreflang="tr" href="https://screenclips.app/tr/">
+    <link rel="alternate" hreflang="uk" href="https://screenclips.app/uk/">
+    <link rel="alternate" hreflang="ru" href="https://screenclips.app/ru/">
+    <link rel="alternate" hreflang="nl" href="https://screenclips.app/nl/">
+    <link rel="alternate" hreflang="ro" href="https://screenclips.app/ro/">
+    <link rel="alternate" hreflang="cs" href="https://screenclips.app/cs/">
+    <link rel="alternate" hreflang="ja" href="https://screenclips.app/ja/">
+    <link rel="alternate" hreflang="vi" href="https://screenclips.app/vi/">
+    <link rel="alternate" hreflang="ko" href="https://screenclips.app/ko/">
+    <link rel="alternate" hreflang="sv" href="https://screenclips.app/sv/">
+    <link rel="alternate" hreflang="no" href="https://screenclips.app/no/">
+    <link rel="alternate" hreflang="da" href="https://screenclips.app/da/">
+    <link rel="alternate" hreflang="fi" href="https://screenclips.app/fi/">
+    <link rel="alternate" hreflang="el" href="https://screenclips.app/el/">
+    <link rel="alternate" hreflang="pt-PT" href="https://screenclips.app/pt-pt/">
+    <link rel="alternate" hreflang="pt-BR" href="https://screenclips.app/pt-br/">
+    <link rel="alternate" hreflang="hu" href="https://screenclips.app/hu/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://screenclips.app/zh-hans/">
+    <link rel="alternate" hreflang="x-default" href="https://screenclips.app/en/">
+    <title>ScreenClips — vos captures arrêtent de se perdre dans Photos</title>
+    <script>
+      (() => {
+        const html = document.documentElement;
+        const current = html.dataset.lang || html.lang || 'pl';
+        const targets = {
+          "pl": html.dataset.langTargetPl,
+          "en": html.dataset.langTargetEn,
+          "de": html.dataset.langTargetDe,
+          "es": html.dataset.langTargetEs,
+          "es-mx": html.dataset.langTargetEsMx,
+          "it": html.dataset.langTargetIt,
+          "fr": html.dataset.langTargetFr,
+          "fr-ca": html.dataset.langTargetFrCa,
+          "tr": html.dataset.langTargetTr,
+          "uk": html.dataset.langTargetUk,
+          "ru": html.dataset.langTargetRu,
+          "nl": html.dataset.langTargetNl,
+          "ro": html.dataset.langTargetRo,
+          "cs": html.dataset.langTargetCs,
+          "ja": html.dataset.langTargetJa,
+          "vi": html.dataset.langTargetVi,
+          "ko": html.dataset.langTargetKo,
+          "sv": html.dataset.langTargetSv,
+          "no": html.dataset.langTargetNo,
+          "da": html.dataset.langTargetDa,
+          "fi": html.dataset.langTargetFi,
+          "el": html.dataset.langTargetEl,
+          "pt-pt": html.dataset.langTargetPtPt,
+          "pt-br": html.dataset.langTargetPtBr,
+          "hu": html.dataset.langTargetHu,
+          "zh-hans": html.dataset.langTargetZhHans
+        };
+        const supported = ["pl", "en", "de", "es", "es-mx", "it", "fr", "fr-ca", "tr", "uk", "ru", "nl", "ro", "cs", "ja", "vi", "ko", "sv", "no", "da", "fi", "el", "pt-pt", "pt-br", "hu", "zh-hans"];
+        const key = 'screenclips-language';
+        let stored = null;
+        try { stored = localStorage.getItem(key); } catch (_) {}
+        document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-lang-switch]');
+          if (!link) return;
+          try { localStorage.setItem(key, link.dataset.langSwitch); } catch (_) {}
+        });
+        if (supported.includes(stored)) return;
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        const matched = languages.map((language) => (language || '').toLowerCase()).find((language) => language.startsWith('pl') || language.startsWith('de') || language.startsWith('hu') || language.startsWith('da') || language.startsWith('ru') || language.startsWith('nl') || language.startsWith('ro') || language.startsWith('cs') || language.startsWith('ja') || language.startsWith('vi') || language.startsWith('ko') || language.startsWith('es-mx') || language.startsWith('es-419') || language.startsWith('es') || language.startsWith('it') || language.startsWith('fr-ca') || language.startsWith('fr') || language.startsWith('tr') || language.startsWith('uk') || language.startsWith('ua') || language.startsWith('sv') || language.startsWith('se') || language.startsWith('no') || language.startsWith('nb') || language.startsWith('nn') || language.startsWith('fi') || language.startsWith('el') || language.startsWith('pt-br') || language.startsWith('pt-pt') || language.startsWith('pt') || language.startsWith('zh-cn') || language.startsWith('zh-hans') || language === 'zh');
+        const preferred = matched && matched.startsWith('pl') ? 'pl' : matched && matched.startsWith('de') ? 'de' : matched && matched.startsWith('hu') ? 'hu' : matched && matched.startsWith('da') ? 'da' : matched && matched.startsWith('ru') ? 'ru' : matched && matched.startsWith('nl') ? 'nl' : matched && matched.startsWith('ro') ? 'ro' : matched && matched.startsWith('cs') ? 'cs' : matched && matched.startsWith('ja') ? 'ja' : matched && matched.startsWith('vi') ? 'vi' : matched && matched.startsWith('ko') ? 'ko' : matched && (matched.startsWith('es-mx') || matched.startsWith('es-419')) ? 'es-mx' : matched && matched.startsWith('es') ? 'es' : matched && matched.startsWith('it') ? 'it' : matched && matched.startsWith('fr-ca') ? 'fr-ca' : matched && matched.startsWith('fr') ? 'fr' : matched && matched.startsWith('tr') ? 'tr' : matched && (matched.startsWith('uk') || matched.startsWith('ua')) ? 'uk' : matched && (matched.startsWith('sv') || matched.startsWith('se')) ? 'sv' : matched && (matched.startsWith('no') || matched.startsWith('nb') || matched.startsWith('nn')) ? 'no' : matched && matched.startsWith('fi') ? 'fi' : matched && matched.startsWith('el') ? 'el' : matched && matched.startsWith('pt-br') ? 'pt-br' : matched && matched.startsWith('pt-pt') ? 'pt-pt' : matched && matched.startsWith('pt') ? 'pt-br' : matched && (matched.startsWith('zh-cn') || matched.startsWith('zh-hans') || matched === 'zh') ? 'zh-hans' : 'en';
+        if (current === 'pl' && preferred !== current && targets[preferred]) {
+          window.location.replace(targets[preferred] + window.location.hash);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=20260705-lang-dropdown">
+  </head>
+  <body>
+    <main>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="brand" href="#top" aria-label="ScreenClips">
+          <div class="app-icon" aria-hidden="true"></div>
+          <span>ScreenClips</span>
+        </a>
+        <div class="nav-links">
+          <a href="#how-it-works">Fonctionnement</a>
+          <a href="#features">Fonctions</a>
+          <a href="#privacy">Confidentialité</a>
+          <details class="language-switcher" aria-label="Langue">
+            <summary aria-label="Langue"><span class="language-current"><span class="language-flag quebec-flag" aria-hidden="true"></span><span>CA</span></span></summary>
+            <div class="language-menu">
+              <a href="../" hreflang="pl" lang="pl" data-lang-switch="pl"><span class="language-flag" aria-hidden="true">🇵🇱</span><span>PL</span></a>
+              <a href="../en/" hreflang="en" lang="en" data-lang-switch="en"><span class="language-flag" aria-hidden="true">🇬🇧</span><span>EN</span></a>
+              <a href="../de/" hreflang="de" lang="de" data-lang-switch="de"><span class="language-flag" aria-hidden="true">🇩🇪</span><span>DE</span></a>
+              <a href="../es/" hreflang="es" lang="es" data-lang-switch="es"><span class="language-flag" aria-hidden="true">🇪🇸</span><span>ES</span></a>
+              <a href="../es-mx/" hreflang="es-MX" lang="es-MX" data-lang-switch="es-mx"><span class="language-flag" aria-hidden="true">🇲🇽</span><span>MX</span></a>
+              <a href="../it/" hreflang="it" lang="it" data-lang-switch="it"><span class="language-flag" aria-hidden="true">🇮🇹</span><span>IT</span></a>
+              <a href="../fr/" hreflang="fr" lang="fr" data-lang-switch="fr"><span class="language-flag" aria-hidden="true">🇫🇷</span><span>FR</span></a>
+              <a href="./" hreflang="fr-CA" lang="fr-CA" data-lang-switch="fr-ca" aria-current="page"><span class="language-flag quebec-flag" aria-hidden="true"></span><span>CA</span></a>
+              <a href="../tr/" hreflang="tr" lang="tr" data-lang-switch="tr"><span class="language-flag" aria-hidden="true">🇹🇷</span><span>TR</span></a>
+              <a href="../uk/" hreflang="uk" lang="uk" data-lang-switch="uk"><span class="language-flag" aria-hidden="true">🇺🇦</span><span>UA</span></a>
+              <a href="../ru/" hreflang="ru" lang="ru" data-lang-switch="ru"><span class="language-flag" aria-hidden="true">🇷🇺</span><span>RU</span></a>
+              <a href="../nl/" hreflang="nl" lang="nl" data-lang-switch="nl"><span class="language-flag" aria-hidden="true">🇳🇱</span><span>NL</span></a>
+              <a href="../ro/" hreflang="ro" lang="ro" data-lang-switch="ro"><span class="language-flag" aria-hidden="true">🇷🇴</span><span>RO</span></a>
+              <a href="../cs/" hreflang="cs" lang="cs" data-lang-switch="cs"><span class="language-flag" aria-hidden="true">🇨🇿</span><span>CS</span></a>
+              <a href="../ja/" hreflang="ja" lang="ja" data-lang-switch="ja"><span class="language-flag" aria-hidden="true">🇯🇵</span><span>JA</span></a>
+              <a href="../vi/" hreflang="vi" lang="vi" data-lang-switch="vi"><span class="language-flag" aria-hidden="true">🇻🇳</span><span>VI</span></a>
+              <a href="../ko/" hreflang="ko" lang="ko" data-lang-switch="ko"><span class="language-flag" aria-hidden="true">🇰🇷</span><span>KO</span></a>
+              <a href="../sv/" hreflang="sv" lang="sv" data-lang-switch="sv"><span class="language-flag" aria-hidden="true">🇸🇪</span><span>SV</span></a>
+              <a href="../no/" hreflang="no" lang="no" data-lang-switch="no"><span class="language-flag" aria-hidden="true">🇳🇴</span><span>NO</span></a>
+              <a href="../da/" hreflang="da" lang="da" data-lang-switch="da"><span class="language-flag" aria-hidden="true">🇩🇰</span><span>DA</span></a>
+              <a href="../fi/" hreflang="fi" lang="fi" data-lang-switch="fi"><span class="language-flag" aria-hidden="true">🇫🇮</span><span>FI</span></a>
+              <a href="../el/" hreflang="el" lang="el" data-lang-switch="el"><span class="language-flag" aria-hidden="true">🇬🇷</span><span>EL</span></a>
+              <a href="../pt-pt/" hreflang="pt-PT" lang="pt-PT" data-lang-switch="pt-pt"><span class="language-flag" aria-hidden="true">🇵🇹</span><span>PT</span></a>
+              <a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang-switch="pt-br"><span class="language-flag" aria-hidden="true">🇧🇷</span><span>BR</span></a>
+              <a href="../hu/" hreflang="hu" lang="hu" data-lang-switch="hu"><span class="language-flag" aria-hidden="true">🇭🇺</span><span>HU</span></a>
+              <a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang-switch="zh-hans"><span class="language-flag" aria-hidden="true">🇨🇳</span><span>ZH</span></a>
+            </div>
+          </details>
+          <a class="facebook-button" href="https://www.facebook.com/profile.php?id=61591182151102" aria-label="ScreenClips sur Facebook">
+            <span aria-hidden="true">f</span>
+          </a>
+          <a class="app-store-button nav-cta" href="https://apps.apple.com/app/id6771277332" aria-label="Télécharger ScreenClips sur l’App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Télécharger sur</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero section-shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Organiseur de captures d’écran pour iPhone</div>
+          <h1>Vos captures arrêtent de se perdre dans Photos.</h1>
+          <p class="lead">Transformez vos captures éparpillées en Clips avec un nom, une note et une bibliothèque. Sans compte, sans nuage, sans fouille interminable dans Photos.</p>
+          <div class="hero-actions">
+            <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Télécharger ScreenClips sur l’App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Télécharger sur</small><strong>App Store</strong></span>
+          </a>
+            <a class="secondary-link" href="#how-it-works">Voir le fonctionnement</a>
+          </div>
+          <div class="trust-row" aria-label="Sans compte"><span>Sans compte</span><span>Fonctionne localement</span><span>Déblocage Premium unique</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="Aperçu de l’app ScreenClips">
+          <div class="floating-card card-left"><strong>Bibliothèques</strong><small>Recettes · Billets · Études</small></div>
+          <div class="phone hero-phone">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Écran d’accueil de ScreenClips avec bibliothèques et Clips" loading="lazy" src="../screens/home.webp">
+            </div>
+          </div>
+          <div class="floating-card card-right"><strong>Clips avec contexte</strong><small>Nom, note, captures</small></div>
+        </div>
+      </section>
+
+      <section class="problem section-shell compact">
+        <div class="section-heading">
+          <span class="kicker">Problème</span>
+          <h2>Photos est très bien pour les photos. Les captures importantes ont besoin de plus.</h2>
+          <p>Reçus, recettes, billets, idées et extraits d’articles finissent à côté des égoportraits, des mèmes et des photos de plafond prises par accident. On a bâti le nuage, mais on perd encore la capture avec l’adresse de l’hôtel.</p>
+        </div>
+        <div class="problem-grid"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">▣</span>
+            <h3>Les captures disparaissent dans le lot</h3>
+            <p>Vous sauvegardez quelque chose d’important, puis une semaine plus tard vous faites défiler Photos comme une archive de preuves.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">✎</span>
+            <h3>Le contexte disparaît</h3>
+            <p>L’image seule ne suffit pas toujours. ScreenClips vous laisse ajouter un nom et une note.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">☰</span>
+            <h3>Les sujets se mélangent</h3>
+            <p>Voyages, travail, achats et apprentissage méritent chacun leur place, pas une seule pile sans fin dans Photos.</p>
+          </article></div>
+      </section>
+
+      <section id="how-it-works" class="how section-shell">
+        <div class="section-heading narrow">
+          <span class="kicker">Fonctionnement</span>
+          <h2>Trois étapes. Pas de système de plus à gérer.</h2>
+        </div>
+        <div class="steps"><div class="step-card">
+            <span>01</span>
+            <h3>Créez une bibliothèque</h3>
+            <p>Séparez les sujets comme les recettes, reçus, billets, recherches, apprentissages ou tout ce que vous voulez retrouver.</p>
+          </div>
+<div class="step-card">
+            <span>02</span>
+            <h3>Ajoutez un Clip</h3>
+            <p>Un Clip est un petit ensemble autour d’un sujet précis. Il a un nom, une description et ses propres captures.</p>
+          </div>
+<div class="step-card">
+            <span>03</span>
+            <h3>Revenez sans chercher</h3>
+            <p>Ouvrez une bibliothèque, choisissez un Clip, et tout ce qu’il vous faut est déjà réuni.</p>
+          </div></div>
+        <div class="showcase-grid">
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Liste de Clips dans ScreenClips" loading="lazy" src="../screens/clips.webp">
+            </div>
+          </div>
+          <div class="showcase-copy">
+            <span class="kicker">Du chaos au contexte</span>
+            <h2>Des bibliothèques et des Clips au lieu d’un grand fouillis dans Photos.</h2>
+            <p>ScreenClips n’essaie pas de deviner à votre place. Il donne une structure simple : une bibliothèque pour le sujet, un Clip pour l’élément précis, puis les captures ou photos à l’intérieur.</p>
+            <div class="mini-list"><span>✓ nom et description du Clip</span><span>✓ captures et photos au même endroit</span><span>✓ retour rapide aux éléments sauvegardés</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="use-cases section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">Utilisations</span>
+          <h2>Pour les choses que vous sauvegardez vraiment en captures.</h2>
+        </div>
+        <div class="use-case-grid"><div class="use-case">
+            <span aria-hidden="true">▤</span>
+            <strong>Reçus</strong>
+            <small>factures, preuves d’achat</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">✈</span>
+            <strong>Voyage</strong>
+            <small>billets, adresses, réservations</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☕</span>
+            <strong>Recettes</strong>
+            <small>du Web et des conversations familiales</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">◈</span>
+            <strong>Idées</strong>
+            <small>inspiration et recherche</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">Aa</span>
+            <strong>Apprentissage</strong>
+            <small>vocabulaire, notes, matériel</small>
+          </div>
+<div class="use-case">
+            <span aria-hidden="true">☺</span>
+            <strong>Mèmes</strong>
+            <small>parce que le monde peut vaciller, mais au moins ça peut rester drôle</small>
+          </div></div>
+      </section>
+
+      <section id="features" class="features section-shell">
+        <div class="feature-layout">
+          <div class="feature-copy">
+            <span class="kicker">Fonctions</span>
+            <h2>Tout ce qu’il faut pour reprendre le contrôle des captures. Sans drame.</h2>
+            <div class="feature-list"><article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">＋</span>
+            <h3>Ajoutez des captures et des photos</h3>
+            <p>Regroupez les éléments dans des Clips et ajoutez-en au fil de l’évolution du sujet.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">⇪</span>
+            <h3>Exportez en PDF</h3>
+            <p>Transformez un Clip en fichier lisible quand vous voulez l’envoyer ou le garder hors de l’app.</p>
+          </article>
+<article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">♡</span>
+            <h3>Marquez ce qui compte</h3>
+            <p>Favoris, marques et ordre là où il n’y avait avant qu’un défilement interminable.</p>
+          </article></div>
+          </div>
+          <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Écran de détail d’un Clip avec capture, photo et export PDF" loading="lazy" src="../screens/detail.webp">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="privacy section-shell compact">
+        <div class="privacy-card">
+          <div>
+            <span class="kicker light">Confidentialité</span>
+            <h2>Vos captures restent avec vous.</h2>
+            <p>ScreenClips fonctionne localement. Vous n’avez pas besoin de compte pour vous organiser, et vous n’avez pas à confier vos reçus, notes et projets à un autre service qui veut absolument « améliorer l’expérience ».</p>
+          </div>
+          <div class="privacy-points"><span>Sans compte</span><span>Sans nuage</span><span>Sans publicité</span></div>
+        </div>
+      </section>
+
+      <section class="premium section-shell">
+        <div class="premium-copy">
+          <span class="kicker">Premium</span>
+          <h2>Commencez par l’ordre. Débloquez plus d’espace quand ScreenClips devient votre système.</h2>
+          <p>Premium ne complique pas l’app. Il ajoute simplement plus d’espace pour les bibliothèques, les Clips et les captures. Le prix est affiché dans l’App Store.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Télécharger ScreenClips sur l’App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Télécharger sur</small><strong>App Store</strong></span>
+          </a>
+        </div>
+        <div class="phone ">
+            <div class="phone-frame">
+              <span class="phone-island"></span>
+              <img alt="Écran ScreenClips Premium" loading="lazy" src="../screens/paywall1.webp">
+            </div>
+          </div>
+      </section>
+
+      <section class="faq section-shell compact">
+        <div class="section-heading narrow">
+          <span class="kicker">FAQ</span>
+          <h2>Des réponses courtes, parce que la vie est déjà assez longue.</h2>
+        </div>
+        <div class="faq-list"><details open>
+            <summary>ScreenClips supprime-t-il les photos de ma bibliothèque ?</summary>
+            <p>Non. Retirer un élément d’un Clip ne supprime pas l’original dans Photos.</p>
+          </details>
+<details>
+            <summary>L’app fonctionne-t-elle hors ligne ?</summary>
+            <p>Oui. ScreenClips est conçu comme un organiseur local sur votre iPhone.</p>
+          </details>
+<details>
+            <summary>Dois-je créer un compte ?</summary>
+            <p>Non. ScreenClips n’a pas besoin de compte pour organiser vos Clips.</p>
+          </details>
+<details>
+            <summary>Puis-je aussi ajouter des photos normales ?</summary>
+            <p>Oui. Vous pouvez ajouter des captures et des photos lorsqu’elles appartiennent à un Clip.</p>
+          </details></div>
+      </section>
+
+      <section class="final-cta section-shell">
+        <div class="final-card">
+          <div class="app-icon" aria-hidden="true"></div>
+          <h2>Arrêtez de chercher vos captures. Revenez-y simplement.</h2>
+          <p>ScreenClips organise ce que vous sauvegardez « pour plus tard ». Cette fois, plus tard est vraiment retrouvable.</p>
+          <a class="app-store-button " href="https://apps.apple.com/app/id6771277332" aria-label="Télécharger ScreenClips sur l’App Store">
+            <span class="apple-mark" aria-hidden="true">●</span>
+            <span><small>Télécharger sur</small><strong>App Store</strong></span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 ScreenClips</span>
+        <div>
+          <a href="./privacy.html">Politique de confidentialité</a>
+          <a href="./terms.html">Conditions</a>
+          <a href="mailto:screenclips@screenclips.app">Nous joindre</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
